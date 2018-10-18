@@ -10,8 +10,10 @@ public class GameMaster : MonoBehaviour {
     public Snake snake;
     public float wallThickness = 1;
     public Text currentNumText;
+    public Text currentScore;
 
     private int currentNum;
+    private int score = 0;
     private float xLength, zLength;
     private List<GameObject> currentApples = new List<GameObject>();
 
@@ -19,13 +21,25 @@ public class GameMaster : MonoBehaviour {
     {
         xLength = ground.localScale.x - 2*wallThickness;
         zLength = ground.localScale.z - 2*wallThickness;
+
+        currentScore.text = score.ToString();
     }
 	// Update is called once per frame
 	void Update () {
 
         if (snake.currentNums >= currentNum)
         {
+            if(snake.currentNums == currentNum)
+            {
+                score += 10;
+            }
+            else
+            {
+                score -= 10;
+            }
+            currentScore.text = score.ToString();
             ResetSnakeBody();
+            DeleteRemainingApples();
             CreateNewRandomNum();
             SpawnApplePairs(2);
         }
@@ -38,11 +52,18 @@ public class GameMaster : MonoBehaviour {
         {
             snake.bodyParts[i].gameObject.GetComponentInChildren<TextMesh>().text = "";
         }
+        snake.currentNums = 0;
     }
-
+    void DeleteRemainingApples()
+    {
+        foreach(GameObject apple in currentApples)
+        {
+            Destroy(apple);
+        }
+    }
     void CreateNewRandomNum()
     {
-        currentNum = Random.Range(1, 100);
+        currentNum = Random.Range(2, 100);
         currentNumText.text = currentNum.ToString();
     }
 
