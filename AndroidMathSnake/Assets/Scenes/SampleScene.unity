@@ -596,7 +596,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1278465706
 GameObject:
@@ -673,33 +673,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1278465706}
   m_CullTransparentMesh: 0
---- !u!1 &1325279602 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1596451806036090, guid: e2f783b5d56f063479faa964060578a2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1623716370}
---- !u!114 &1325279604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1325279602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a56a4679877e0774fbee79086bbb6ad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  apple: {fileID: 1387718410403596, guid: 18d630463d4727a4891bfab0afbf293c, type: 2}
-  ground: {fileID: 1327297062}
-  snake: {fileID: 1885550529}
-  wallThickness: 1.5
-  currentNumText: {fileID: 1278465708}
-  currentScore: {fileID: 1998573876}
---- !u!4 &1327297062 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4714626948904744, guid: e2f783b5d56f063479faa964060578a2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1623716370}
 --- !u!1001 &1623716370
 Prefab:
   m_ObjectHideFlags: 0
@@ -737,44 +710,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4579010363001702, guid: e2f783b5d56f063479faa964060578a2, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302541107738912, guid: e2f783b5d56f063479faa964060578a2, type: 2}
-      propertyPath: m_TagString
-      value: GameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 1334637531870820, guid: e2f783b5d56f063479faa964060578a2, type: 2}
-      propertyPath: m_TagString
-      value: GameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 1872085827188888, guid: e2f783b5d56f063479faa964060578a2, type: 2}
-      propertyPath: m_TagString
-      value: GameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 1468531152582304, guid: e2f783b5d56f063479faa964060578a2, type: 2}
-      propertyPath: m_TagString
-      value: GameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 65355835892400254, guid: e2f783b5d56f063479faa964060578a2,
-        type: 2}
-      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 65401652844743830, guid: e2f783b5d56f063479faa964060578a2,
+    - target: {fileID: 114646710487505824, guid: e2f783b5d56f063479faa964060578a2,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65655297498961120, guid: e2f783b5d56f063479faa964060578a2,
+      propertyPath: snake
+      value: 
+      objectReference: {fileID: 1885550529}
+    - target: {fileID: 114646710487505824, guid: e2f783b5d56f063479faa964060578a2,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65959701597189396, guid: e2f783b5d56f063479faa964060578a2,
+      propertyPath: currentNumText
+      value: 
+      objectReference: {fileID: 1278465708}
+    - target: {fileID: 114646710487505824, guid: e2f783b5d56f063479faa964060578a2,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: currentScore
+      value: 
+      objectReference: {fileID: 1998573876}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f783b5d56f063479faa964060578a2, type: 2}
   m_IsPrefabAsset: 0
