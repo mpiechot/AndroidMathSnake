@@ -13,10 +13,9 @@ public class BodyPartMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        GetComponent<SphereCollider>().enabled = false;
         rb = GetComponent<Rigidbody>();
         text = GetComponentInChildren<TextMesh>();
-        Debug.Log("Is text null? " + (text == null));
-        Debug.Log("Is text.text null? " + (text.text == null));
     }
 	
 	// Update is called once per frame
@@ -30,6 +29,7 @@ public class BodyPartMovement : MonoBehaviour {
         if (distance > minDistance)
         {
             rb.velocity = (target.position - transform.position) * speed * distance;
+            transform.LookAt(target);
         }
         else
         {
