@@ -13,7 +13,8 @@ public class BodyPartMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        GetComponent<SphereCollider>().enabled = false;
+        StartCoroutine(WaitSomeTime());
+
         rb = GetComponent<Rigidbody>();
         text = GetComponentInChildren<TextMesh>();
     }
@@ -28,7 +29,8 @@ public class BodyPartMovement : MonoBehaviour {
         float distance = Vector3.Distance(transform.position, target.position);
         if (distance > minDistance)
         {
-            rb.velocity = (target.position - transform.position) * speed * distance;
+           // rb.velocity = (target.position - transform.position) * speed * distance;
+            transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
             transform.LookAt(target);
         }
         else
@@ -36,4 +38,12 @@ public class BodyPartMovement : MonoBehaviour {
             rb.velocity = Vector3.zero;
         }
 	}
+
+    IEnumerator WaitSomeTime()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Debug.Log("Enabled!");
+        GetComponent<SphereCollider>().enabled = true;
+    }
 }

@@ -30,24 +30,21 @@ public class Snake : MonoBehaviour {
     void AddBodyPart(int num)
     {
         //Spawn the new part on the location of the last bodyPart of the snake
-        GameObject newPart;
-        if(bodyParts.Count == 1)
-        {
-            //TODO!!! Schöner machen
-            newPart = Instantiate(bodyPartPrefab, bodyParts[bodyParts.Count - 1].position, bodyParts[bodyParts.Count - 1].rotation);
-            newPart.transform.position = newPart.transform.position + new Vector3(1, 0, 0);    //Verschiebe den ersten BodyPart um x+1, damit der Head nicht im Bodypart -> GameOver ist
-        }
-        else{
-            newPart = Instantiate(bodyPartPrefab, bodyParts[bodyParts.Count - 1].position, bodyParts[bodyParts.Count - 1].rotation);
-        }
+        GameObject newPart = Instantiate(bodyPartPrefab, bodyParts[bodyParts.Count - 1].position, bodyParts[bodyParts.Count - 1].rotation);
+        newPart.name = "BodyPart Nr." + bodyParts.Count;
 
-        //Increase the speed of the snake
+        //Increase the speed of the snake and its bodyParts
         bodyParts[0].gameObject.GetComponent<SnakeMovement>().speed += 0.3f;
+        for(int i = 1;i< bodyParts.Count;i++)
+        {
+            bodyParts[i].GetComponent<BodyPartMovement>().speed += 0.3f;
+        }
 
         //Get the BodyPartMovement of the newPart variable
         BodyPartMovement bpm = newPart.GetComponent<BodyPartMovement>();
         if(bpm != null)
         {
+            //Print the eaten number on the bodyPart if not 0
             if (num != 0)
             {
                 TextMesh mesh = bpm.GetComponentInChildren<TextMesh>();
@@ -75,6 +72,7 @@ public class Snake : MonoBehaviour {
         }
         if (col.tag == "GameOver")
         {
+            Debug.Log("Snake hit: " + col.name + " -> " + col.tag);
             Destroy(gameObject);
             Destroy(GameObject.FindGameObjectWithTag("BodyParts"));
         }

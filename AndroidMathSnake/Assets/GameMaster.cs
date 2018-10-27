@@ -11,6 +11,9 @@ public class GameMaster : MonoBehaviour {
     public float wallThickness = 1;
     public Text currentNumText;
     public Text currentScore;
+    public float speed = 1f;
+
+    protected Vector3 worldSize;
 
     private int currentNum;
     private int score = 0;
@@ -19,10 +22,13 @@ public class GameMaster : MonoBehaviour {
 
     void Start()
     {
-        xLength = ground.localScale.x - 2*wallThickness;
-        zLength = ground.localScale.z - 2*wallThickness;
+        worldSize = ground.GetComponent<MeshRenderer>().bounds.size;
+        xLength = worldSize.x - 2*wallThickness;
+        zLength = worldSize.z - 2*wallThickness;
 
         currentScore.text = score.ToString();
+
+        snake.GetComponent<SnakeMovement>().speed = speed;
     }
 	// Update is called once per frame
 	void Update () {
@@ -41,7 +47,7 @@ public class GameMaster : MonoBehaviour {
             ResetSnakeBody();
             DeleteRemainingApples();
             CreateNewRandomNum();
-            SpawnApplePairs(2);
+            SpawnApplePairs(3);
         }
     }
 
@@ -84,7 +90,7 @@ public class GameMaster : MonoBehaviour {
     {
         float randomX = Random.Range(0, 100);
 
-        GameObject currentApple = Instantiate(apple, ground.position, ground.rotation) as GameObject;       
+        GameObject currentApple = Instantiate(apple, ground.position, Quaternion.identity) as GameObject;       
         currentApple.GetComponent<Apple>().num = num;
 
         currentApple.transform.position = new Vector3(Random.Range(-(xLength/2), (xLength / 2)), 10, Random.Range(-(xLength / 2), (xLength / 2)));

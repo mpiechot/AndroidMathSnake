@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SnakeMovement : MonoBehaviour {
 
-    public float speed = 1f;
+    public float speed { get; set; }
     public float rotationSpeed = 50f;
 
     private float horizontal;
