@@ -9,9 +9,11 @@ public class GameMaster : MonoBehaviour {
     public Transform ground;
     public Snake snake;
     public float wallThickness = 1;
-    public Text currentNumText;
+    public GameObject searchNumberField;
     public Text currentScore;
     public float speed = 1f;
+    public GameObject[] numbers = new GameObject[10];
+
 
     protected Vector3 worldSize;
 
@@ -19,6 +21,7 @@ public class GameMaster : MonoBehaviour {
     private int score = 0;
     private float xLength, zLength;
     private List<GameObject> currentApples = new List<GameObject>();
+    private List<GameObject> currentNumObjects = new List<GameObject>();
 
     void Start()
     {
@@ -53,7 +56,6 @@ public class GameMaster : MonoBehaviour {
 
     void ResetSnakeBody()
     {
-        Debug.Log(snake.bodyParts.Count);
         for (int i = 1; i < snake.bodyParts.Count;i++)
         {
             snake.bodyParts[i].gameObject.GetComponentInChildren<TextMesh>().text = "";
@@ -69,8 +71,9 @@ public class GameMaster : MonoBehaviour {
     }
     void CreateNewRandomNum()
     {
+        ClearCurrentNumObjects();
         currentNum = Random.Range(2, 100);
-        currentNumText.text = currentNum.ToString();
+        CreateNumObjectsInList(currentNum, searchNumberField.transform);
     }
 
     void SpawnApplePairs(int ammount)
@@ -86,15 +89,57 @@ public class GameMaster : MonoBehaviour {
         SpawnApple(firstNum);
         SpawnApple(currentNum - firstNum);
     }
+
     void SpawnApple(int num)
     {
-        float randomX = Random.Range(0, 100);
+        GameObject currentApple = Instantiate(apple, Vector3.zero, Quaternion.identity) as GameObject;
+        
+        currentApple.transform.position = new Vector3(Random.Range(-(xLength/2), (xLength / 2)), 10, Random.Range(-(zLength / 2), (zLength / 2)));
 
-        GameObject currentApple = Instantiate(apple, ground.position, Quaternion.identity) as GameObject;       
         currentApple.GetComponent<Apple>().num = num;
 
-        currentApple.transform.position = new Vector3(Random.Range(-(xLength/2), (xLength / 2)), 10, Random.Range(-(xLength / 2), (xLength / 2)));
 
+        CreateNumObjects(num, currentApple.transform);
+        
         currentApples.Add(currentApple);
+    }
+    private void CreateNumObjectsInList(int num, Transform parent)
+    {
+        float moveX = (num < 10 ? -0.8f : -0.2f);
+        int xPlus = -1;
+        while (num != 0)
+        {
+            int digit = num % 10;
+            num /= 10;
+            Vector3 numPos = new Vector3(parent.position.x + moveX, parent.position.y, parent.position.z - 0.7f);
+            GameObject digitObj = Instantiate(numbers[digit], numPos, numbers[digit].transform.rotation) as GameObject;
+            currentNumObjects.Add(digitObj);
+            moveX += xPlus;
+            digitObj.transform.parent = parent;
+        }
+    }
+    private void CreateNumObjects(int num, Transform parent)
+    {
+        float moveX = (num < 10 ? -0.8f : -0.2f);
+        int xPlus = -1;
+        while (num != 0)
+        {
+            int digit = num % 10;
+            num /= 10;
+            Vector3 numPos = new Vector3(parent.position.x + moveX, parent.position.y + 1f, parent.position.z - 0.7f);
+            GameObject digitObj = Instantiate(numbers[digit], numPos, numbers[digit].transform.rotation) as GameObject;
+            moveX += xPlus;
+            digitObj.transform.parent = parent;
+        }
+    }
+    private void ClearCurrentNumObjects()
+    {
+            Debug.Log("Destroy: ");
+        for(int i= currentNumObjects.Count - 1; i >= 0; i--)
+        {
+            GameObject delete = currentNumObjects[i];
+            currentNumObjects.RemoveAt(i);
+            Destroy(delete);
+        }
     }
 }

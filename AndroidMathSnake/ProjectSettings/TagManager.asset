@@ -7,6 +7,7 @@ TagManager:
   - BodyParts
   - Apple
   - GameOver
+  - Numbers
   layers:
   - Default
   - TransparentFX

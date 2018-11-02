@@ -43,7 +43,6 @@ public class BodyPartMovement : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
 
-        Debug.Log("Enabled!");
         GetComponent<SphereCollider>().enabled = true;
     }
 }

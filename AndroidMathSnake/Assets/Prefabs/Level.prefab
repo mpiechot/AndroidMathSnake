@@ -9108,3 +9108,15 @@ MonoBehaviour:
   currentNumText: {fileID: 0}
   currentScore: {fileID: 0}
   speed: 3
+  numbers:
+  - {fileID: 1437541047903218, guid: 6a8b3c9dbb8cd6041b091b147d0050f0, type: 2}
+  - {fileID: 1384631737456826, guid: 1f96a3adf91a8fa4582288c20f568735, type: 2}
+  - {fileID: 1205096901422574, guid: af0203e86ee06fb41bf9a5410d13b88f, type: 2}
+  - {fileID: 1081143935172768, guid: 5213c889547cefa41a7cca32a1c5bcbc, type: 2}
+  - {fileID: 1257153901411856, guid: 419eb5605b5ae4e44bfca7b80642f1ab, type: 2}
+  - {fileID: 1481417104482832, guid: ba3dd84102f7af247bcfc683165f7e47, type: 2}
+  - {fileID: 1288442370106368, guid: e0fcb786076f4e4409d960944612862e, type: 2}
+  - {fileID: 1470622612529344, guid: 25e28e7081c88234dbbc69888bae6b7b, type: 2}
+  - {fileID: 1822261240222510, guid: 9edf9b6c5edd9444daecf1090d9f7883, type: 2}
+  - {fileID: 1079723975485738, guid: 8ee263da76759154d8744827e6ce3ef3, type: 2}
+  numbersInstances: {fileID: 0}

@@ -5,16 +5,20 @@ using UnityEngine;
 public class Apple : MonoBehaviour {
 
     public int num { get; set; }
-    public TextMesh text;
+    public GameObject system;
 
 	// Use this for initialization
-	void Start () {    
-        text = GetComponentInChildren<TextMesh>();
-        text.text = num.ToString();
+	void Start () {
     }
 	
 	// Update is called once per frame
 	void Update () {
         
 	}
+
+    void OnDestroy()
+    {
+        Debug.Log("Destroy?!");
+        Instantiate(system, transform.position, system.transform.rotation);
+    }
 }
