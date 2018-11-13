@@ -13,7 +13,8 @@ public class GameMaster : MonoBehaviour {
     public Text currentScore;
     public float speed = 1f;
     public GameObject[] numbers = new GameObject[10];
-
+    public static GameMaster gm;
+    public GameObject appleDestroyAnim;
 
     protected Vector3 worldSize;
 
@@ -22,6 +23,12 @@ public class GameMaster : MonoBehaviour {
     private float xLength, zLength;
     private List<GameObject> currentApples = new List<GameObject>();
     private List<GameObject> currentNumObjects = new List<GameObject>();
+    private List<Vector3> destroyAppleAnims = new List<Vector3>();
+
+    void Awake()
+    {
+        gm = this;
+    }
 
     void Start()
     {
@@ -33,9 +40,25 @@ public class GameMaster : MonoBehaviour {
 
         snake.GetComponent<SnakeMovement>().speed = speed;
     }
+
+    public GameMaster getInstance()
+    {
+        return gm;
+    }
+    public void startAppleDestroy(Transform apple)
+    {
+        destroyAppleAnims.Add(apple.position);
+    }
 	// Update is called once per frame
 	void Update () {
-
+        if(destroyAppleAnims.Count > 0)
+        {
+            for(int i=destroyAppleAnims.Count-1;i>=0;i--)
+            {
+                Instantiate(appleDestroyAnim, destroyAppleAnims[i], appleDestroyAnim.transform.rotation);
+                destroyAppleAnims.RemoveAt(i);
+            }
+        }
         if (snake.currentNums >= currentNum)
         {
             if(snake.currentNums == currentNum)

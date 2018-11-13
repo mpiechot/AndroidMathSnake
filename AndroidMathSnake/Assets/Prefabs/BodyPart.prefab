@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4429313264784860}
   - component: {fileID: 54002744227178852}
   - component: {fileID: 114199718067780986}
-  - component: {fileID: 135039018679414422}
+  - component: {fileID: 65595225211064346}
   m_Layer: 0
   m_Name: BodyPart
   m_TagString: GameOver
@@ -147,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016519643260978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.0158544, y: 0.5877178, z: 7.3026605}
+  m_LocalPosition: {x: 4.535928, y: 0.9999961, z: 4.0612803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4798635585007876}
@@ -371,6 +371,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!65 &65595225211064346
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1016519643260978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.6, z: 1.2}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!102 &102060822452364508
 TextMesh:
   serializedVersion: 3
@@ -403,15 +415,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced1158e580d878469263bf37bb4ab40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &135039018679414422
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1016519643260978}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

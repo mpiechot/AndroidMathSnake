@@ -6,9 +6,12 @@ public class Apple : MonoBehaviour {
 
     public int num { get; set; }
     public GameObject system;
+    public MeshRenderer apple;
+    private GameMaster gm;
 
 	// Use this for initialization
 	void Start () {
+        gm = GameMaster.gm;
     }
 	
 	// Update is called once per frame
@@ -19,6 +22,6 @@ public class Apple : MonoBehaviour {
     void OnDestroy()
     {
         Debug.Log("Destroy?!");
-        Instantiate(system, transform.position, system.transform.rotation);
+        gm.startAppleDestroy(transform);
     }
 }
