@@ -8,6 +8,7 @@ TagManager:
   - Apple
   - GameOver
   - Numbers
+  - Score
   layers:
   - Default
   - TransparentFX

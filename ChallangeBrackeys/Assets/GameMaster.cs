@@ -7,20 +7,13 @@ public class GameMaster : MonoBehaviour {
 
     public GameObject ball;
     public float spawnInterval = 10f;
+    public float directionVelocity = 10;
     public Text pointsText;
-    public static GameMaster gm;
 
     private float currentTime = 0f;
     private List<GameObject> balls = new List<GameObject>();
     private int points = 0;
 
-	// Use this for initialization
-	void Awake () {
-		if(gm == null)
-        {
-            gm = new GameMaster();
-        }
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -42,10 +35,12 @@ public class GameMaster : MonoBehaviour {
         currentTime -= 0.5f;
         if (currentTime <= 0)
         {
-            GameObject newBall = Instantiate(ball, new Vector3(Random.Range(-5, 5), Random.Range(5, 15), 0), Quaternion.identity) as GameObject;
+            GameObject newBall = Instantiate(ball, new Vector3(Random.Range(-10, 10), Random.Range(5, 15), 0), Quaternion.identity) as GameObject;
+            Rigidbody rb = newBall.GetComponent<Rigidbody>();
+            rb.velocity = new Vector3(Random.Range(-directionVelocity, directionVelocity), Random.Range(-5, 5), 0);
             balls.Add(newBall);
 
-
+            
             currentTime = spawnInterval;
         }
 	}

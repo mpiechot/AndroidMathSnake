@@ -18,5 +18,19 @@ public class Movement : MonoBehaviour {
 
         transform.Translate(Vector3.right * speed * horizontal * Time.deltaTime);
 	}
-
+    void OnTriggerEnter(Collider col)
+    {
+        if(col.tag == "Wall")
+        {
+            transform.Translate(Vector3.zero);
+            if (transform.position.x < 0)
+            {
+                transform.Translate(Vector3.right * speed  * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
+            }
+        }
+    }
 }
