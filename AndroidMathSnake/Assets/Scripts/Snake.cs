@@ -83,6 +83,7 @@ public class Snake : MonoBehaviour {
         {
             Debug.Log("Snake hit: " + col.name + " -> " + col.tag);
             PlayerValues.Score = Int32.Parse(GameMaster.gm.currentScore.text);
+            StartCoroutine(StartUIControll.focusOn());
             SceneManager.LoadScene("UpdateHighScore");
             Destroy(gameObject);
             Destroy(GameObject.FindGameObjectWithTag("BodyParts"));

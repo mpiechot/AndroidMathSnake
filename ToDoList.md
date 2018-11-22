@@ -1,12 +1,13 @@
 <font color="lightgreen">**✓**</font>
 
 #### ToDo List: 21.11.2018 - 28.11.2018: <font color="red">(0%)</font>
-* Spiel auf Tablet testen<font color="red">(0%)</font>
+* Spiel auf Tablet testen<font color="red">(20%)</font>
 * UI auf 16:9 anpassen?<font color="red">(0%)</font>
 * Äpfel verfaulen einbauen<font color="red">(0%)</font>
 * Äpfel verfaulen testen<font color="red">(0%)</font>
 * Bug: Schlange kann sich splitten(lücken entstehen)<font color="red">(0%)</font>
 * Über Aufbau des Nutzertests informieren<font color="red">(0%)</font>
+* UI Schlange in Third-Person hinzufügen um gegessene Zahlen im Blick zu behalten<font color="red">(0%)</font>
 
 #### ToDo List: 28.11.2018 - 05.12.2018: <font color="red">(0%)</font>
 * Bug: Manchmal ist die Schlange schneller als die Bodyparts<font color="red">(0%)</font>

@@ -19,6 +19,7 @@ public class UpdateHighScore : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        StartCoroutine(StartUIControll.focusOn());
         profile.depthOfField.enabled = true;
         profile.vignette.enabled = true;
         score = PlayerValues.Score;
