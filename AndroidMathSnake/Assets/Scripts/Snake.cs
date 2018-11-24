@@ -5,53 +5,80 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour {
-
-    public int currentNums { get; set; }
-    public GameObject bodyPartPrefab;
-    public List<Transform> bodyParts = new List<Transform>();
-    public TailMovement tail;
+    [Header("Snake Movement")]
+    public float snakeSpeed = 1f;
+    public float turnSpeed = 50f;
     public float minDistance = 1f;
 
+    [Header("Snake BodyParts")]
     private GameObject PartsList;
+
+    public int currentNums { get; set; }
+    public List<Transform> bodyParts = new List<Transform>();
+
+    [Header("Prefabs and Config")]
+    private GameMaster gm;
+    private int currLevel = 1;
+
+    public int maxLevel;
+    public BodyPartMovement tailMovement;
+    public SnakeMovement snakeMovement;
+    public GameObject bodyPartPrefab;
+
 
     // Use this for initialization
     void Start () {
-        tail.target = transform;
-        tail.minDistance = minDistance;
-        bodyParts.Add(transform);
-        tail.speed = bodyParts[0].gameObject.GetComponent<SnakeMovement>().speed;
+        gm = GameMaster.gm;
+
+        //Let the tail follow the Snakehead at start
+        tailMovement.target = transform;
+        tailMovement.minDistance = minDistance;
+
+        //bodyParts.Add(transform);
+        tailMovement.speed = snakeSpeed;
+        snakeMovement.speed = snakeSpeed;
+        snakeMovement.rotationSpeed = turnSpeed;
+
         PartsList = GameObject.FindGameObjectWithTag("BodyParts");
-        //for(int i = 0; i < 10; i++)
-        //{
-       //     AddBodyPart(0);
-       // }
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        updateSpeed();
 
-       
-	}
+    }
 
     void AddBodyPart(int num)
     {
-        //Spawn the new part on the location of the last bodyPart of the snake
-        GameObject newPart = Instantiate(bodyPartPrefab, bodyParts[bodyParts.Count - 1].position, bodyParts[bodyParts.Count - 1].rotation);
-        newPart.name = "BodyPart Nr." + bodyParts.Count;
-        tail.target = newPart.transform;
-        tail.StartCoroutine(tail.LetTargetMoveFirst());
+        GameObject newPart = getNewBodyPart(num);
 
-        //Increase the speed of the snake and its bodyParts
-        bodyParts[0].gameObject.GetComponent<SnakeMovement>().speed += 0.3f;
-        tail.speed += 0.3f;
-        for(int i = 1;i< bodyParts.Count;i++)
+        updateTailTarget(newPart);
+
+        increaseSpeedAndLevel();          
+    
+        bodyParts.Add(newPart.transform);
+    }
+
+    private GameObject getNewBodyPart(int num)
+    {
+        //Spawn the new part on the location of the last bodyPart of the snake
+        Transform spawnPos;
+        if (bodyParts.Count == 0)
         {
-            bodyParts[i].GetComponent<BodyPartMovement>().speed += 0.3f;
+            spawnPos = snakeMovement.transform;
         }
+        else
+        {
+            spawnPos = bodyParts[bodyParts.Count - 1];
+
+        }
+        GameObject newPart = Instantiate(bodyPartPrefab, spawnPos.position, spawnPos.rotation);
+        newPart.name = "BodyPart Nr." + bodyParts.Count;
+
 
         //Get the BodyPartMovement of the newPart variable
         BodyPartMovement bpm = newPart.GetComponent<BodyPartMovement>();
-        if(bpm != null)
+        if (bpm != null)
         {
             //Print the eaten number on the bodyPart if not 0
             if (num != 0)
@@ -60,18 +87,43 @@ public class Snake : MonoBehaviour {
                 mesh.text = num.ToString();
                 currentNums += num;
             }
-            bpm.target = bodyParts[bodyParts.Count - 1];
+            bpm.target = spawnPos;
             bpm.minDistance = minDistance;
-            bpm.speed = bodyParts[0].gameObject.GetComponent<SnakeMovement>().speed;
-
         }
-        newPart.transform.position = new Vector3(newPart.transform.position.x, bodyParts[0].position.y, newPart.transform.position.z);
+        newPart.transform.position = new Vector3(newPart.transform.position.x, spawnPos.position.y, newPart.transform.position.z);
 
         newPart.transform.SetParent(PartsList.transform);
 
-        bodyParts.Add(newPart.transform);
+        return newPart;
     }
+    private void updateTailTarget(GameObject newPart)
+    {
+        tailMovement.target = newPart.transform;
+        tailMovement.StartCoroutine(tailMovement.LetTargetMoveFirst());
+    }
+    private void increaseSpeedAndLevel()
+    {
+        currLevel++;
+        if(currLevel < maxLevel)
+        {
+            snakeSpeed += 0.3f;
+        }
+        else
+        {
+            gm.currentRotTime = 0.001f;
+        }
 
+
+    }
+    private void updateSpeed()
+    {
+        snakeMovement.speed = snakeSpeed;
+        tailMovement.speed = snakeSpeed;
+        foreach (Transform part in bodyParts)
+        {
+            part.GetComponent<BodyPartMovement>().speed = snakeSpeed;
+        }
+    }
     void OnTriggerEnter(Collider col)
     {
         if(col.tag == "Apple")

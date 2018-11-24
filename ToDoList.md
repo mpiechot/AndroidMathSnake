@@ -1,12 +1,10 @@
-</font>
-
 #### ToDo List: 21.11.2018 - 28.11.2018: <font color="red">(20%)</font>
 * <font color="lightgreen">Spiel auf Tablet testen **✓**</font>
 * <font color="lightgreen">UI auf 1920x1200 anpassen **✓**</font>
-* Steuerung für Tablet einfügen<font color="red">(0%)</font>
-* Äpfel verfaulen einbauen<font color="red">(0%)</font>
-* Äpfel verfaulen testen<font color="red">(0%)</font>
-* Bug: Schlange kann sich splitten(lücken entstehen)<font color="red">(0%)</font>
+* <font color="lightgreen">Steuerung für Tablet einfügen **✓**</font>
+* <font color="lightgreen">Äpfel verfaulen einbauen **✓**</font>
+* Äpfel verfaulen testen<font color="orange">(80%)</font>
+* Bug: Schlange kann sich splitten(lücken entstehen)<font color="red">(30%)</font>
 * Über Aufbau des Nutzertests informieren<font color="red">(0%)</font>
 * UI Schlange in Third-Person hinzufügen um gegessene Zahlen im Blick zu behalten<font color="red">(0%)</font>
 

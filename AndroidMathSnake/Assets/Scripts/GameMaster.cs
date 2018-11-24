@@ -4,17 +4,16 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class GameMaster : MonoBehaviour {
-
     public GameObject apple;
     public Transform ground;
     public Snake snake;
     public float wallThickness = 1;
     public GameObject searchNumberField;
     public Text currentScore;
-    public float speed = 1f;
     public GameObject[] numbers = new GameObject[10];
     public static GameMaster gm;
     public GameObject appleDestroyAnim;
+    public float currentRotTime;
 
     protected Vector3 worldSize;
 
@@ -35,10 +34,9 @@ public class GameMaster : MonoBehaviour {
         worldSize = ground.GetComponent<MeshRenderer>().bounds.size;
         xLength = worldSize.x - 2*wallThickness;
         zLength = worldSize.z - 2*wallThickness;
+        currentRotTime = 0f;
 
         currentScore.text = score.ToString();
-
-        snake.GetComponent<SnakeMovement>().speed = speed;
     }
 
     public GameMaster getInstance()
@@ -48,6 +46,7 @@ public class GameMaster : MonoBehaviour {
     public void startAppleDestroy(Transform apple)
     {
         destroyAppleAnims.Add(apple.position);
+        currentApples.Remove(apple.gameObject);
     }
 	// Update is called once per frame
 	void Update () {
@@ -59,7 +58,7 @@ public class GameMaster : MonoBehaviour {
                 destroyAppleAnims.RemoveAt(i);
             }
         }
-        if (snake.currentNums >= currentNum)
+        if (snake.currentNums >= currentNum || currentApples.Count == 0)
         {
             if(snake.currentNums == currentNum)
             {
@@ -79,7 +78,7 @@ public class GameMaster : MonoBehaviour {
 
     void ResetSnakeBody()
     {
-        for (int i = 1; i < snake.bodyParts.Count;i++)
+        for (int i = 0; i < snake.bodyParts.Count;i++)
         {
             snake.bodyParts[i].gameObject.GetComponentInChildren<TextMesh>().text = "";
         }
@@ -120,7 +119,6 @@ public class GameMaster : MonoBehaviour {
         currentApple.transform.position = new Vector3(Random.Range(-(xLength/2), (xLength / 2)), 10, Random.Range(-(zLength / 2), (zLength / 2)));
 
         currentApple.GetComponent<Apple>().num = num;
-
 
         CreateNumObjects(num, currentApple.transform);
         

@@ -5,15 +5,13 @@ using UnityEngine;
 public class SnakeMovement : MonoBehaviour {
 
     public float speed { get; set; }
-    public float rotationSpeed = 50f;
+    public float rotationSpeed { get; set; }
 
-    private float horizontal;
+    private bool leftClicked = false;
+    private bool rightClicked = false;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
+    private static float horizontal;
+
 	// Update is called once per frame
 	void Update () {
         GetInput();
@@ -26,7 +24,21 @@ public class SnakeMovement : MonoBehaviour {
 
     void GetInput()
     {
-        horizontal = Input.GetAxis("Horizontal");
+        //horizontal = Input.GetAxis("Horizontal");
+ 
+        if(!(leftClicked ^ rightClicked))
+        {
+            horizontal = 0;
+            return;
+        }
+        if (leftClicked)
+        {
+            horizontal = -1;
+        }
+        if (rightClicked)
+        {
+            horizontal = 1;
+        }
     }
 
     void Move()
@@ -36,5 +48,23 @@ public class SnakeMovement : MonoBehaviour {
             transform.Rotate(Vector3.up * horizontal * rotationSpeed * Time.deltaTime);
         }
         transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
+    }
+    public void moveLeftDown()
+    {
+        Debug.Log("Left Down called!");
+        leftClicked = true;
+    }
+    public void moveLeftUp()
+    {
+        Debug.Log("Left Up called!");
+        leftClicked = false;
+    }
+    public void moveRightDown()
+    {
+        rightClicked = true;
+    }
+    public void moveRighUp()
+    {
+        rightClicked = false;
     }
 }

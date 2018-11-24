@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TailMovement : MonoBehaviour
 {
-
     public Transform target { get; set; }
     public float speed { get; set; }
     public float minDistance { get; set; }

@@ -12,7 +12,8 @@ public class BodyPartMovement : MonoBehaviour {
     private Rigidbody rb;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         StartCoroutine(WaitSomeTime());
 
         rb = GetComponent<Rigidbody>();
@@ -20,7 +21,8 @@ public class BodyPartMovement : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void FixedUpdate ()
+    {
 		if(target == null)
         {
             //Debug.LogError("Target is null!");
@@ -44,5 +46,9 @@ public class BodyPartMovement : MonoBehaviour {
         yield return new WaitForSeconds(1f);
 
         GetComponent<BoxCollider>().enabled = true;
+    }
+    public IEnumerator LetTargetMoveFirst()
+    {
+        yield return new WaitForSeconds(3f);
     }
 }
