@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Snake : MonoBehaviour {
+public class Snake : MonoBehaviour
+{
     [Header("Snake Movement")]
     public float snakeSpeed = 1f;
     public float turnSpeed = 50f;
     public float minDistance = 1f;
+    public float incSpeed = 0.3f;
+    public float incTurn = 5f;
 
     [Header("Snake BodyParts")]
     private GameObject PartsList;
@@ -18,16 +21,15 @@ public class Snake : MonoBehaviour {
 
     [Header("Prefabs and Config")]
     private GameMaster gm;
-    private int currLevel = 1;
 
-    public int maxLevel;
     public BodyPartMovement tailMovement;
     public SnakeMovement snakeMovement;
     public GameObject bodyPartPrefab;
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         gm = GameMaster.gm;
 
         //Let the tail follow the Snakehead at start
@@ -40,10 +42,11 @@ public class Snake : MonoBehaviour {
         snakeMovement.rotationSpeed = turnSpeed;
 
         PartsList = GameObject.FindGameObjectWithTag("BodyParts");
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         updateSpeed();
 
     }
@@ -54,8 +57,6 @@ public class Snake : MonoBehaviour {
 
         updateTailTarget(newPart);
 
-        increaseSpeedAndLevel();          
-    
         bodyParts.Add(newPart.transform);
     }
 
@@ -101,19 +102,10 @@ public class Snake : MonoBehaviour {
         tailMovement.target = newPart.transform;
         tailMovement.StartCoroutine(tailMovement.LetTargetMoveFirst());
     }
-    private void increaseSpeedAndLevel()
+    public void increaseMovement()
     {
-        currLevel++;
-        if(currLevel < maxLevel)
-        {
-            snakeSpeed += 0.3f;
-        }
-        else
-        {
-            gm.currentRotTime = 0.001f;
-        }
-
-
+        snakeSpeed += incSpeed;
+        turnSpeed += incTurn;
     }
     private void updateSpeed()
     {
@@ -126,7 +118,7 @@ public class Snake : MonoBehaviour {
     }
     void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Apple")
+        if (col.tag == "Apple")
         {
             AddBodyPart(col.gameObject.GetComponent<Apple>().num);
             Destroy(col.gameObject);

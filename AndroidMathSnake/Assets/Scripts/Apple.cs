@@ -10,6 +10,7 @@ public class Apple : MonoBehaviour {
     public MeshRenderer apple;
     private GameMaster gm;
     public float rotTimer;
+    public float spawnSize = 2;
     private float rot;
     private Color freshColor = new Color(255,255,255);
     private Color deadColor = new Color(0, 255, 172);
@@ -28,12 +29,14 @@ public class Apple : MonoBehaviour {
             can.enabled = true;
             can.gameObject.SetActive(true);
         }
+
         rot = 1f;
         Debug.Log("RotTime: " + rotTimer);
     }
 	
 	// Update is called once per frame
 	void Update () {
+        transform.localScale = new Vector3(Map(transform.position.y, 10, 0.6f, spawnSize, 1.5f), transform.localScale.y, Map(transform.position.y, 10, 0.6f, spawnSize, 1.5f));
 
         rot -= rotTimer;
         rotBar.fillAmount = rot;
@@ -46,5 +49,10 @@ public class Apple : MonoBehaviour {
     void OnDestroy()
     {
         gm.startAppleDestroy(transform);
+    }
+
+    private float Map(float value, float from1, float to1, float from2, float to2)
+    {
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
 }

@@ -14,6 +14,12 @@ public class GameMaster : MonoBehaviour {
     public static GameMaster gm;
     public GameObject appleDestroyAnim;
     public float currentRotTime;
+    public int[] raiseDifficultyLevels = { 1, 2, 3, 4 };
+    public int[] difficultysMax = { 20, 50, 100 , 100};
+    public int[] difficultysMin = { 3, 20, 50, 30 };
+    public int currentLevel = 0;
+    public int currentDiffculty = 0;
+    
 
     protected Vector3 worldSize;
 
@@ -60,6 +66,19 @@ public class GameMaster : MonoBehaviour {
         }
         if (snake.currentNums >= currentNum || currentApples.Count == 0)
         {
+            currentLevel++;
+            if(currentDiffculty < raiseDifficultyLevels.Length-1 && currentLevel > raiseDifficultyLevels[currentDiffculty + 1])
+            {
+                currentDiffculty++;
+            }
+            if(currentDiffculty == raiseDifficultyLevels.Length - 1)
+            {
+                currentRotTime = 0.001f;
+            }
+            else
+            {
+                snake.increaseMovement();
+            }
             if(snake.currentNums == currentNum)
             {
                 score += 10;
@@ -70,7 +89,8 @@ public class GameMaster : MonoBehaviour {
             }
             currentScore.text = score.ToString();
             ResetSnakeBody();
-            DeleteRemainingApples();
+            if (currentDiffculty != raiseDifficultyLevels.Length - 1)
+                DeleteRemainingApples();
             CreateNewRandomNum();
             SpawnApplePairs(3);
         }
@@ -94,7 +114,7 @@ public class GameMaster : MonoBehaviour {
     void CreateNewRandomNum()
     {
         ClearCurrentNumObjects();
-        currentNum = Random.Range(2, 100);
+        currentNum = Random.Range(difficultysMin[currentDiffculty], difficultysMax[currentDiffculty]);
         CreateNumObjectsInList(currentNum, searchNumberField.transform);
     }
 
