@@ -9,7 +9,7 @@ public class GameMaster : MonoBehaviour {
     public Snake snake;
     public float wallThickness = 1;
     public GameObject searchNumberField;
-    public Text currentScore;
+    public TextMesh currentScore;
     public GameObject[] numbers = new GameObject[10];
     public static GameMaster gm;
     public GameObject appleDestroyAnim;

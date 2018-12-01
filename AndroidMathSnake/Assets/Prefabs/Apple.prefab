@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4861214810296156}
   - component: {fileID: 33939542419862068}
   - component: {fileID: 23087433139854878}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: apple_soft_shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 135447865100889298}
   - component: {fileID: 23927634327428642}
   - component: {fileID: 114915839392310814}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Apple
   m_TagString: Apple
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 224790212947682772}
   - component: {fileID: 222738523089590282}
   - component: {fileID: 114816414429973348}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4505652697012200}
   - component: {fileID: 33591824188934344}
   - component: {fileID: 23088918073073786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 223083842115691344}
   - component: {fileID: 114879314339222098}
   - component: {fileID: 114837835123245342}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4625541700465960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 224413574674414736}
   - component: {fileID: 222186923412609180}
   - component: {fileID: 114776589184978320}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,6 +427,7 @@ MonoBehaviour:
   system: {fileID: 1433797948300538, guid: 1629c1b7b2a7fb84493f3ad85ebe74fd, type: 2}
   apple: {fileID: 23088918073073786}
   rotTimer: 0
+  spawnSize: 2
   rotBar: {fileID: 114776589184978320}
   can: {fileID: 223083842115691344}
 --- !u!135 &135134883690908556

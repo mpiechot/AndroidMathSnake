@@ -40,6 +40,19 @@ public class Apple : MonoBehaviour {
 
         rot -= rotTimer;
         rotBar.fillAmount = rot;
+        if(rot > 0.66f)
+        {
+            rotBar.color = Color.green;
+
+        }
+        else if(rot > 0.33f)
+        {
+            rotBar.color = new Color(255, 240, 0);
+        }
+        else
+        {
+            rotBar.color = Color.red;
+        }
         if (rot < 0)
         {
             Destroy(gameObject);
