@@ -7726,3 +7726,4 @@ MonoBehaviour:
   difficultysMin: 0300000014000000320000001e000000
   currentLevel: 1
   currentDiffculty: 3
+  cameraShaker: {fileID: 0}

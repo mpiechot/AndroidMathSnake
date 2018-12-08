@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BodyPartMovement : MonoBehaviour {
 
     public Transform target { get; set; }
     public float speed { get; set; }
     public float minDistance { get; set; }
-    public TextMesh text { get; set; }
+    public TextMeshPro text { get; set; }
 
     private Rigidbody rb;
 
@@ -17,7 +18,7 @@ public class BodyPartMovement : MonoBehaviour {
         StartCoroutine(WaitSomeTime());
 
         rb = GetComponent<Rigidbody>();
-        text = GetComponentInChildren<TextMesh>();
+        text = GetComponentInChildren<TextMeshPro>();
     }
 	
 	// Update is called once per frame

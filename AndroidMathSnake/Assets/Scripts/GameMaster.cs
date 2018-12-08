@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
+using EZCameraShake;
 
 public class GameMaster : MonoBehaviour {
     public GameObject apple;
     public Transform ground;
     public Snake snake;
     public float wallThickness = 1;
-    public GameObject searchNumberField;
-    public TextMesh currentScore;
+    public TextMeshProUGUI searchNumberField;
+    public TextMeshProUGUI currentScore;
     public GameObject[] numbers = new GameObject[10];
     public static GameMaster gm;
     public GameObject appleDestroyAnim;
@@ -19,6 +21,7 @@ public class GameMaster : MonoBehaviour {
     public int[] difficultysMin = { 3, 20, 50, 30 };
     public int currentLevel = 0;
     public int currentDiffculty = 0;
+   // public CameraShaker cameraShaker;
     
 
     protected Vector3 worldSize;
@@ -81,11 +84,16 @@ public class GameMaster : MonoBehaviour {
             }
             if(snake.currentNums == currentNum)
             {
+                FindObjectOfType<AudioManager>().Play("Right");
                 score += 10;
             }
             else
             {
                 score -= 10;
+
+                FindObjectOfType<AudioManager>().Play("Wrong");
+
+                CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
             }
             currentScore.text = score.ToString();
             ResetSnakeBody();
@@ -100,8 +108,9 @@ public class GameMaster : MonoBehaviour {
     {
         for (int i = 0; i < snake.bodyParts.Count;i++)
         {
-            snake.bodyParts[i].gameObject.GetComponentInChildren<TextMesh>().text = "";
+            snake.bodyParts[i].gameObject.GetComponentInChildren<TextMeshPro>().text = "";
         }
+        searchNumberField.text = "";
         snake.currentNums = 0;
     }
     void DeleteRemainingApples()
@@ -115,6 +124,7 @@ public class GameMaster : MonoBehaviour {
     {
         ClearCurrentNumObjects();
         currentNum = Random.Range(difficultysMin[currentDiffculty], difficultysMax[currentDiffculty]);
+        searchNumberField.text = currentNum + " = ";
         CreateNumObjectsInList(currentNum, searchNumberField.transform);
     }
 

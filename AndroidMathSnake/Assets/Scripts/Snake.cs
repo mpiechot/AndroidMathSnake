@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Snake : MonoBehaviour
 {
@@ -84,7 +85,7 @@ public class Snake : MonoBehaviour
             //Print the eaten number on the bodyPart if not 0
             if (num != 0)
             {
-                TextMesh mesh = bpm.GetComponentInChildren<TextMesh>();
+                TextMeshPro mesh = bpm.GetComponentInChildren<TextMeshPro>();
                 mesh.text = num.ToString();
                 currentNums += num;
             }
@@ -120,11 +121,22 @@ public class Snake : MonoBehaviour
     {
         if (col.tag == "Apple")
         {
+            TextMeshProUGUI search = gm.searchNumberField;
+            if (search.text[search.text.Length - 2] == '=')
+            {
+                search.text += col.GetComponent<Apple>().num;
+            }
+            else
+            {
+                search.text += " + " + col.GetComponent<Apple>().num;
+            }
+            gm.searchNumberField.text += "";
             AddBodyPart(col.gameObject.GetComponent<Apple>().num);
             Destroy(col.gameObject);
         }
         if (col.tag == "GameOver")
         {
+            FindObjectOfType<AudioManager>().Play("Wrong");
             Debug.Log("Snake hit: " + col.name + " -> " + col.tag);
             PlayerValues.Score = Int32.Parse(GameMaster.gm.currentScore.text);
             StartCoroutine(StartUIControll.focusOn());

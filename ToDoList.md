@@ -11,11 +11,11 @@
 * <font color="lightgreen">Perspektive in TopDown -> Äpfel sieht man nicht fallen **✓**</font>
 * <font color="lightgreen">Zufallszahlen aus bestimmten Bereich -> Steigt pro Level an **✓**</font>
 
-#### ToDo List: 28.11.2018 - 05.12.2018: <font color="orange">(60%)</font>
-* UI Schlange in Third-Person hinzufügen um gegessene Zahlen im Blick zu behalten<font color="red">(10%)</font>
+#### ToDo List: 28.11.2018 - 05.12.2018: <font color="orange">(80%)</font>
+* <font color="lightgreen">UI Schlange in Third-Person hinzufügen um gegessene Zahlen im Blick zu behalten **✓**</font>
 * <font color="lightgreen">Farbscala für Äpfel verfault von Grün zu Rot **✓**</font>
-* Alle Informationen an einem Platz (gefressene Zahlen und gesuchte)<font color="red">(10%)</font>
-* Über Aufbau des Nutzertests informieren<font color="red">(5%)</font>
+* <font color="lightgreen">Alle Informationen an einem Platz (gefressene Zahlen und gesuchte) **✓**</font>
+* Über Aufbau des Nutzertests informieren<font color="red">(25%)</font>
 * <font color="lightgreen">Logo erstellen **✓**</font>
 * <font color="lightgreen">Buttons passend zum Logo entwerfen **✓**</font>
 * Entwicklung des Nutzertests anfangen<font color="red">(0%)</font>
