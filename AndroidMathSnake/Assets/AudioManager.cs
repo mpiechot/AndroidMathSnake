@@ -11,7 +11,14 @@ public class AudioManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
-
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         DontDestroyOnLoad(gameObject);
 
@@ -35,5 +42,15 @@ public class AudioManager : MonoBehaviour {
             return;
         }
         s.source.Play();
+    }
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound " + name + " cant be found");
+            return;
+        }
+        s.source.Stop();
     }
 }

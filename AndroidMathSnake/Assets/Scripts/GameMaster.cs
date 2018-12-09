@@ -40,6 +40,8 @@ public class GameMaster : MonoBehaviour {
 
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("Move");
+        FindObjectOfType<AudioManager>().Play("Music");
         worldSize = ground.GetComponent<MeshRenderer>().bounds.size;
         xLength = worldSize.x - 2*wallThickness;
         zLength = worldSize.z - 2*wallThickness;
@@ -64,6 +66,7 @@ public class GameMaster : MonoBehaviour {
             for(int i=destroyAppleAnims.Count-1;i>=0;i--)
             {
                 Instantiate(appleDestroyAnim, destroyAppleAnims[i], appleDestroyAnim.transform.rotation);
+                FindObjectOfType<AudioManager>().Play("Splash");
                 destroyAppleAnims.RemoveAt(i);
             }
         }

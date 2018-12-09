@@ -7721,9 +7721,8 @@ MonoBehaviour:
   appleDestroyAnim: {fileID: 1433797948300538, guid: 1629c1b7b2a7fb84493f3ad85ebe74fd,
     type: 2}
   currentRotTime: 0
-  raiseDifficultyLevels: 01000000020000000300000004000000
+  raiseDifficultyLevels: 050000000a0000001400000032000000
   difficultysMax: 14000000320000006400000064000000
   difficultysMin: 0300000014000000320000001e000000
   currentLevel: 1
-  currentDiffculty: 3
-  cameraShaker: {fileID: 0}
+  currentDiffculty: 0

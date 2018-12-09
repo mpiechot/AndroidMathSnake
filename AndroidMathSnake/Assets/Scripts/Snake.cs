@@ -121,6 +121,7 @@ public class Snake : MonoBehaviour
     {
         if (col.tag == "Apple")
         {
+            FindObjectOfType<AudioManager>().Play("Eat");
             TextMeshProUGUI search = gm.searchNumberField;
             if (search.text[search.text.Length - 2] == '=')
             {
@@ -136,7 +137,8 @@ public class Snake : MonoBehaviour
         }
         if (col.tag == "GameOver")
         {
-            FindObjectOfType<AudioManager>().Play("Wrong");
+            FindObjectOfType<AudioManager>().Play("Die");
+            FindObjectOfType<AudioManager>().Stop("Move");
             Debug.Log("Snake hit: " + col.name + " -> " + col.tag);
             PlayerValues.Score = Int32.Parse(GameMaster.gm.currentScore.text);
             StartCoroutine(StartUIControll.focusOn());

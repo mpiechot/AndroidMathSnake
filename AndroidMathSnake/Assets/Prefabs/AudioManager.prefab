@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4610929929805602}
-  - component: {fileID: 114032294204049952}
   - component: {fileID: 114546574307037342}
   m_Layer: 0
   m_Name: AudioManager
@@ -41,18 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114032294204049952
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1332938161920446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c85d63e1c99ca75469f3249d1d4b53d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds: []
 --- !u!114 &114546574307037342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,8 +59,38 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Right
-    clip: {fileID: 8300000, guid: 7561db97d415f53409a71e45fd58b0b4, type: 3}
+    clip: {fileID: 8300000, guid: 035ad54c05185c74caed4bd22925b4fe, type: 3}
     volume: 0.78
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: Eat
+    clip: {fileID: 8300000, guid: b1cf17b99a8122f429a7ebbf3bd0d2c0, type: 3}
+    volume: 0.42
+    pitch: 1.81
+    loop: 0
+    source: {fileID: 0}
+  - name: Die
+    clip: {fileID: 8300000, guid: f320105a3776fb54ca52a926e5d2c6c1, type: 3}
+    volume: 0.42
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Move
+    clip: {fileID: 8300000, guid: 28baf11f5aa7d40459516cfcb3620372, type: 3}
+    volume: 0.29
+    pitch: 0.54
+    loop: 1
+    source: {fileID: 0}
+  - name: Splash
+    clip: {fileID: 8300000, guid: f8f0fa0a447cc6543865ee3725aaaefc, type: 3}
+    volume: 0.42
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Music
+    clip: {fileID: 8300000, guid: 4f0b652d3dde92e4fa52597dcd99420f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
