@@ -63,7 +63,6 @@ public class StartUIControll : MonoBehaviour {
         Debug.Log("Start");
         while (iCounter <= 100)
         {
-            Debug.Log("Counter: " + iCounter);
             setDOF.focalLength += minusFocalLength;
             setVignette.intensity += minusVignIntens;
             iCounter++;
