@@ -42,6 +42,8 @@
 * Schlangenfeatures wie Speedboost
 
 #### Nutzertest
+**Spiel vorbereiten ohne Startbildschirm und Highscore liste? Also nach Spielende direkt Auswahl für "Noch eine Runde?"**
+
 10min
 Pause
 10min
