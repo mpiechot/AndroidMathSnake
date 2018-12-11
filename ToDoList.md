@@ -39,3 +39,21 @@
 #### Für den 'Ausblick'
 * Level 5: mit Fake Äpfeln
 * Bug: 360° Drehung der Schlange sieht sehr komisch aus
+* Schlangenfeatures wie Speedboost
+
+#### Nutzertest
+10min
+Pause
+10min
+
+KidsGEQ
+Fragen erklären mit Beispiel
+
+Würdest du gerne weiterspielen?
+
+
+Welche Version fandest du besser?
+welche schwieriger
+übersicht?
+
+Fragen einzeln ausdrucken oder interview
