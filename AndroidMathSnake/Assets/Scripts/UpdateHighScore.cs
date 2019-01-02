@@ -51,30 +51,29 @@ public class UpdateHighScore : MonoBehaviour {
                 moveScore = moveScore2;
             }
         }
-        if(place >= 0)
-        {
-             congrats.text = "Congratulations! You reached " + score + " points!\n That is Number " + (place+1) + " in our highscore table!" +
-             "\n please type in a name to represent you in this highscore table.";
-        }
-        else
-        {
-            congrats.text = "Congratulations! You reached " + score + " points!\n You need " + (PlayerPrefs.GetInt("score9") - score +1) + " more points for our Highscore table!";
-            saveBack.GetComponentInChildren<Text>().text = "Back";
-            labelName.enabled = false;
-            nameInput.GetComponent<Image>().enabled = false;
-            inputPlaceholder.enabled = false;
-
-        }
+        congrats.text = "Glückwunsch! Du hast\n" + score + "\nPunkte erreicht!";
+//        if(place >= 0)
+//        {
+//        }
+//        else
+//        {
+//            congrats.text = "Congratulations! You reached " + score + " points!\n You need " + (PlayerPrefs.GetInt("score9") - score +1) + " more points for our Highscore table!";
+//            saveBack.GetComponentInChildren<Text>().text = "Back";
+//            labelName.enabled = false;
+//            nameInput.GetComponent<Image>().enabled = false;
+//            inputPlaceholder.enabled = false;
+//
+//        }
 	}
 
     public void OnUpdateSaveStart()
     {
         Debug.Log("Update-Save");
-        if(place >= 0)
-        {
-            PlayerPrefs.SetInt("score" + place, score);
-            PlayerPrefs.SetString("name" + place, nameInput.text);
-        }
-        SceneManager.LoadScene("StartScene");
+//        if(place >= 0)
+//        {
+//            PlayerPrefs.SetInt("score" + place, score);
+//            PlayerPrefs.SetString("name" + place, nameInput.text);
+//        }
+        SceneManager.LoadScene("ThirdPersonGame");
     }
 }

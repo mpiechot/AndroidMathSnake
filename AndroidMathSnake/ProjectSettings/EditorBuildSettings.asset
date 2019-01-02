@@ -5,19 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartScene.unity
     guid: 29a5fbf81d1d3b74890c863f42130b97
   - enabled: 1
+    path: Assets/Scenes/NextTry.unity
+    guid: 7b960d43cbe60584ea3b66e7c1f149dc
+  - enabled: 0
     path: Assets/Scenes/ClassicGame.unity
     guid: 2c87f188e55572243add463f6a4f12d3
   - enabled: 1
     path: Assets/Scenes/ThirdPersonGame.unity
     guid: aef593d64375372418ed3218965cf78a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Highscore.unity
     guid: 05f357e91627c5142b5fabee2d6142d9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UpdateHighScore.unity
     guid: 0750171b011bd774dbcc57d2b2244950
   m_configObjects: {}
