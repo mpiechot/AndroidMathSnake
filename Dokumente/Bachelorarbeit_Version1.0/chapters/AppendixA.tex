@@ -1,0 +1,35 @@
+\chapter{Appendix A}
+\label{chap:AppendixA}
+\section{Nicht-Deterministische FSM}
+\label{sec:NDFSM}
+Die Mealy NDFSM und die Moore NDFSM lassen sich durch das 6-fach-Tupel
+\begin{equation}
+M = \{S,I,O,\Delta,\Lambda,R\}
+\label{eq:DefMNDFSM}
+\end{equation}
+beschreiben. Beide Zustandsautomaten haben dabei die Relation für den nächsten Zustand
+\begin{equation}
+\Delta: I \times S \times S \xrightarrow{} B
+\label{eq:DefMNDFSMDelta}
+\end{equation}
+gemein, bei der jede Kombination aus Eingangsignalen $i$ und und aktuellen Zuständen $p$ sich auf eine nicht leere Menge von nächsten Zuständen bezieht. Die charakteristische Funktion für die Ausgangs-Beziehung ergibt sich bei Mealy NDFSM zu 
+\begin{equation}
+\Lambda: I \times S \times O \xrightarrow{} B \text{ .}
+\label{eq:DefMealyNDFSMLambda}
+\end{equation}
+Jede Kombination aus Eingangssignal $i$ und aktuellen Zustand $p$ bezieht sich hierbei auf eine nicht leere Menge von Ausgangsignalen $o$. Für die Zustands-Restriktions-Relation ergibt sich
+\begin{equation}
+(i,p,n,o) \in I \times S \times S \times O \text{ sodass } T(i,p,n,o)=1 \text{ falls } \Delta(i,p,n)=1 \text{ und } \Lambda(i,p,o)=1 \text{ .}
+\label{re:CondMealyNDFSMT}
+\end{equation}
+Als ein Sonderfall der Mealy NDFSM ergibt sich $\Lambda$ bei der Moore NDFSM zu
+\begin{equation}
+\Lambda: \times O \xrightarrow{} B \text{ .}
+\label{eq:DefMMooreNDFSMLambda}
+\end{equation} 
+Dabei bezieht sich jeder aktuelle Zustan $n$ auf eine nicht leere Menge von Ausgangsignalen $o$. Weiterhin folgt 
+\begin{equation}
+(i,p,n,o) \in I \times S \times S \times O \text{ sodass } T(i,p,n,o)=1 \text{ falls } \Delta(i,p,n)=1 \text{ und } \Lambda(p,o)=1 \text{ .}
+\label{eq:CondMooreNDFSMT}
+\end{equation}
+Bei einer Incompletely Specified FSM (ISFSM) besziehen sich $\Delta$ (\ref{eq:DefMNDFSMDelta}) und $\Lambda$ (\ref{eq:DefMealyNDFSMLambda}, \ref{eq:DefMMooreNDFSMLambda}) entweder auf einen möglichen nächsten Zustand $n$ beziehungsweise Ausgang $o$ oder auf alle Zustände beziehungweise Ausgangssignale.

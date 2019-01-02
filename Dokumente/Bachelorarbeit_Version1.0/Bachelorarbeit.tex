@@ -1,0 +1,232 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Haupteil des Dokuments -Main-                                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{format/Header}
+
+\renewcommand{\headrulewidth}{0.00pt}    %Dicke der Kopflinie
+\renewcommand{\footrulewidth}{0.00pt}    %Dicke der Fusslinie
+
+\setlength{\textheight}{630pt}%630
+\setlength{\textwidth}{450pt}
+%\setlength{\textwidth}{17cm}
+\setlength{\headsep}{40pt}
+\setlength{\headheight}{50pt}%45
+
+
+% Kopf- und Fusszeile definieren
+% Definition fuer zweiseitige Anordnung ( aus wikipedia.org )
+% ---------------------------------------------------------------------------------------------------
+%\lhead[<lh-even>]{<lh-odd>}   |	   \chead[<ch-even>]{<ch-odd>}    |    	\rhead[<rh-even>]{<rh-odd>}
+% ....
+% ...
+% ..
+% .
+%\lfoot[<lf-even>]{<lf-odd>} 	 |     \cfoot[<cf-even>]{<cf-odd>} 	  |     \rfoot[<rf-even>]{<rf-odd>}
+% ---------------------------------------------------------------------------------------------------
+% \thepage 	number of the current page
+% \leftmark 	current chapter name printed like "CHAPTER 3. THIS IS THE CHAPTER TITLE"
+% \rightmark 	current section name printed like "1.6. THIS IS THE SECTION TITLE"
+% \chaptername 	the name chapter in the current language. If this is English, it will display "Chapter"
+% \thechapter 	current chapter number
+% \thesection 	current section number
+
+
+
+
+
+% ********************************************  K O P F *********************************************
+%      links gerade Seitenzahl                                      links UNgerade Seitenzahl              
+\lhead[ \thepage ]                                                  { }   
+%      mitte gerade Seitenzahl                                      mitte UNgerade Seitenzahl
+\chead[\leftmark]                                                   {\leftmark}
+%      rechts gerade Seitenzahl                                     rechts UNgerade Seitenzahl
+\rhead[         ]                                                   { \thepage} 
+
+
+
+% ********************************************  F U S S *********************************************
+%      links gerade Seitenzahl                                      links UNgerade Seitenzahl
+\lfoot[]                                                            {} 	
+%      mitte gerade Seitenzahl                                      mitte UNgerade Seitenzahl
+\cfoot[]                                                            {}
+%      rechts gerade Seitenzahl                                     rechts UNgerade Seitenzahl
+\rfoot[]                                                            {}
+% ****************************************************************************************************
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+
+\hyphenation{Punkttypen Test-ab-de-ckung Test-endkri-te-ri-um Test-endkri-te-ri-en Test} %besondere Worttrennungen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ihr Buch                                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Schmutztitel-Seite %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\extratitle{Schmutztitel}
+
+%% eigene Titelseitengestaltung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+%\begin{titlepage}
+%Einsetzen der TXC Vorlage "Deckblatt" m?glich
+%\end{titlepage}
+
+%\include{chapters/Deckblatt}
+
+%% Angaben zur Standardformatierung des Titels %%%%%%%%%%%%%%%%%%%%%%%%
+%\titlehead{Titelkopf}
+%\subject{Typisierung}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\title{Der Name Ihrer Arbeit}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\author{Ihr Name}
+%\and{Der Name des Co-Autoren}
+%\thanks{Fußnote}			% entspr. \footnote im Flie?text
+%\date{}					% falls anderes, als das aktuelle gewünscht
+%\publishers{Herausgeber}
+
+%% R?ckseite der Titelseite %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\uppertitleback{Titelrückseitenkopf}
+%\lowertitleback{Titelrückseitenfuß}
+
+%% Widmungsseite %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\dedication{Widmung}
+
+%\maketitle 						% Titelei wird erzeugt
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begingroup %group removes the 1.page of chapter on right side -> empty pages
+\renewcommand{\cleardoublepage}{}
+\renewcommand{\clearpage}{}
+
+\frontmatter   %einleitungsteil   % Vorspann (z.B. roemische Seitenzahlen)
+
+\include{chapters/Cover}	
+
+\onehalfspacing % zeilen abstand 1.5
+\thispagestyle{empty}
+\include{chapters/second}
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+\include{chapters/Aufgabenstellung}
+\newpage
+\thispagestyle{empty} 
+\include{chapters/second}
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+\include{chapters/Kurzfassung}
+\newpage
+\thispagestyle{empty}
+\include{chapters/Abstract}
+\newpage
+
+
+
+
+
+\singlespacing %zeilenabstand 1.0
+%% Erzeugung von Verzeichnissen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{page}{1} % seitenzahl ab inhatsverzeichniss
+\addtocontents{toc}{\protect\thispagestyle{fancy}} 
+\setcounter{secnumdepth}{3} % Nummerierungstiefe
+\setcounter{tocdepth}{2}	% Tiefe/Ebenen Inhaltsverzeichnis
+\tableofcontents			% Inhaltsverzeichnis
+\newpage
+\addtocontents{lof}{\protect\thispagestyle{fancy}}  
+\listoffigures				% Abbildungsverzeichnis
+\newpage
+\addtocontents{lot}{\protect\thispagestyle{fancy}} 
+\listoftables				% Tabellenverzeichnis
+\endgroup
+
+
+
+%% Der Text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\onehalfspacing
+%\doublespacing
+
+%\chead[Danksagung]{Danksagung}
+%\include{chapters/Danksagung}
+
+%\include{chapters/eid}
+
+%\cleardoublepage
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+
+\mainmatter
+\newcounter{romcounter}
+\setcounter{romcounter}{\value{page}}
+\renewcommand{\thepage}{\arabic{page}}
+\renewcommand{\chapterpagestyle}{empty} % first page of chapter now heading
+\setcounter{page}{1}
+
+\onehalfspacing
+
+% ********************************************  K O P F *********************************************
+%      links gerade Seitenzahl                                      links UNgerade Seitenzahl                  
+\lhead[\thepage]														{}
+
+%      mitte gerade Seitenzahl                                      mitte UNgerade Seitenzahl
+%\chead[\rightmark ]                                                 {\leftmark}
+\chead[\rightmark]													{\leftmark}
+%      rechts gerade Seitenzahl                                     rechts UNgerade Seitenzahl
+\rhead[]															{\thepage}
+
+% ********************************************  F U S S *********************************************
+%      links gerade Seitenzahl                                      links UNgerade Seitenzahl
+\lfoot[]                                                            {} 	
+%      mitte gerade Seitenzahl                                      mitte UNgerade Seitenzahl
+\cfoot[]                                             				{}
+%      rechts gerade Seitenzahl                                     rechts UNgerade Seitenzahl
+\rfoot[]                                                            {}
+% ****************************************************************************************************
+\pagestyle{fancy}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\include{chapters/Einleitung}
+\include{chapters/Grundlagen}
+\include{chapters/Modell}
+\include{chapters/Validierung}
+%\include{chapters/Approximationsmodell}
+\include{chapters/Zusammenfassung}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+%Anhang  Beschriftung mit "`Anhang A"' bzw. "`A."
+\appendix	
+%    \captionsetup{list=no}	   
+\include{chapters/AppendixA}
+\include{chapters/AppendixB}
+%\renewcommand{\thepage}{\roman{page}}   %%Umstellung auf Roman-Stile
+%\setcounter{page}{\value{romcounter}} 
+
+
+%\bibliographystyle{alpha}
+\bibliographystyle{alphadin}
+\nocite{*}
+\bibliography{bib/lit}
+
+
+
+\backmatter					
+% Nachspann die Nummerierung der Gliederungseinheiten im Text und im Inhaltsverzeichnis unterdrückt
+
+\pagestyle{empty}
+\thispagestyle{empty}
+\include{chapters/Erklaerung}
+\thispagestyle{empty}
+\newpage
+%\addcontentsline{toc}{chapter}{Index}
+\renewcommand{\indexname}{Index}
+\printindex
+
+
+\end{document}

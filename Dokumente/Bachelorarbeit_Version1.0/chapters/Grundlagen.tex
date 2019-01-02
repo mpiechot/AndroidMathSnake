@@ -1,0 +1,551 @@
+% Main chapter 2:
+% Grundlagen
+\chapter{Grundlagen}
+\label{chap:Grundlagen}
+Das Kapitel \ref{chap:Grundlagen} behandelt die Grundlagen der vorliegenden Arbeit. Dazu zählen neben den Graphenbasierten Entwurfsprachen (Abschnitt \ref{sec:GBES}) die Finite-State-Machines (Abschnitt \ref{sec:FSM}) und das Requirements Engineering (Abschnitt \ref{sec:RE}).
+	
+\section{Graphenbasierte Entwurfssprachen}
+\label{sec:GBES}
+Graphenbasierte Entwurfssprachen ermöglichen es, "`\textit{das gesamte Wissen über den Entwurf eines Systems in einer digitalen, \mbox{konsistenten} und ausführbaren Graphenrepräsentation abzubilden}"' \cite{IIL17}. Grundlegend für die Modellierung in graphenbasierten Entwurfssprachen ist die Unified Modeling Language (UML). Ein kurzer Einblick erfolgt in Unterabschnitt \ref{subsec:UML}. Die UML bietet die Basis für die Systemmodellierung im Design Cockpit 43\textsuperscript{\textregistered} (Unterabschnitt \ref{subsec:DC43}). Einen Überblick über den Entwurf in graphenbasierten Entwurfssprachen wird Unterabschnitt \ref{subsec:GBE} dargelegt.
+
+\subsection{Unified Modeling Language}
+\label{subsec:UML}
+\begin{quote}
+	"`\textit{Seit Jahrhunderten stimmen Bauherren und Architekten Gebäudeanforderungen mithilfe
+		von Grundrissen, Schnitten und Ansichten ab. Wie Bauzeichnungen für die Gebäudeplanung
+		bilden UML-Diagramme im Kontext der Softwareentwicklung mittlerweile das zentrale
+		Entwurfs- und Kommunikationsmittel.}"'\cite{RBF16}
+\end{quote}
+ Die Unified Modeling Language ist eine international genormte graphische Modellierungssprache zur  Entwicklung und Beschreibung von Systemen. Elementarer Bestandteil dieser sind somit die UML-Diagramme. Grundsätzlich lassen sich die 14 Diagramme in zwei Kategorien einteilen:\\
+ 
+ \textbf{Strukturdiagram}: Dieses stellt die statische Struktur des Systems dar. Die Beschreibung erfolgt mithilfe von Klassen, Schnittstellen, Beziehungen, Konnektoren, Attributen und Operationen. Die wichtigste Ausprägung eines Strukturdiagramms, auch in Bedeutung auf der weiteren Verwendung im Design Cockpit 43\textsuperscript{\textregistered}, stellt das Klassendiagramm dar. Ein Beispiel kann Abbildung \ref{img:Ex_Class_Diagram} entnommen werden.
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[width=0.8\textwidth]{images/Ex_Class_Diagram.pdf}
+ 	\caption{Beispiel eines Klassendiagramms}
+ 	\label{img:Ex_Class_Diagram}
+ \end{figure}\\
+Das Diagramm besteht aus vier Klassen: Raum, Hörsaal, Vorlesung und Student. Bei der Klasse Raum handelt es sich um eine abstrakte Klasse, dies ist durch die kursive Schrift kenntlich gemacht. Abstrakte Klassen können nicht instanziiert werden d.h. es ist nicht möglich konkrete Objekte dieser Klasse zu erstellen. Die Klasse Hörsaal erbt von der Klasse Raum. Daraus folgt, dass der Hörsaal alle Attribute und Methoden (implementierte Operationen) übernimmt. Unterklassen können, bei Bedarf, die geerbten Attribute und Methoden überschreiben oder neue Attribute und Methoden hinzufügen. Bei der Klasse Hörsaal handelt es sich nicht um eine abstrakte Klasse, was zur Folge hat, dass eine Instanz (konkretes Objekt) dieser Klasse erstellt werden kann. Die Beziehung zwischen dem Hörsaal und der Vorlesung ist ein unidirektionale Assoziation mit der Multiplizität [0...*]. Dies bedeutet, dass ein Hörsaal keine bis beliebig viele Vorlesungen hat. Konkrete Beziehungen, soll heißen Instanzen einer Assoziation, werden Links genannt. Die Beziehung zwischen der Vorlesung und dem Student wird als bidirektionale Assoziation bezeichnet. Dies bedeutet, dass sowohl eine Navigierbarkeit von dem Studenten zur Vorlesung als auch von der Vorlesung zum Studenten besteht.  Die Beschreibung der Attribute, Methoden und Parameter erfolgt nach folgendem Schema:\\
+\begin{figure} [H]
+Attribute:\\
+$[Sichtbarkeit] [/] name [:Typ] [Multiplizitaet] [=Vorgabewert][\{eigenschaftswert*\}]$\\
+Methoden:\\
+$[Sichtbarkeit] name [(\{Parameter\})][:Rueckgabetyp][\{eigenschaftswert*\}]$\\
+Parameter:\\
+$[Uebergaberichtung] name : Typ [Multiplizitaet] [=Vorgabewert][\{eigenschaftswer*\}]$\\
+\end{figure}
+Die Definition der Sichtbarkeiten sind Tabelle \ref{tab:VisUML} zu entnehmen.
+\begin{table}[H]	
+\begin{tabularx}{\textwidth}{p{0.08\textwidth}|p{0.15\textwidth}|p{0.8\textwidth}}
+	Symbol & Bezeichnung & Eigenschaften \\ \hline
+	$+$ & public & sichtbar für alle \\ \hline
+	$\#$ & protected & sichtbar für alle innerhalb des gleichen Pakets;\newline sichtbar nur für Unterklassen außerhalb des Pakets \\ \hline
+	$-$ & private & sichtbar nur innerhalb der Klasse \\ \hline
+	$\tilde{}$ & package & sichtbar für alle innerhalb des gleichen Pakets	
+\end{tabularx}
+\caption{Sichtbarkeiten in der UML}
+\label{tab:VisUML}
+\end{table} 
+
+\textbf{Verhaltensdiagram}: Dieses stellt das dynamische Verhalten eines Systems dar. Besondere Aufmerksamkeit soll hier, erneut in Bezug auf die weitere Verwendung im Design Cockpit 43\textsuperscript{\textregistered}, dem Aktivitätsdiagramm gewidmet werden. Zu den wichtigsten Elementen dieses gehören u.a. Start-, Endknoten, Aktionen und Entscheidungsknoten. Beispielhaft ist ein derartiges Diagramm in Abbildung \ref{img:Ex_Activity_Diagram} illustriert. 
+ \begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Ex_Activity_Diagram.png}
+	\caption{Beispiel eines Aktivitätsdiagramm \cite{RBF16}} 
+	\label{img:Ex_Activity_Diagram}
+\end{figure}\\
+Das Ativitätsdiagramm beginnt mit dem Startknoten, der durch einen Vollkreis dargestellt ist. Von dort aus führt der Pfeil zu der ersten Aktion "`anfordern". Die graue Schrift an den Pfeilen beschreiben den Zustand in dem sich das System an dieser Stelle befindet. Der Entscheidungsknoten wird durch eine Raute symbolisiert. Die Bedingungen an ausgehenden Pfaden aus dem Entscheidungsknoten werden durch eckige Klammern angezeigt. Der Endknoten zeichnet sich im Gegensatz zu dem Startknoten durch eine zusätzlichen Hohlkreis um den Vollkreis aus.\\
+Das Zustandsdiagramm, ein weiteres Verhaltensdiagramm, lässt sich aus dem Aktivitätsdiagramm ableiten, indem man die Pfeile zu Rechtecken macht und die Rechtecke zu Pfeilen. Dies ist im gegensätzlichen Fokus beider Diagramme begründet. Während das Aktivitätsdiagramm den Fokus auf die Aktionen legt, liegt jener des Zustandsdiagramms auf den Zuständen.\\
+
+Für eine ausführlichere Beschreibung der Unified Modeling Language, ihre Diagramme und Begriffe sei beispielsweise auf "`Einführung in die UML"' von Randen, Bercker und Fieml \cite{RBF16} verwiesen.
+
+\subsection{Design Cockpit 43\textsuperscript{\textregistered}}
+\label{subsec:DC43}
+Das Design Cockpit 43\textsuperscript{\textregistered} (DC43) liefert "`\textit{eine Softwareumgebung zur Erstellung und Ausführung von graphenbasierten Entwurfssprachen auf Basis der [im vorangegangen Abschnitt behandelten] Unified Modeling Language (UML)}"' \cite{IIL17}. Grundlage für das DC43 ist das Eclipse Framework, welcher mittels Erweiterungen eine flexible Anpassung an das jeweilige Problem ermöglicht. Zusätzlich bietet das Design Cockpit 43\textsuperscript{\textregistered} unterschiedlichste Schnittstellen zur "`Übersetzung"' der Unified Modeling Language in die sogenannten Domain Specific Languages der Zielsysteme,  wie zum Beispiel CAD, MKS und FEM. Die ermöglicht eine Analyse in den jeweiligen Fachdomänen mit dem Vorteil eines zentralen Datenmodells. Die wichtigsten Schlüsselkomponenten des DC43 sind:\\
+
+\textbf{Klassendiagramm:} Das ,im vorherigen Abschnitt bereits angesprochene, Klassendiagramm enthält die verschiedenen Klassen (Vokabeln) mit ihren Attributen und stellt die Beziehungen der Klassen zueinander dar.\\
+
+\textbf{Aktivitätsdiagramm:} Das, ebenfalls im vorherigen Abschnitt bereits besprochene, Aktivitätsdiagramm beinhaltet eine Abfolge von Aktionen (Rules) zur Transformation des Entwurfsgraphen. Dazu stehen vor allem sogenannte "`Java-Rules"' und die graphischen Regeln mit ihrer charakteristischen Linker- (if) und Rechter-Hand-Seite (then) zur Verfügung. Bei diesen erfolgt eine Modifaktion des Entwurfsgraphen gemäß der Rechten-Hand-Seite, insofern die Linke-Hand-Seite erfüllt ist. Ein Beispielhaft ist eine derartige Regel in Abbildung \ref{img:Graphical_Rule} abgebildet. In dieser wird, insofern eine Instanz der Gastturbinen-Klasse gefunden wird, Instanzen der Verdichter-, Brennkammer und Turbinen-Klasse erzeugt und in Beziehung zum Gastturbinen-Objekt gesetzt.
+ \begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Graphical_Rule.pdf}
+	\caption{Beispiel einer graphischen Regel innerhalb des Aktivitätsdiagramm im Design Cockpit 43 \textsuperscript{\textregistered}} \label{img:Graphical_Rule}
+\end{figure}\\
+
+\textbf{Lösungspfadgenerator:} Der Lösungspfadgenerator fungiert als Solver für die im Klassendiagramm als Gleichungen aufgeprägten Randbedingungen und im Aktivitätsdiagramm gesetzten Werten.\\
+
+\textbf{Entwurfsgraph:} Der Entwurfsgraph repräsentiert die Topologie des Entwurfs mit mit seiner Geometrie etc. in einer abstrakten Graphendarstellung.\\
+
+Auf das Zusammenspiel von Vokabeln und Regeln im Laufe des Entwurfsprozesses wird im folgenden Unterabschnitt noch einmal genauer eingegangen.
+
+\subsection{Graphenbasierter Entwurf}
+\label{subsec:GBE}
+Im konventionellen Produktentwurf ergibt sich oftmals die Konfrontation mit der Situation, dass bereits zu einem frühen Zeitpunkt Entscheidungen gefällt werden müssen, welche einen hohen Anteil, der durch die Produktentwicklung, anfallenden Kosten bestimmen, ohne die Folgen richtig abschätzen zu können. Der graphenbasierte Entwurf schafft hier Abhilfe. Ein großer Vorteil von diesem ist, neben dem zentralen Datenmodell, die systematische Variation von Design-Varianten, welche eine substantielle methodische Hilfestellung bei der eingangs erwähnten Problematik bietet. Ein Überblick über die Verarbeitungskette im graphenbasierten Entwurf kann mittels Abbildung \ref{img:Graph_Based_Design} gewonnen werden.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/GBD_process_chain.pdf}
+	\caption{Graphenbasierter Entwurfsprozess, nach \cite{Rud14}} !!!noch abändern, wenn engültiges Ablaufdiagramm bekannt!!!\label{img:Graph_Based_Design}
+\end{figure}\\
+Das Kernstück des graphenbasierten Entwurfs bilden dabei die Elemente im grauen Kasten. Im ersten Schritt bilden, die aus dem Klassendiagramm gewonnenen, Klassen mit ihren Beziehungen zueinander die Vokabeln. Zusammen mit den, aus dem Aktivitätsdiagramm extrahierten, Regeln, welche mittels Transformationen die Vokabeln in Instanzen ausprägen und deren Verlinkungen modifzieren, bilden diese das Produktionssystem. Ausgehend von dem Produktionssystems können mithilfe eines Compilers (DC43), unter Beachtung sämtlicher im Lösungspfadgenerator verarbeiteten Randbedingungen beziehungsweise Gleichungen, verschiedene Entwurfsvariationen erzeugt werden. Schließlich liefert der Entwurfsgraph eine abstrakte Repräsentation dises Entwurfs. Durch die, in Unterabschnitt \ref{subsec:DC43} erwähnten Schnittstellen, lässt sich dieser abstrakte Entwurfsgraph für weitere Untersuchungen in die jeweiligen fachspezifischen Analyseprogramme exportieren. Außerdem ist es natürlich auch noch möglich durch entsprechende Schnittstellen Daten aus anderen Programmen, wie zum Beispiel über das Requirements Interchange Format (ReqIF), zu importieren und im graphenbasierten Entwurf zu verarbeiten.\\
+Variationen in Vokabeln und Regeln ermöglichen es Entwurfsalternativen, in einem Zeitaufwand der nur durch die Rechenzeit gegeben ist, zu erzeugen.
+Eine Rückführung der Ergebnisse von den Analysetools mittels Bewertungsverfahren ermöglicht eine automatische Variation des Produktionssystems.
+
+
+\section{Finite State Machine}
+\label{sec:FSM}
+Der Zustandsautomat (englisch: finite state machine, FSM) versteht sich als ein abgeschlossenes System welches durch eine Menge von Zuständen und deren Übergänge definiert wird. Die Impulse für einen Übergang können von dabei sowohl extern angeregt werden als auch spontan auftreten. In der vorliegenden Arbeit werden grundsätzlich vier verschiedene Übergänge unterschieden: 
+\begin{itemize}
+	\item[] \textbf{Spontane Transitionen}: Bei spontanen Transitionen sind keine Bedingungen an die Übergänge geknüpft. Diese können quasi instantan auftreten.
+	\item[] \textbf{Eingangs-Angeregte Transitionen}:  Die Überführung auf den nächsten Zustand mittels einer Eingangs-Angeregten Transitionen kann nur eintreten insofern bestimmte Bedingungen bezüglich des Eingangs erfüllt sind.
+	\item[] \textbf{Counter-Angeregte Transitionen}: Counter-Angeregte Transitionen beinhalten eine Bedingung bezüglich eines bestimmten Zählwerts um auf den nächsten Zustand zu führen.  
+	\item[] \textbf{Timer-Angeregte Transitionen}: Bei Timer-angeregten Transitionen ist ein Timeout-Signal eines (spezifischen) Timers nötig, damit diese Transition begangen werden kann.
+\end{itemize}
+Möglich sind natürlich auch Kombinationen dieser.
+%Eine Erweiterung des funktionellen Umfangs wird durch hinzufügen von einem oder mehreren externen Speichern erhalten. Diese ermöglichen es Informationen die nicht mit dem aktuellen Status in Verbindung stehen zu speichern \cite{Sta17}. 
+In Abschnitt \ref{sec:FSM} werden die theoretischen Grundlagen zu den Finite State Machines  betrachtet. Dazu folgt zuerst eine kurze Definition von FSMs in Abschnitt \ref{(subsec:DefFSM)}. Anschließend wird eine Klassifikation der verschiedenen Arten von FSMs (Abschnitt \ref{(subsec:ClassFSM)}) dargelegt. Zusätzlich wird ein Algorithmus zur Zustandsminimierung in Abschnitt \ref{subsec:StateMinimization} angesprochen.
+
+\subsection{Definition}
+\label{(subsec:DefFSM)}
+%Ein Zustandsautomat stellt das mathematische Modell einer sequentiellen Schaltung dar \cite{CK13}. [Sequentielle Schaltung erklären]
+Cerny \cite{Cer80} schlägt charakteristische Funktionen vor um Mengen und ihr Beziehungen zueinander darzustellen. Bei einer gegebenen Relation $R \subseteq X \times Y$, wobei $X$ und $Y$ eine endliche Menge sind, ist die charakteristische Funktion von $R \chi_R : X \times Y \rightarrow B$ für jedes Paar $(x,y) \in X \times Y$ definiert wie folgt:
+\begin{equation}
+\chi_R(x,y)=\begin{cases}
+0 & \text{falls x,y nicht in Beziehung R zueinander stehen}\\
+1& \text{falls x,y in Bezihung R zueinander stehen} 
+\end{cases}\ \text{.}
+\label{eq:charFunkt}
+\end{equation}
+Die vorrangengangene Gleichung lässt sich auch auf n-dimensionale Relationen ausbauen.
+Kam, Villa, Brayton und Sangiovanni-Vincentelli \cite{KVBS97} definieren einen Zustandsautomaten folgendermaßen :
+Eine FSM wird durch ein 5-fach-Tupel 
+\begin{equation}
+M=\{S,I,O,T,R\}
+\label{eq:DefFSM}
+\end{equation} definiert. $S$ beschreibt dabei den finiten Zustandsraum, $I$ den finiten Eingangsraum und $O$ den finiten Ausgangsraum. $T$ bezeichnen die Zustands-Transitions-Beziehungen und sind definiert durch eine charakteristische Funktion $T$: 
+\begin{equation}
+T=I \times S \times S \times O \xrightarrow {} B
+\label{eq:DefFSMT}
+\end{equation} Bei einem Eingang $i$ kann die FSM bei einem momentanten Zustand $p$ nur in den nächsten Zustand $n$ mit den Ausgang $o$ übergehen insofern die charakteristische Transitionsfunktion (\ref{eq:DefFSMT}) $T(i,p,n,o) = 1$ ist, wobei mögliche ist, dass mehrere Transitionen für den momentanten Zustand  $n$ und den Eingang $i$ exisiteren. Die Zustands-Transitions-Beziehungen können als vollständig angesehen werden insofern die Bedingung 
+\begin{equation}
+\forall i \in I \forall p \in S \exists n \in S \exists o \in O \text{ sodass } T(i,p,n,o) = 1
+\label{eq:CondFSMT}
+\end{equation}
+erfüllt ist.
+\begin{equation}
+R \subseteq S
+\label{eq:DefFSMR}
+\end{equation} bilden eine Menge von Reset-States, sprich Ausgangszuständen in welche die FSM (z.B. nach Beendigung dieser) zurückgesetzt werden kann.
+Der Zustands-Transitions-Graph eines gegebenen Zustandsautomaten $M = \{S,I,O,T,R\}$ ist ein gekennzeichneter Graph
+\begin{equation}
+STG(M) = (V,E)
+\label{eq:GraphFSMT}
+\end{equation}
+bei dem jeder Zustand $s \in S$ durch einen Knoten $V$ und jede Transition durch eine Kante $E$ gegeben ist.
+% Zustandsautomat Abbildungen von Mealy und Moore-Typ Automaten später bei Erläuterung der Typen. Evtl Auch Zustandsüberganzsbild
+\subsection{Klassifikation}
+\label{(subsec:ClassFSM)}
+Die Finite State Machines lassen sich je nach Ausführung beziehungsweise der Zustands-Transitions-Relationen in verschieden Klassen einordnen. Bei der in Abschnitt \ref{(subsec:DefFSM)} definiertem und allgemeinstem Zustandsautomaten handelt es sich um eine nicht-deterministische FSM, da bei dieser keinerlei Restriktionen an die Transitionen geknüpft sind. Nicht-deterministische Finite State Machines (NDFSM) zeichnen sich durch einen nicht eindeutigen nächsten Zustand $p$ bezüglich eines Paars aus Eingangssinal $i$ und aktuellen Zustand $n$ aus. Die Transition in den nächsten Zustand ist somit prinzipiell willkürlich und nicht deterministisch festgelegt. Wie bereits angeklungen beruht somit die Einordnung in die verschiedenen Klassen auf Restriktionen and die Transitionen. Die allgemeine Struktur von FSM ist in Abbildung \ref{img:StructFSM} dargestellt. $\delta / \Delta$ und $\lambda / \Lambda$ stehen hierbei für die Funktion/Relation des nächsten Zustands beziehungsweise des Ausgangs. Diese spielen bei der Klassifizerung eine wichtige Rolle und erfahren deshalb eine genauere Betrachtung in diesem Abschnitt. Eine Übersicht der Klassifikation von Zustandsautomaten ist Abbildung \ref{img:ClassFSM} zu entnehmen. Die im folgenden vorgestellten Defintionen zur Klassifikation von Zustandautomaten lassen sich ebenfalls auf Kam, Villa, Brayton und Sangiovanni-Vincentelli \cite{KVBS97} zurückführen.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.66\textwidth]{images/StructureStateMachine.pdf}
+	\caption{Struktur einer Finite State Machine}
+	\label{img:StructFSM}
+\end{figure}
+
+\subsubsection{Nicht-deterministische FSM}
+\label{subsubsec:ClassNDFSM}
+Eine nicht pseudo nicht-deterministische Finite State Machine (PNDFSM) ist definiert durch ein 6-fach-Tupel 
+\begin{equation}
+M = \{S,I,O,\delta,\Lambda,R\} \text{ .}
+\label{eq:DefPNDFSM}
+\end{equation}
+Zustätzlich zu den aus Abschnitt \ref{(subsec:DefFSM)} bekannten Vektoren $S,I,O,R$ treten $\delta$ und $\Lambda$ auf. $\delta$ stellt mit
+\begin{equation}
+\delta : I \times S \times O \xrightarrow{} S
+\label{eq:DefPNDFSMdelta}
+\end{equation}
+die Funktion des nächsten Zustands dar, wobei jedes 3-fach-Tupel aus Eingang $i$, aktueller Zustand $p$ und Ausgang $o$ auf einen eindeutigen nächsten Zustand $n$ abbildet. $\Lambda$ ist die charakteristische Ausgangsfunktion mit
+\begin{equation}
+\Lambda: I \times S \times O \xrightarrow{} B \text{ ,}
+\label{eq:DefPNDFSMLambda}
+\end{equation}
+wobei jede Kombination von Eingang $i$ und aktuellen Zustand $p$ sich auf einen oder mehrere Ausgangswerte $o$ beziehen. Für die Zustands-Transitions-Relationen lässt sich somit folgende restriktierende Bedingung ableiten:
+\begin{equation}
+\forall i,p,o \exists! n \text{ sodass } T(i,p,n,o)=1
+\label{eq:CondPNDFSMT} 
+\end{equation}
+Weitere nicht-deterministische Finite State Machines, wie die Mealy NDFSM, die Moore NDFSM und die Incomplete Specified FSM lassen sich von vornherein für die vorliegende Arbeit ausschließen. Dies ist darin begründet, dass es für ein automotives System höchst unpraktikabel erscheint, insofern die "`Soll-Reaktion"'  und somit der nächste Zustand nicht eindeutig festgelegt ist.
+Für Definitionen zu diesen drei Klassen von Finite State Machines sei auf Abschnitt \ref{sec:NDFSM} im Appendix verwiesen.
+
+\subsubsection{Deterministische FSM}
+\label{subsubsec:ClassDFSM}
+Den nicht-deterministischen FSM diametral gegenüber steht die Completely Specified FSM (CSFSM) oder auch einfach nur deterministische Finite State Machine (DFSM). Beschrieben wird diese durch folgendes 6-fach-Tupel:
+\begin{equation}
+M = \{S,I,O,\delta,\lambda,r\} \text{ .}
+\label{eq:DefDFSM}
+\end{equation}
+$S$ steht hierbei wieder für den finiten Zustandsraum, $I$ für den Raum der Eingangssignale und $O$ für den Raum der Ausganssignale. $r \in S$ beschreibt im Gegensatz zu R nicht eine Menge von möglichen sondern einen eindeutigen Reset-State. Die Funktion für den nächsten Zustand ist definiert durch
+\begin{equation}
+\delta : I \times S \xrightarrow{} S \text{ ,}
+\label{eq:DefDFSMdelta}
+\end{equation}
+wobei $n \in S$ der nächste Zustand bezüglich des aktuellen Zustands $p \in S$ und des Eingangs $i \in I$ ist, insofern gilt $n = \delta(i,p)$. Die Definition der Funktion für den Ausgang ist
+\begin{equation}
+\lambda : I \times S \xrightarrow{} O \text{ .}
+\label{eq:DefDFSMlambda}
+\end{equation}
+Hier steht $o \in O$ für den Ausgang des aktuellen Zustands $p \in S$ bezüglich des Eingangs $i \in I$, falls gilt $o = \delta(i,p)$. Die Beziehung für die Zustands-Transitions-Relation ergibt sich zu
+\begin{equation}
+\forall (i,p) \in I \times S \exists! n \in S \text{ sodass } T(i,p,n,o)=1 \text{ .}
+\end{equation}
+Durch Spezialisierung der Funktion für den Ausgang lässt sich die Moore DFSM ableiten. Bei dieser gilt
+\begin{equation}
+\lambda : S \xrightarrow{} O \text{ .}
+\label{eq:DefMooreDFSMlambda}
+\end{equation}
+$o \in O$ bezeichnet dabei für $o=\lambda(p)$ das Ausgangssignal des aktuellen Zustands $p \in S$.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.66\textwidth]{images/ClassificationFSMOverview.pdf}
+	\caption{Übersicht der Klassifikation von Finite State Machines}
+	\label{img:ClassFSM}
+\end{figure}
+
+\subsubsection{Definition von Zustand, Eingang, Ausgang und Transitionsfunktion und Ausgangsfunktion (MooreDFSM)}
+\label{subsubsec:DefSIOT}
+Eine  deterministische Moore Finite State Machine resultiert aus der Annahme eindeutiger Zustände, die hinreichend den Ausgang festlegen. Für diese lassen sich folgende Definitionen %nach Kam, Villa, Brayton und Sangiovanni-Vincentelli \cite{KVBS97} 
+für den Zustand, den Eingang, den Ausgang, die Transitionsfunktion und die Ausgangsfunktion geben. Anhand der Abbildung \ref{img:Ex_FS_Diagram} werden die gegebenen Definitionen mit einem Beispiel erweitert. Vorweg sei bemerkt, dass es sich bei dem Eingangsraum, dem Zustandsraum und den Ausgangraum der vorrangegangenen Definitionen zur Klassifikation der Zustandsautomaten um generische Räume handeln kann. Somit liegt beispielweise keine Beschränkung des Eingangs oder des Ausgangs auf ein binäres Signal vor, sondern diese können symbolische Werte annehmen. \\
+
+\textbf{Zustand (State):} \textit{Der Zustand beschreibt eindeutig die aktuelle Situation in der sich das System befindet. Als Zustandsmenge wird die endliche Gesamtheit aller Zustände die ein System einnehmen kann bezeichnet. Untermengen dieser sind der Initialzustand und die Menge akzeptierter Endzustände.}\\
+Beispiele sind mit Abbildung \ref{img:Ex_FS_Diagram} durch die Zustände "`Einkaufswagen"', "`zu bezahlen"', "`bezahlt"' und "`versendet"' gegeben. "`Einkaufswagen"', dargestellt durch einen Vollkreis, ist dabei der Initialzustand und "`versendet"', zusätzlich mit ein umliegenden Ring illustriert, der akzeptierten Endzustand.\\
+
+\textbf{Eingang (Input):} \textit{Der Eingang besteht aus einer endlichen Zeichenfolge erlaubter Eingabesymbole, dem sogenannten Eingabealphabet. Der Eingang koppelt über die Transitionsfunktion direkt in das System ein.}\\
+Anhand des Beispiels in Abbildung \ref{img:Ex_FS_Diagram} könnte unter anderem das Drücken eines Bestellknopfs einen möglichen Eingang in die Finite State Machine, welche das System eines Bestellvorgangs abbildet, darstellen.\\
+
+
+\textbf{Ausgang (Output):} \textit{ Der Ausgang besteht analog zum Eingang ebenfalls aus einer endlichen Zeichenfolge erlaubter Ausgabesymbole. Der Ausgang koppelt prinzipiell nicht in das System zurück und hat somit grundsätzlich nur auf die Ausgabe einen Einfluss.}\\
+Ein möglicher Ausgang in Bezug auf Abbildung \ref{img:Ex_FS_Diagram} wäre somit die Anzeige einer Versandbestätiung, nachdem der akzeptierte Endzustand "`versendet"' erreicht worden ist.\\
+
+\textbf{Transitionsfunktion (Transition Logic):} \textit{Die Transitionsfunktion regelt den Übergang von dem aktuellen Zustand zum nächsten Zustand. Ein Zustand kann über endliche viele Transitionen mit sich selbst oder anderen Zuständen in Verbindung gesetzt werden. Die Transitionsfunktion bildet bezüglich des Eingangs und dem aktuellen Zustand auf die entsprechende Transition und somit den nächsten Zustand ab.}\\
+In Abbildung \ref{img:Ex_FS_Diagram} bildet die Transitionsfunktion beispielweise anhand des Eingangs der Bezahlung auf die Transition beziehungsweise Aktion bezahlen ab, welche das System von dem Zustand "`zu bezahlen"' in den Zustabd "`bezahlt"' überführt.\\
+
+\textbf{Ausgangsfunktion (Output Logic):} \textit{Die Ausgangsfunktion bildet auf einen entsprechenden Ausgang beziehungsweise Ausgabesymbol ab. Bei Moore FSM besteht dabei nur eine Abhängigkeit auf den aktuellen Zustand.}\\
+Beispielhaft bildet die Ausgangsfunktion in Abbildung \ref{img:Ex_FS_Diagram} anhand des aktuellen Status "`versendet"' auf den Ausgang der Anzeige einer Versandbestätigung ab.\\
+
+Die Modellierung eines Systems ist somit durch eine Abfolge von Zuständen, die aufgrund des momentan anliegenden Eingangs, in definierte andere Zustände wechseln und einen entsprechendes Ausgang produzieren möglich.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/Ex_FS_Diagram.png}
+	\caption{Zustandsdiagramm einer Bestellung \cite{RBF16}}
+	\label{img:Ex_FS_Diagram}
+\end{figure}
+
+\subsection{Zustandsminimierung bei FSM}
+\label{subsec:StateMinimization}
+Zur Zustandsminimierung bei Finite State Machines existiert eine Vielzahl von Methoden. Czerwinski und Kania schlagen den in diesem Abschnitt vorgestellte schnelle und einfache Vorgehensweise zur symbolischen Zustandsminimierung vor \cite{CK13}.
+
+\subsubsection{Algorithmus zur Zustandsminimierung}
+\label{subsubsec:AlgStateMinimization}
+Der erste Schritt zur Zustandsminimierung besteht hierbei die Finite State Machine in Form einer State Transition Table (Zustandsübergangstabelle, STT) darzustellen. Die STT (Abbildung \ref{img:FSM2STT}) enthält in der ersten Spalte das Eingangssginal, in der zweiten den aktuellen, in der dritten den nächsten Zustand und in der vierten das Ausgangssignal.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.66\textwidth]{images/STT.png}
+	\caption{Zustandsübergangsgraph und zugehörige STT \cite{CK13}}
+	\label{img:FSM2STT}
+\end{figure}
+Im nächsten Schritt wird die STT in partitionierte Tabellen überführt. Dabei werden die Transitionen (Zeilen in der STT) nach dem Ausgangssignal sortiert (Abbildung \ref{img:STT2PT}).
+\begin{figure}
+	\centering
+	\includegraphics[width=0.66\textwidth]{images/PT.png}
+	\caption{STT und zugehörige partitionierte Tabellen \cite{CK13}}
+	\label{img:STT2PT}
+\end{figure}
+Es sei hier angemerkt, dass Czerwinski und Kania den Raum der Eingangssignale mit X bezeichnen (und nicht wie in vorangegangenen Defintionen mit I). Als inkompatibel zur Zustandsminimierung können nun diejenigen Spalten angesehen werden, falls mindestens eine Reihe mit zwei verschiedenen Zuständen existiert. Aus diesen partitionierten Tabellen lässt sich nun der Inkompatibilitätsgraph (Abbildung \ref{img:PT2ICGraph}) ableiten.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.66\textwidth]{images/ICGraph.png}
+	\caption{Partitionierte Tabellen und der daraus abgeleitete Inkompatibilitätsgraph. St3 und St8 sind inkompatibel, da diese zwei unterschiedliche nächste Zustände besitzen. \cite{CK13}}
+	\label{img:PT2ICGraph}
+\end{figure}
+Der Inkompatibilitätsgraph ist dabei ein ungerichteter Graph. Die Knoten symbolisieren die verschiedenen Zustände, die Kanten die Inkompatibilität. Die Grundidee besteht nun darin zweit adjazenten (mit einer Kante verbundenen) Knoten unterschiedliche Farben zuzuweisen. Dabei wird dem Knoten mit der höchsten Anzahl von Kanten eine Farbe zugewiesen. Dem adjanzenten Knoten wird diese Farbe als "nicht verfügbar" zugeteilt. Im Anschluss kann diese Kante dann entfernt werden. Der vollständige Algorithmus kann wir folgt formuliert werden:
+\begin{figure}[H]
+\begin{enumerate}
+	\item Aufteilung der STT in partitionierte Tabellen
+	\item Aufstellen des Inkompatibilitätsgraph
+	\item Suchen des Knotens $\nu_i$ im Imkompatibilitätsgraph mit:
+	\begin{enumerate}
+		\item der größten Anzahl von nicht verfügbaren Farben
+		\item der größten Anzahl von Kanten
+	\end{enumerate}
+	\item Zuteilen einer verfügbaren Farbe $A_i$ zum Knoten $\nu_i$
+	\item Zuteilen der nicht verfügbaren Farbe $a_i$ zu den adjazenten Knoten zu $\nu_i$
+	\item Reduzieren (entfernen der Kanten zu den adjazenten Knoten zu $\nu_i$) des Inkompatibilitätsgraph
+	\item Bei Vorhandensein von nicht gefärbten Knoten zurück zu Punkt 3
+	\item Ende
+\end{enumerate}
+\end{figure}
+Ein Beispiel der Anwendung dieses Algorithmus kann Abbildung \ref{img:ICGraph_Example} entnommen werden. 
+\begin{figure}
+	\centering
+	\includegraphics{images/ICGraph_Example.png}
+	\caption{Anwendungsbeispiel des vorgestellten Algorithmus zur Zustandsminimierung. Kompatible Knoten sind hier mit der gleichen Farbe gekennzeichnet. \cite{CK13}}
+	\label{img:ICGraph_Example}
+\end{figure}
+
+\section{Requirements Engineering}
+\label{sec:RE}
+\begin{quote}
+	"`\textit{Die Anforderungen an ein neues [...] Produkt zu ermitteln, zu spezifizieren, zu analysieren, zu validieren und daraus eine fachliche Lösung abzuleiten bzw. ein Produktmodell zu entwickeln gehört mit zu den anspruchsvollsten Aufgaben}."' \cite{Bal09}
+\end{quote} 
+Zusammengefasst wird dies unter dem Begriff des Requirements Engineering. Zuerst wird in Abschnitt \ref{subsec:ProDev} auf die Produktentwicklung und ihre Modelle beziehungsweise Methoden eingegangen. Anschließend folgt in Abschnitt \ref{subsec:ClassReq} eine Klassifikation der Requirements. 
+%Abschließend widmet sich Abschnitt \ref{subsec:Patterns} der Sprachverarbeitung der textualisierten Requirements. 
+\subsection{Produktentwicklung}
+\label{subsec:ProDev}
+Dieser Unterabschnitt gibt einen Einblick in den allgemeinen Ablauf der Produktentwicklung beziehungsweise der Entwicklung eines Systems. Bei realen technischen Systemen ist schnell eine hohe Komplexitätsstufe erreicht. Dies lieferte, im Rahmen des Systems Engineering,  den Anlass zur Entwicklung verschiedener Phasenmodelle, welche bei der Produktentwicklung eines hoch komplexen Systems als Hilfestellung dienen sollen.\\
+Bei dem klassischen Phasenmodell (auch "`Wasserfall"'-Modell genannt; Abbildung \ref{img:Waterfal_Model}) handelt es sich um das einfachste solcher Modelle. 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/WaterfallModel_simple.pdf}
+	\caption{Vereinfachte Darstellung des Wasserfallmodells}
+	\label{img:Waterfal_Model}
+\end{figure}
+Bei diesem werden einfach die Stufen der verschiedenen Phasen hinabgestiegen bis man bei der letzten angelangt ist. Die Ergebnisse der vorherigen Stufe sind dabei bindende Randbedingungen für die folgende Stufe.\\ 
+%In den ersten drei Phasen wird das Lastenheft mit den Anforderungen erstellt. Dabei werden die Spezifikationen sukzessiv von der Produkt-, über die System- bis zur Kompontenebene verfeinert. Die Entwicklungsphase beinhaltet den Übergang von der abstrakten Spezifikation zum wirklichen Bauteil. In den letzten drei Phasen folgt die Integration der Komponenten zum Gesamtprodukt. Dabei werden zuerst die einzelnen Komponenten für sich,
+%anschließend die zum System kombinierten Komponenten und abschließen die zum Produkt zusammengefügten (Teil-)Systeme getestet.
+In der ersten Phase der Analyse und Definition erfolgt die Erstellung des Lastenhefts. Daraufhin folgt die Entwurfsphase, in welcher der Entwurf der Systemarchitektur stattfindet. Die Entwicklungsphase beinhaltet den Übergang von der abstrakten Spezifikation zum wirklichen Bauteil. In der letzten Phase, Integration, Test und Abnnahme, werden die Bauteile beziehungsweise Komponenten zum Gesamtsystem kombiniert und die Überprüfung dieses durchgeführt.\\ 
+Eine Weiterentwicklung des Wasserfallmodells, und auch Stand der Technik im Systems Engineering, ist das V-Model (Abbildung \ref{img:Mod_V-Model}).
+Zusätzlich zum Wasserfallmodell schlüsselt dieses die temporale Abfolge der verschiedenen Spezifikations und Testphasen auf und bildet die Teststufe direkt gegenüber der entsprechenden Spezifikationsstufe ab. Dadurch entsteht das für die Namensgebung maßgebliche V.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.99\textwidth]{images/Mod_V-Model.pdf}
+	\caption{Das allgemeine V-Modell, nach \cite{SL05}}
+	\label{img:Mod_V-Model}
+\end{figure}
+Zusätzlich enthält dieses auf der Spezifikationsseite bis hin zur Entwicklung Verfikationsschritte. Auf der Integrationsseite werden zu den Tests auf den verschieden Stufen des weiteren auch noch Integrationstests durchgeführt, welche überprüfen ob die Schnittstellen zwischen den einzelnen Elementen die Spezifikation erfüllen. Eine Validierung bezüglich der Requirements findet mittels den Tests statt.
+%Bei der Verifikation wird ausgehend von der Entwicklung sukzessiv zürück auf die Anforderungen gehend bewertet ob den Spezifikationen gemäß entwickelt wurde. Die Validierung kontrolliert mithilfe der Tests ob die Spezifikationen eingehalten worden sind (Validierung nach Benz Vorlesung einfügen). Auf der Integrationsseite werden zusätzlich zu den Tests auf den verschieden Stufen auch noch Integrationstests durchgeführt, welche überprüfen ob die Schnittstellen zwischen den einzelnen Elementen die Spezifikation erfüllen.\\
+
+Durch die Abbildung \ref{img:Mod_V-Model} zum V-Model wird sofort die elementare Wichtigkeit von Requirements ersichtlich. Durch die Verifikations- und Validierungsschritte ist es möglich die Korrektheit und Vollständigkeit des Phasenergebnisses relativ zu seiner direkten Spezifikation (Phaseneingangsdokumenten) nachzuweisen (Verifikation) \cite{SL05} und ob ein (Teil-) Produkt eine festgelegte (spezifizierte) Aufgabe tatsächlich löst (Validation) \cite{SL05}. Die Überprüfung, ob die Anforderungen die Funktionen des Systems beziehungsweise die Funktionsweise des Gesamtsystems korrekt beschreiben stellt jedoch ein Problem dar. Beispielsweise tritt eine unvollständige Spezifikation des Systems, welche nicht alle gewünschten (Teil-) Funktionen des Systems ausreichend beschreibt, womöglich erst bei den Produkttests beziehungsweise der Abnahme zu Tage.  Des weiteren können auch Uneindeutigkeiten durch rendundante, oder sogar sich wiedersprechenden Requirements auftreten.
+
+Es sei an dieser Stelle vorweggenommen, dass sich die vorliegende Arbeit hauptsächlich mit der linken Seite des V-Modell, also den Spezifikationen beschäftigt. Mit der rechten Seite des V-Modell, zumindest einem Teil davon, genau genommen der Optimierung von Testfällen durch Entfernen redundanter Testschritte und dem dadurch benötigtem Clustering und Neuordnen dieser haben sich bereits Walter et al. \cite{WSPR17} befasst.
+
+%validation
+%Ref: ISO 9000
+%Confirmation by examination and through provision of objective evidence that the requirements for a specific
+%intended use or application have been fulfilled.
+
+%verification
+%Ref: ISO 9000
+%Confirmation by examination and through provision of objective evidence that specified requirements have been
+%fulfilled.
+ 
+\subsection{Klassifikation von Requirements}
+\label{subsec:ClassReq}
+Dieser Unterabschnitt legt eine Möglichkeit der Klassifzierung von Requirements dar.\\ Anforderungen werden traditionsweise in zwei Klassen unterteilt, funktionale Requirements und nicht-funktionale Requirements. \\
+Es besteht grundsätzlich großes Einvernehmen über die Defintion der funktionalen Anforderungen. Eine übliche Definition wäre "`eine Funktion, welche ein System in der Lage sein muss auszuführen"' \cite{IEEE90}.\\
+Ganz anders stellt sich die Lage bei nicht-funktionalen Anforderungen dar. Zu dem Thema der nicht-funktionalen Requirements gibt es zwar eine Vielzahl von Veröffentlichungen, aber im Allgemeinen besteht hier kein Konsensus über die Definition dieser \cite{Gli07}. Glinz ersetzt den Ausdruck der nicht-funktionalen Requirements indem er diesen weiter aufgliedert in Performance Requirements, Quality Requirements und Constraints. Eine Übersicht über die Klassifzierung von Requirements wird in Abbildung \ref{img:OV_Class_Req} gegeben.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/Overview_Class_Req.png}
+	\caption{Überblick über die Klassifzierung von nicht-funktionalen Requirements nach Glinz \cite{Gli07}}
+	\label{img:OV_Class_Req}
+\end{figure} 
+Im Gegensatz zu den funktionalen Andorderungen stellen die Performance und Quality Anforderungen keine Funktionen dar, sondern sind als Attribute des Systems anzusehen. Die Performance Requirements beinhalten beispielsweise vor allem zeitliche und räumliche Begrenzungen. Die Quality Requirements beschreiben unter anderem Attribute wie Brauchbarkeit und Sicherheit. Constraints stellen ihrem Namen entsprechend (zum Beispiel: pyhsikalische oder kulturelle) Randbedingung für das System auf.
+
+\subsection{Grundprinzipien an Requirements}
+\label{subsec:PrincReq}
+Dieser Unterabschnitt stellt einige Grundprinzipien an Requirements vor, die eine sinnvolle und effektive Arbeit mit Anforderungen gewährleisten.
+Zunächst soll vorangestellt werden, dass Anforderungen nicht das Verhalten, sondern Eigenschaften, Effekte und Auswirkungen beschreiben sollten. Dies wird mit der Möglichkeit verschiedener Verhalten, welche das gewünschte Resultat liefern, begründet, sowie auch verschiedene Programme das gewünschte Ergebnis berechnen können \cite{Jac17}.\\
+Zusätzlich sollten folgende Grundprinzipien, welche von der IEEE Computer Society und dem IEEE-SA Standards Board gelistet \cite{II98} und von ISO/IEC/IEEE \cite{III11} definiert werden, auf Requirements angewendet werden können:
+\begin{itemize}
+	\item[] \textbf{Notwendig}: Das Requirement definiert eine essentiele Funktion, Charakteristik, Zwang und/oder Gütefaktor.
+	\item[] \textbf{Implementationsfrei}: Das Requirement gibt keine spezifische Implementation vor oder stützt sich auf eine spezifische Implementation.
+	\item[] \textbf{Eindeutig}: Das Requirement ist so formuliert, dass es nur auf eine bestimmte Weise interpretiert werden kann.
+	\item[] \textbf{Konsistent}: Die Konsistenz steht mit keinen anderen Requirements im Konflikt.
+	\item[] \textbf{Vollständig}: Das Requirement benötigt keine Erweiterungen, da es messbar ist und die Funktionen und Charakteristiken ausreichend beschrieben sind um die Ansprüche der Teilhaber zu erfüllen.
+	\item[] \textbf{Singulär}: Die textuale Beschreibung des Requirements beinhaltet nur ein Requirement.
+	\item[] \textbf{Realisierbar}: Es besteht die technische Möglichkeit das Requirement umzusetzen.
+	\item[] \textbf{Rückverfolgbar}: Das Requirement ist sowohl auf die Dokumente, in welchen die Ansprüche der Teilhaber niedergeschrieben sind zurückführbar, als auch auf spezifischere Requirements nachverfolgbar.
+	\item[] \textbf{Nachweisbar}: Es besteht die Möglichkeit zu überprüfen, ob das System das spezifizierte Requirement erfüllt. Die Nachweisbarkeit wird verbessert, falls das Requirement messbar ist.
+\end{itemize}
+Es sei an dieser Stelle vorweggenommen, dass mit der, in dieser Arbeit, entwickelten Methodik die Notwendigkeit, Konsistenz und Rückverfolgbarkeit systematisch überprüft werden können. Die Nachweisbarkeit ist mittels der Validierung über Tests gegeben und die Validation der Vollständigkeit obliegt dem Anwender, da dieser beurteilen muss ob das System den Ansprüchen entsprechend funktioniert. Den Erhalt der Singularität und der Eindeutigkeit wird im nächsten Unterabschnitt (\ref{sec:Patterns}) untersucht.
+
+\section{Formalisierung von textuellen Requirements (Sprachverarbeitung)}
+\label{sec:Patterns}
+\begin{quote}
+	"`\textit{Die Fähigkeit, mit natürlicher Sprache zu kommunizieren, ist eine der erstaunlichsten Eigenschaften des Menschen. [...] Der wissenschaftliche und technische Fortschritt der letzten Jahrzehnte hat dazu geführt, dass Maschinen immer besser darin werden, Teile der menschlichen Sprachkompetenz nachzuahmen. Die Maschinelle Sprachverarbeitung befasst sich also mit der so genannten Computerlinguistik und untersucht die Sprache aus einem besonderen Blickwinkel. Ihr geht es darum, die sprachlichen Gesetzmäßigkeiten explizit zu machen, um auf dieser Basis Rechnersysteme zu erstellen, die Sprache verstehen und produzieren können.}"' \cite{IMS17}
+\end{quote}
+Der vorliegende Abschnitt befasst sich mit Überführung von natürlicher Sprache in maschinelle Operationen. Dazu werden zuerst spezialisierte Sprachmuster (Unterabschnitt \ref{subsec:specPatterns}) und anschließend generische Sprachmuster zur automatischen Sprachverarbeitung (Unterabschnitt \ref{subsec:genPatterns}) vorgestellt. Zwischen den beiden Sprachmustern erfolgt in Unterabschnitt \ref{subsec:Logic} ein kurzer Einschub in die Logik, da das generische Pattern auf dieser aufbaut. Daraufhin werden diese kurz diskutiert (Unterabschnitt \ref{subsec:discPatterns}) und letzendlich wird die der vorliegenden Arbeit zugrundeliegende Vearbeitungskette zur Sprachverarbeitung in Unterabschnitt \ref{subsec:FormProcLang} eingeführt.
+\subsection{Spezialisierte Sprachmuster}
+\label{subsec:specPatterns}
+Spezialisierte Spachmuster (im folgenden kurz: Muster) sind meistens für einen spezifischen Anwendungsfall entwickelt und zugeschnitten. Im folgenden werden zwei spezialisierte Muster vorgestellt.\\
+Die "`EARS"' Pattern entwickelt von Mavin und Wilkinsons \cite{MW10} und die "`MASTeR"' Schablonen bereitgestellt von den SOPHISTen \cite{JPQRSSV16}.\\
+
+Zuerst wird sich nun dem "`Easy Approach to Requirements Syntax"' (EARS) zugewandt. Mavin et al. beklagen sich über zahlreiche Probleme mit natürlich sprachlichen Requirements, die da wären Untestbarkeit, ungeeigneter Implementierung, zu viele Worte, Dopplungen, Versäumnix, Komplexität, Vagheit und Mehrdeutigkeit. Zur Beherrschung dieser Probleme schlagen diese ein kleine Anzahl von einfachen Requirement-Strukturen als effiziente Möglichkeit vor um das Schreiben guter Anforderungen zu verbessern. Die Muster mit ihren Erklärungen, Aufbau und Beispiel sind in Tabelle \ref{tab:EARSTemplates} bereitgestellt.
+\begin{table}[]
+	\centering
+	\begin{tabularx}{\textwidth}{p{0.13\textwidth}|p{0.13\textwidth}|p{0.66\textwidth}} 
+		\hline
+		\multicolumn{3}{c}{Muster}  \\ \hline
+		\multirow{3}{0.0\textwidth}{Allgegen-wärtig} & Erklärung & Requirements haben weder Vorbedingung noch Auslöser und sind immer aktiv \\ \cline{2-3}
+		 & Aufbau  & <system name> shall <system response> \\ \cline{2-3}
+		 & Beispiel & The control system shall indicate the engine oil quantity to the aircraft \\ \hline
+		\multirow{3}{0.0\textwidth}{Ereignis-Gesteuert} & Erklärung & Requirements werden nur initiiert sobald ein auslösendes Ereignis an den Syste-Grenzen eintritt \\ \cline{2-3}
+		& Aufbau  & When <optional preconditions> <trigger> the <system name> shall <system response> \\ \cline{2-3}
+		& Beispiel & When continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition \\ \hline
+		\multirow{3}{0.0\textwidth}{Ungewolltes Verhalten} & Erklärung & Requirements definieren die erforderliche Antwort des Systems um ein ungwollten Zustand zu mildern, oder um das System davon abzuhalten in den ungewollten Zustand überzugehen. Diese sind äquivalent zu den Ereignis-Gesteuerten Requirements, kennzeichen aber durch die If-Then Schlüsselworte die Handhabung ungewollten Verhaltens \\ \cline{2-3}
+		& Aufbau  & IF <optional preconditions> <trigger>, THEN the <system name> shall <system response> \\ \cline{2-3}
+		& Beispiel & If the computed airspeed fault flag is set, then the control system shall use modelled airspeed \\ \hline
+		\multirow{3}{0.0\textwidth}{Zustands-Gesteuert} & Erklärung & Requirements sind aktiv während das System in einem definierten Zustand ist. \\ \cline{2-3}
+		& Aufbau  & WHILE <in a specific state> the <system name> shall <system response> \\  \cline{2-3}
+		& Beispiel & While the aircraft is in-flight, the control system shall maintain engine fuel flow above XXlbs/sec \\ \hline
+		\multirow{3}{0.0\textwidth}{Optionale Merkmale} & Erklärung & Requirements sind nur anwendbar in Systemen, welche ein bestimmtes Merkmal haben \\  \cline{2-3}
+		& Aufbau  & WHERE <feature is included> the <system name> shall <system response> \\ \cline{2-3}
+		& Beispiel & Where a control system component acts as a firewall, the component shall be Fireproof \\ \hline
+	\end{tabularx}
+	\caption{EARS-Muster mit Erklärungen, Aufbau und Beispiel, nach \cite{MW10}}
+	\label{tab:EARSTemplates}
+\end{table}
+%\begin{table}	
+%	\begin{tabularx}{\textwidth}{|p{0.13\textwidth}|p{0.27\textwidth}|p{0.20\textwidth}|p{0.29\textwidth}|}
+%		\hline
+%		Muster & Erklärung & Aufbau & Beispiel \\ \hline
+%		Allgegen-wärtig & Requirements haben weder Vorbedingung noch Auslöser und sind immer aktiv & <system name> shall <system response> & The control system shall indicate the engine oil quantity to the aircraft \\ \hline
+%		Ereignis-Gesteuert & Requirements werden nur initiiert sobald ein auslösendes Ereignis an den Syste-Grenzen eintritt& When <optional preconditions> <trigger> the <system name> shall <system response>& When continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition\\ \hline
+%		Ungewolltes Verhalten & Requirements definieren die erforderliche Antwort des Systems um ein ungwollten Zustand zu mildern, oder um das System davon abzuhalten in den ungewollten Zustand überzugehen. Diese sind äquivalent zu den Ereignis-Gesteuerten Requirements, kennzeichen aber durch die If-Then Schlüsselworte die Handhabung ungewollten Verhaltens & IF <optional preconditions> <trigger>, THEN the <system name> shall <system response> & If the computed airspeed fault flag is set, then the control system shall use modelled airspeed \\ \hline
+%		Zustands-Gesteuert& Requirements sind aktiv während das System in einem definierten Zustand ist. & WHILE <in a specific state> the <system name> shall <system response> & While the aircraft is in-flight, the control system shall maintain engine fuel flow above XXlbs/sec\\ \hline
+%		Optionale Merkmale& Requirementssind nur anwendbar in Systemen, welche ein bestimmtes Merkmal haben & WHERE <feature is included> the <system name> shall <system response> & Where a control system component acts as a firewall, the component shall be Fireproof  \\ \hline	
+%	\end{tabularx}
+%	\caption{EARS-Muster mit Erklärungen, Aufbau und Beispiel, nach \cite{MW10}}
+%	\label{tab:EARSTemplates}
+%\end{table}
+Laut Mavin et al. kann mithilfe dieser Patterns die Anzahl der benötigen Worte und die Komplexität der Beschreibung eines Requirements deutlich reduziert werden. Außerdem soll die Identifikation redundanter oder fehlender Anforderungen vereinfacht werden.\\
+
+Die Satzschablonen "`Mustergültige Anforderungen - die SOPHIST Templates für Requirements"' (MASTeR) stellen ebenfalls Vorlagen für hochqualitative Requirements bereit. "Die Arbeit mit einer Satzschablone für Anforderungen trägt ihren Teil dazu bei, dass Anforderungssätze
+einheitlich strukturiert sind und so gewisse Defekte (wie z. B. das Fehlen des
+Akteurs) von vornherein vermieden werden`"' \cite{JPQRSSV16}. Beispielhaft ist in Abbildung \ref{img:Func_MASTeR} der sogenannte Funktions-Master, eine Schablone zur Formulierung funktionaler Anforderungen abgebildet.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.99\textwidth]{images/Sophist_Patterns.png}
+	\caption{FunktionsMASTeR zur Formulierung funktionaler Anforderungen \cite{JPQRSSV16}}
+	\label{img:Func_MASTeR}
+\end{figure}
+Die rechtliche Verbindlichkeit ist dabei vereinfacht wie folgt festgelegt \cite{JPQRSSV16}. 
+\begin{itemize}
+	\item[] \textbf{Muss}: Alle Anforderungen, die mit MUSS formuliert sind, sind verpflichtend
+	in der Umsetzung. Die Abnahme eines Produkts kann verweigert werden, sollte das System einer MUSS-Anforderung nicht entsprechen.
+	\item[] \textbf{Sollte}: Formulierungen mit SOLLTE stellen einen Wunsch eines Stakeholders
+	dar. Sie sind nicht verpflichtend und müssen nicht erfüllt werden. Allerdings erhöht ihre Umsetzung die Zufriedenheit der Stakeholder und ihre Dokumentation verbessert die Zusammenarbeit und Kommunikation zwischen Stakeholdern und Entwicklern/Auftragnehmern.
+	\item[] \textbf{Wird}: Mit WIRD dokumentieren Sie die Absicht eines Stakeholders. Eine mit WIRD formulierte Anforderung dient als Vorbereitung für eine in der Zukunft liegende Integration einer Funktion. Sie ist verpflichtend in der Umsetzung zu berücksichtigen, auch wenn ihre Realisierung zunächst nicht getestet wird.
+\end{itemize}
+Oft sind bestimmte Funktionen eines Systems an Bedingungen gebunden. Um dies in den Schablonen abzufangen, kann dem System dabei noch eine Bedingung vorangestellt werden, welche wiederrum durch eine Schablone, dem sogenannten BedingungsMASTeR (Abbildung \ref{img:Cond_MASTeR}), beschrieben wird. 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.99\textwidth]{images/Sophist_Patterns2.png}
+	\caption{BedingungsMASTeR zur Formulierung von Bedingungen \cite{JPQRSSV16}}
+	\label{img:Cond_MASTeR}
+\end{figure}
+Für nicht-funktionale Requirements steht als Universal-Schablone der EigenschaftsMASTeR zur Verfügung (Abbildung \ref{img:Prop_MASTeR}).
+\begin{figure}
+	\centering
+	\includegraphics[width=0.99\textwidth]{images/Sophist_Patterns3.png}
+	\caption{EigenschaftsMASTeR zur Formulierung nicht-funktionaler Anforderungen \cite{JPQRSSV16}}
+	\label{img:Prop_MASTeR}
+\end{figure}
+Laut den Sophisten ist es anhand dieser Schablonen möglich "`die natürlichsprachliche Dokumentaion von Anforderungen zu verbessern"' \cite{JPQRSSV16} und fundamentale Fehler von Beginn an zu vermeiden.
+
+\subsection{Einschub: Logik}
+\label{subsec:Logic}
+Im folgenden werden zwei Unterformen der Logik behandelt. Die Prädikatenlogik (First Order Logic, FOL) mit der konjunktive Normalform (Conjunctive Normal Form, CNF) als Darstellung dieser und die Lineare Temporal Logik (Linear Temporal Logic, LTL).
+\begin{quote}
+	"`\textit{Die Prädikatenlogik ist eine an logische Grundkonzepte angelehnte Form der Wissensrepräsentation. Die am häufigsten verwendete Prädikatenlogik erster Ordnung umfasst: Variablen, Konstanten, Funktionen, Prädikate und Ausdrücke mit Verknüpfungsapparaturen und Quantoren. Ein Prädikat ist eine Aussage mit einer Menge von Parametern, der aufgrund vorhandener Datenobjekte (Faktenwissen) ein Wahrheitswert zugeordnet werden kann.}"' \cite{LS17}
+\end{quote}
+Die First Order Logic macht Gebrauch von folgenden Arten logischer Symbole um First-Order Terme und Formeln zusammenzusetzen \cite{BM11}:
+\begin{itemize}
+	\item[] \textbf{Verknüpfungsoperatoren}: Diese sind nötig um aus einfachen Formeln komplexere zu erzeugen. Eine Auswahl dieser sind Tabelle \ref{tab:junctors} zu entnehmen
+	\item[] \textbf{Variablen}: Eine endliche Menge von symbolischen Variablen.
+	\item[] \textbf{Quantoren}: In der Prädikatenlogik kommen zwei Quantoren zum Einsatz: $\forall$ um eine Aussage über alle Variablen in der Domäne zu machen und $\exists$ um etwas über mindestens eine Variable mit einen bestimmten Attribut auszusagen.
+	\item[] \textbf{Klammern}: Klammer-Symbole können um symbolische Folgen gesetzt werden und so als "`Zeichensetzung"' dienen.
+\end{itemize}
+\begin{table}[]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+	Operationen & Junktoren  & Bezeichnung & Beispiel \\ \hline
+	Negation & NOT & $\lnot$ oder $!$ & NOT A \\ \hline
+	Konjunktion	& AND & $\land$ & A AND B \\ \hline
+	Disjunktion & OR  & $\lor$ & A OR B \\ \hline
+	Implikation	& IMPLIES & $\rightarrow$ & A I B \\ \hline
+	\end{tabular}
+	\caption{Verknüpfungsoperationen der Prädikatenlogik}
+	\label{tab:junctors}
+	\end{table}
+Eine konjunktive Normalforn zeichent sich dadurch aus, dass sie eine Konjunktion von Disjunktionstermen ist. Disjunktionsterme sind wiederrum Disjunktionen von Variablen oder negierten Variablen \cite{BN77}. Ausgedrückt als Formel folgt
+\begin{equation}
+CNF = \bigwedge_{i} \bigvee_{j} (\lnot) x_{ij} \text{,}
+\label{eq:CNF}
+\end{equation}
+wobei $x_{ij}$ für eine Variable steht. Mithilfe der konjunktiven Normalform ist es möglich eine eindeutige Darstellung von Ausdrücken in der Prädikatenlogik zu erhalten.\\
+
+Die Lineare Temporal Logik hat ihren Urspung in der von Arthur Prior entwickelten Tense Logic (TL). Priors Motivation zur Entwicklung der Tense Logic war größtenteils philosphisch \cite{Zal17}. Diesen störte die Unandwendbarkeit einer formalen logischen Notation auf philosophische Probleme und Lösungen bezüglich der Zeit. Die ursprüngliche Tense Logic von Prior bestand aus vier zeitlichen Operatoren $P$ ("`It has at some time been the case that …"'), $F$ ("`It will at some time be the case that …"'), $H$ ("`It has always been the case that …"') und $G$ ("`It will always be the case that …"'). Es sei vorweggenommen, dass im weiteren Verlauf der vorliegenden Arbeit die Operatoren $P$ und $H$ eine untergeornete Rolle spielen, da technische Systeme im Allgemeinen als eine vorwärtsgerichte Folge von Systemzuständen, sozusagen Reaktionen auf bestimmte Aktionen, anzusehen sind und deshalb Aussagen über die Vergangenheit nur wenig sinnhaft sind. Implizit war dieser Logik schon ein linearer Zeitfluss zugrunde gelegt. Prior selbst fügte noch Erweiterungen zu seiner ursprünglichen Sprache hinzu. Darunter fällt auch der Operator $X$ ("`neXttime"'). Als einer der wichtigsten Erweiterungen zählen die Operatoren $S$ ("`Since"') and $U$ ("`Until"') die von Hans Kamp in seiner Doktorarbeit eingeführt wurden. Im weiteren Verlauf der Arbeit ist, aus bereits genannten Gründen, erneut nur $U$ von Interesse. Die Sprachliche Bedeutung von $\phi U \psi$ ist dabei "`$\phi \text{ will be true until a time when } \psi \text{ is true}$"'. Weiter bewies Kamp die Fähigkeit von $U$ alle vorwärtsgerichteten Logiken, wie zum Beispiel $F$, darstellen zu können. Aufbauend auf diesen Arbeiten entwickelte sich die Lineare Temporal Logik, welche zuerst von Pnueli vorgeschlagen und von Gabbay zum ersten Mal explizit axiomatisiert wurde. Die LTL besteht nur aus vorwärtsgerichten Operatoren. Eine Übersicht über diese bietet Tabelle \ref{tab:operators_LTL}.
+\begin{table}[]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Operationen & Symbol  & Bezeichnung & Beispiel \\ \hline
+		Global & G & $\square$ oder $!$ & G A \\ \hline
+		neXt	& X & $\circ$ & X B \\ \hline
+		Until & U  & $U$ & A $U$ B \\ \hline
+		Future bzw. Maybe	& F bzw. M & $\diamond$ & F A bzw. M A \\ \hline
+	\end{tabular}
+	\caption{Operatoren der Linearen Tempoal Logik um zeitliche Zusammenhänge darzustellen}
+	\label{tab:operators_LTL}
+\end{table}\\
+Für eine ausführliche Einführung in die vorgestellte Logik sei beispielweise auf  die Literatur von Prior \cite{BP58}, \cite{Pri67} und \cite{PH03} und Hans Kamp \cite{Ka68} verwiesen. Ebenfalls bietet die Stanford Encyclopedia of Philosophy \cite{Zal17} einen guten Überblick zu der Thematik.\\ 
+
+\subsection{Generisches Sprachmuster}
+\label{subsec:genPatterns}
+Generische Sprachmuster sind, im Gegensatz zu speziellen Pattern, nicht nur für bestimmte Zwecke entworfen und zugeschnitten, sondern über ein breites Spektrum anwendbar.\\
+Dwyer et al. \cite{DAC98} entwickelten das Specification Pattern System (SPS). Motivation zur Entwicklung war, dass formale Methoden den Anwendern substantielle Vorteile zur Verfügung stellen. Die Barriere zur Anwendung diesbezüglicher Methoden sehen Dwyer et al. aber vor allem in der manuellen Übersetzung der Zusammenhänge in den Logikraum. Diese Transformation ist aber zur weiteren maschinellen Verarbeitung unabdingbar. Die SPS soll zur Überwindung dieser Barriere beitragen, indem es natürlichsprachlichen Beschreibungen eine direkte Abbildung in den Logikraum (u.a. Lineare Temporal Logik) zuweist. Disbezüglich formte sich die Idee, die aus der Softwareentwicklung bekannten Entwurfs-Muster aufzugreifen, die Notation von Muster auf Spezifikationen anzupassen und anschließend anzuwenden.\\
+Ein Specification Pattern ist eine generalisierte Beschreibung einer allgemein vorkommenden Anforderung bezüglich zulässigen Zustands- oder Ereignisfolgen in einem finiten Zustandsmodell eines Systems. Weiter beschreibt dieses die grundlegende Struktur einiger Aspekte des Verhaltens eines Systems und bietet Ausdrücke dieses Verhaltens in einer Palette von Formalismen \cite{DAC98}. Die Specification Pattern von Dwyer et al. werden als Linear Temporal Logic (LTL), Computation Tree Logic(CTL), Graphical Interval Logic (GIL), Quantified Regular Expressions (QRE), INCA Queries, Action Computation Tree Logic und Regular Alternation-Free Mu-Calculus bereitgestellt. Es sei an dieser Stelle vorweggenommen, dass in der vorliegenden Arbeit nur von der Abbildugn der SPS in LTL Gebrauch gemacht worden ist. Die Lineare Temporal Logik zeichnet sich durch die sequenzielle Abfolge von Zuständen oder Ereignissen entlang eines Pfades aus. Dies erscheint deutlich praktikabler zur Darstellung einer Funktion als zum Beispiel die Computation Tree Logik, welche darauf abzielt den formal beschriebenen Zusammenhang auf allen permutierten Pfaden der Zustände oder Ereignissen nachzuprüfen.\\    
+Die Einteilung erfolgt dabei in elf Basis-Pattern, welche nochmal in fünf Geltungsbereiche unterteilt werden. Beispielhaft ist das sogenannte Response-Pattern in Abbildung \ref{img:Dwyer_Response_Pattern} dargestellt. Für eine vollständige Beschreibung aller Patterns sei auf die Internetseite des Specification Pattern System verwiesen \cite{DACDAP17}.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.99\textwidth]{images/Dwyer_Response_Pattern.png}
+	\caption{Response Pattern \cite{DAC98}}
+	\label{img:Dwyer_Response_Pattern}
+\end{figure}
+Die Abbildung der Pattern unter anderem von SPS zu LTL wurde dabei empirisch validiert. Darunter fallen Reviews unter Projekt-Mitgliedern, die Zuhilfenahme von Experten bezüglich der speziellen Patterns und die Ausführung in Finite State Verification Tools um kleine finite Zustandstransitionsmodelle zu erzeugen, welche befriedigende Sequenzen von Zuständen und Ereignissen lieferten \cite{DACDAP17}.
+\subsection{Diskussion der Sprachmuster}
+\label{subsec:discPatterns}
+Prinzipiell lässt sich schlussfolgern, dass spezialisierte Pattern sehr gut für die Zwecke geeignet sind, für welche sie entwickelt wurden. Im Falle des EARS ist von Mavin et al. \cite{MW10} eine deutliche Reduzierung der Wortanzahl und der Komplexität von Requirements gezeigt worden. Gleichermaßen eignen sich die MASTeR-Schablonen der Sophisten um Requirements einheitlich zu strukturieren, gewisse Defekte, wie das Fehlen von einem Akteur, und sprachliche Effekte zu vermeiden \cite{JPQRSSV16}. Ebenfalls sind beide Muster in der Lage sowohl funktionale, als auch nicht-funktionale Requirements zu beschreiben und zeitliche Bedingungen zu berücksichtigen.\\ 
+Im Vergleich zu generischen Pattern sind spezialisierte Pattern hinsichtlich ihres Zweck sowohl bei der Schwierigkeit der Anwendung als auch bei der Umsetzung eben jenes Zwecks überlegen.\\
+Vorteilhaft verhalten sich die generischen Muster gegenüber den spezialisierten Mustern jedoch bei der maschinellen Sprachverarbeitung. Die Problematik bei spezialisierten und der Gewinn der generischen Pattern ist in Abbildung \ref{img:NL2Logic} illustriert.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/NL2Logic.pdf}
+	\caption{Abbildungsproblematik vom natürlichsprachlichen Raum (NL) in den Logikraum (Logic)}
+	\label{img:NL2Logic}
+\end{figure}
+Die spezialisierten Muster liegen im Raum der allgemeinen natürlichen Sprache (NL). Von diesem sind sowohl injektive als auch surjektive Abbildungen in den Logikraum (Logic) möglich. Jedoch sind die Abbildung im allgemeinen vom NL in Logic niemals bijektiv. Somit ist eine automatische maschinelle Sprachverarbeitung aus dem allgemeinen natürlich sprachlichen Raum schwer vorstellbar und nach heutigen Stand der Technik nicht umsetzbar. Bei den Specification Pattern System von Dwyer et al. \cite{DAC98} handelt es sich um eine Teilmenge der NL. Die Lineare Temporal Logik ist wiederrum eine Teilmenge des Logikraum. Für das SPS ist eine eindeutige Entsprechung im Logikraum zum Beispiel der LTL empirisch nachgewiesen worden. Somit lässt sich der Gebrauch von generischen Pattern rechtfertigen, auch wenn die Erstellung von Spezifikation in diesen anfänglich weniger intuitiv sein kann.
+\subsection{Formalisierungs-Prozess}
+\label{subsec:FormProcLang}
+Die, der vorliegenden Arbeit zugrundeliegende, Verarbeitungskette zur Sprachverarbeitung wurde von Walter et al. \cite{WHPR17} entwickelt und ist in Abbildung \ref{img:Form_Proc} veranschaulicht.\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{images/formalization-process0.pdf}
+	\caption{Formalisierungs Prozess der Sprachverarbeitung \cite{WHPR17}}
+	\label{img:Form_Proc}
+\end{figure}
+Da sowohl in den Veröffentlichungen von Walter et al. \cite{WHPR17} und \cite{WSPR17} als auch in der vorliegenden Arbeit die Formalisierung auf einen natürlichsprachlichen Anforderungssatz eines realen Systems beruht, ist eine manueller Übergang zu den Specification Pattern System notwendig.
+Die Abbildung von SPS zu LTL kann, wie bereits besprochen, maschinell erfolgen.\\
+In der Natur des Requirements steckt die Beschreibung eines Teilsystems beziehungsweise einer Systemfunktion. In einem technischen Systemen gibt es per Definition keinen vorgeschriebenen Abfolge von Systemzuständen, sondern abhängig von aktuellen Zustand und Eingang sind verschiedene folgende Zustände möglich. Aus dieser Entscheidungsvielfalt folgt sofort eine Vielzahl von möglichen Pfaden innerhalb eines technischen Systems.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.99\textwidth]{images/elimination-of-operators-combined.pdf}
+	\caption{Auflösung der linear temporal logischen Operatoren $G$,$U$ und $X$ \cite{WHPR17}}
+	\label{img:Elim_LTL}
+\end{figure}
+Das Naturell von Tests ist jedoch eine vorgeschriebe sequenzielle Abfolge von Testschritten. Somit kann bei der Test-Formalisierung von einer vorwärts gerichteten verketteten Liste von Zuständen ausgegangen werden. Der linear temporal logische Ausdruck enthält sowohl zeitliche als auch Randbedingungen bezüglich der Reihenfolge. Walter et al. \cite{WHPR17} haben unter Einhaltung dieser Bedingungen und der verketteten Liste als zugrunde liegende Datenstruktur die Weiterverarbeitung des formalen Ausdrucks von Linear Temporal Logic in First Order Logic gezeigt. In der FOL sind die zeitlichen Randbedingungen nicht mehr explizit sondern nur noch implizit gegeben. Diese Umwandlung wird beispielhaft in Abbildung \ref{img:Elim_LTL} an der Auflösung der Operatoren $G$, $U$ und $X$ gezeigt. Vor $Par1$ steht der globale Operator $G$, was zur Folge hat, dass dieser in jedem Zustand gelten muss. Des Weiteren gilt $Par2$ nur bis $Par3$. Dies ist durch den Operator $U$ kenntlich gemacht. Der Operator $X$ steht für ein Eintreten im nächsten Zustand. Der Zusammenhang ist an $Par4$ und $Par5$ zu erkennen.\\
+Die Vereinfachung auf ein einfach verkettete Liste ist bei Anforderungen jedoch nicht tragbar. Hier bedarf es einer flexibleren Lösung und dementsprechend muss die Ausprägung der LTL-Ausdrücke in FOL angepasst werden. Eine nähere Beleuchtung des modifzierten Prozesses erfolgt in Kapitel \ref{chap:Model} und speziell der Abbildung von LTL auf FOL in Unterabschnitt \ref{subsec:ltl2fol_lib}.\\
+Durch einen Sortier-Algorithmus enthält man schlussendlich ausgehend von der First Order Logic die konjunktive Normalform. Anhand der eindeutigen Darstellung in der konjunktiven Normalform ist ein Vergleich zu anderen Ausdrücken in der Prädikatenlogik möglich.

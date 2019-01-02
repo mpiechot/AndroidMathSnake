@@ -1,0 +1,44 @@
+\chapter{Appendix B}
+\label{chap:AppendixB}
+\section{Blbliotheken}
+\label{sec:libraries}
+In diesem Teil des Anhangs sind die vollständigen, in der vorliegenden Arbeiten angewandten Bibliotheken, dargestellt.
+\subsection{Atomarisierungs-Bibliothek}
+\label{subsec:app_atomization_lib}
+Im folgenden ist die vollständige Atomarisierungs-Bibliothek (Tabelle \ref{tab:atom_lib}) mit Auflistung aller Specification Patterns gegeben. Diese gibt an welche Variablen, die als Platzhalter für Requirement States dienen, sich atomarisieren lassen. Kurz gesagt führt sie auf welche Requirement States sich in ihre Atomic States aufspalten lassen.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}}
+		\hline
+		Specification\newline Pattern & Ausdruck & atomarisierbar & nicht \newline atomarisierbar \\ \hline
+		Absence & P is false [...] & P & - \\ \hline
+		Existence & P becomes true [...] & P & - \\ \hline
+		Bounded Existence & transitions to P-States occur at most $n$ times [...] & P & - \\ \hline
+		Universality & P is true [...] & P & - \\ \hline
+		Precedence & S precedes P [...] & P & S \\ \hline
+		Response & S responds to P [...] & S & P \\ \hline
+		Precedence Chain & S,T precedes P [...] & P & S,T \\ \hline
+		Precedence Chain & P precedes S,T [...] & T & P,S \\ \hline
+		Response Chain & P responds to S,T [...] & P & S,T \\ \hline
+		Response Chain & S,T responds to P [...] & T & P,S \\ \hline
+		Constrained Chain Patterns & S,T without Z responds to P [...] & T & P,S,Z \\ 
+	\end{tabularx}
+	\caption{Atomarisierungs-Bibliothek}
+	\label{tab:atom_lib}
+\end{table}
+%\subsection{Abbildungs-Bibliothek von SPS zu LTL}
+%\label{subsec:app_sps2ltl_lib}
+\subsection{Abbildungs-Bibliothek von LTL zu FOL}
+\label{subsec:app_ltl2fol_lib}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|p{0.47\textwidth}|p{0.475\textwidth}|}
+		\hline
+		LTL & FOL (FSM) \\ \hline
+		G(Q I G (P)) & \includegraphics[width=0.3\textwidth]{images/P_is_true_after_Q.png} \\ \hline
+		G NOT Q OR M (NOT P U \newline(S OR G NOT P)) & \includegraphics[width=0.3\textwidth]{images/S_precedes_P_after_Q.png} \\ \hline
+		\multicolumn{2}{|c|}{\hspace{0.5cm}\includegraphics[width=0.3\textwidth]{images/LTL2FSM_description.pdf}} \\ \hline
+	\end{tabularx}
+	\caption{Abbildungs-Bibliothek von LTL zu FOL}
+	\label{tab:ltl2fol_lib}
+\end{table}
