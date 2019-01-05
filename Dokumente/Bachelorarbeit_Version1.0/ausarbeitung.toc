@@ -1,0 +1,18 @@
+\select@language {ngerman}
+\select@language {ngerman}
+\contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.1}
+\contentsline {chapter}{\numberline {2}Stand der Forschung}{7}{chapter.2}
+\contentsline {chapter}{\numberline {3}Herangehensweise}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Einf\IeC {\"u}hrung in \LaTeX }{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Sinnvolle Programme}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Wichtige \LaTeX -Befehle}{10}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Textgliederung}{10}{subsection.3.3.1}
+\contentsline {subsubsection}{\nonumberline Unterunter\IeC {\"u}berschrift}{10}{section*.3}
+\contentsline {paragraph}{\nonumberline Absatztitel}{10}{section*.4}
+\contentsline {subparagraph}{\nonumberline Unterabsatz}{10}{section*.5}
+\contentsline {section}{\numberline {3.4}Formatierungen, Listen, Aufz\IeC {\"a}hlungen}{10}{section.3.4}
+\contentsline {section}{\numberline {3.5}Tabellen}{11}{section.3.5}
+\contentsline {section}{\numberline {3.6}Mathematische Gleichungen}{11}{section.3.6}
+\contentsline {section}{\numberline {3.7}Abbildungen}{11}{section.3.7}
+\contentsline {chapter}{\numberline {4}Evaluation}{13}{chapter.4}
+\contentsline {chapter}{\numberline {5}Diskussion}{15}{chapter.5}
