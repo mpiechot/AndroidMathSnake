@@ -13,8 +13,6 @@
 \usepackage{helvet} % Schönere SansSerif-Schrift
 \usepackage{times}  % Schönere Serif-Schrift
 
-\usepackage{blindtext} % sollte am Ende nicht mehr benötigt werden ;)
-
 \pagestyle{headings}
 
 \graphicspath{ {figures/} } % Pfad-Prefix für einzubindende Grafiken. Es sind auch mehrere Pfade möglich, diese müssen jeweils in eigenen {Klammern} stehen.
@@ -26,7 +24,7 @@
 % PDF-Optionen (werden in den Dateieigenschaften angezeigt)
 \hypersetup{
 pdftitle={Titel der Arbeit},
-pdfauthor={Vor- und Nachname},
+pdfauthor={Marco Piechotta},
 pdfsubject={Bachelorarbeit Informatik},
 pdfpagelayout=TwoColumnRight
 }
@@ -47,16 +45,17 @@ Wilhelm-Schickard-Institut für Informatik\\
 [2cm]
 \Large\textbf{Titel der Arbeit (der geht wohl in den\\ meisten Fällen über mehr als eine Zeile)}\\
 [1.5cm]
-\large Vor- und Nachname\\
+\large Marco Piechotta\\
 [0.5cm]
-Datum\\
+\today
+\\
 \vfill
 \small\textbf{Gutachter}\\[0.3cm]
 \large Name Gutachter\\
 \footnotesize Wilhelm-Schickard-Institut für Informatik\\Universität Tübingen\\
 [1cm]
 \small\textbf{Betreuer}\\[0.3cm]
-\large Name Betreuer\\
+\large Heiko Holz\\
 \footnotesize Adresse\\
 Universität Tübingen
 \end{center}
@@ -92,6 +91,9 @@ Bearbeitungszeitraum: Anfangs- -- Enddatum
 \cleardoublepage
 
 \input{chapters/evaluation.tex}
+\cleardoublepage
+
+\input{chapters/results.tex}
 \cleardoublepage
 
 \input{chapters/diskussion.tex}

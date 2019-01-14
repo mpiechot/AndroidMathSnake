@@ -3,16 +3,29 @@
 \contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.1}
 \contentsline {chapter}{\numberline {2}Stand der Forschung}{7}{chapter.2}
 \contentsline {chapter}{\numberline {3}Herangehensweise}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Einf\IeC {\"u}hrung in \LaTeX }{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Sinnvolle Programme}{9}{section.3.2}
-\contentsline {section}{\numberline {3.3}Wichtige \LaTeX -Befehle}{10}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Textgliederung}{10}{subsection.3.3.1}
-\contentsline {subsubsection}{\nonumberline Unterunter\IeC {\"u}berschrift}{10}{section*.3}
-\contentsline {paragraph}{\nonumberline Absatztitel}{10}{section*.4}
-\contentsline {subparagraph}{\nonumberline Unterabsatz}{10}{section*.5}
-\contentsline {section}{\numberline {3.4}Formatierungen, Listen, Aufz\IeC {\"a}hlungen}{10}{section.3.4}
-\contentsline {section}{\numberline {3.5}Tabellen}{11}{section.3.5}
-\contentsline {section}{\numberline {3.6}Mathematische Gleichungen}{11}{section.3.6}
-\contentsline {section}{\numberline {3.7}Abbildungen}{11}{section.3.7}
-\contentsline {chapter}{\numberline {4}Evaluation}{13}{chapter.4}
-\contentsline {chapter}{\numberline {5}Diskussion}{15}{chapter.5}
+\contentsline {section}{\numberline {3.1}Konzeptwahl des Spiels}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Erste Idee Math Smashers}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Weitere Ideenfindung}{9}{subsection.3.1.2}
+\contentsline {subsubsection}{\nonumberline Kombination mit The Legend of Zelda}{9}{section*.3}
+\contentsline {subsubsection}{\nonumberline MathSnake}{10}{section*.4}
+\contentsline {subsubsection}{\nonumberline Murmeladdierer}{10}{section*.5}
+\contentsline {subsubsection}{\nonumberline Zahlenbausteine}{11}{section*.6}
+\contentsline {section}{\numberline {3.2}Wahl des Spielkonzepts und Entwicklung des Spiels}{12}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Verschiedene Spielversionen}{12}{subsection.3.2.1}
+\contentsline {subsubsection}{\nonumberline 3D Snake mit Third-Person-Perspektive}{12}{section*.7}
+\contentsline {subsubsection}{\nonumberline 3D Snake mit TopDown-Perspektive}{12}{section*.8}
+\contentsline {subsubsection}{\nonumberline 2D Snake mit TopDown-Perspektive}{13}{section*.9}
+\contentsline {subsubsection}{\nonumberline Snake mit Grid}{13}{section*.10}
+\contentsline {subsubsection}{\nonumberline Snake ohne Grid}{13}{section*.11}
+\contentsline {section}{\numberline {3.3}Aufbau und Funktionsweise des Spiels}{14}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Aufbau des Spiels}{14}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Funktionsweise des Spiels}{14}{subsection.3.3.2}
+\contentsline {subsubsection}{\nonumberline Levelsystem}{14}{section*.12}
+\contentsline {subsubsection}{\nonumberline Ansicht auf das Spielgeschehen}{15}{section*.13}
+\contentsline {chapter}{\numberline {4}Evaluation}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Game Experience Questionnaire}{17}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Core questionaire}{17}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Social Presence Module}{18}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Umsetzung des KidsGEQ}{18}{section.4.2}
+\contentsline {chapter}{\numberline {5}Results}{19}{chapter.5}
+\contentsline {chapter}{\numberline {6}Diskussion}{21}{chapter.6}

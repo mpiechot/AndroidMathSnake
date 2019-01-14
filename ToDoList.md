@@ -39,7 +39,7 @@
 * Stand der Forschung schreiben<font color="red">(0%)</font>
 
 #### ToDo List: 9.1.2019 - 16.1.2019: <font color="red">(0%)</font>
-* Herangehensweise schreiben (Hauptkapitel! über Implementation der Spiele und Aufbau des Nutzertests)<font color="red">(0%)</font>
+* Herangehensweise schreiben (Hauptkapitel! über Implementation der Spiele und Aufbau des Nutzertests)<font color="red">(10%)</font>
 * Evaluation beginnen<font color="red">(0%)</font>
 
 #### ToDo List: 16.1.2019 - 23.1.2019: <font color="red">(0%)</font>

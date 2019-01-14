@@ -1,107 +1,137 @@
 % !TEX root = ../ausarbeitung.tex
-
+%%% DELETE THIS LATER
+%Im Hauptteil beschreiben Sie Ihre praktische Arbeit. Code gehört %normalerweise nicht in eine Ausarbeitung. Ausnahmen sind Algorithmen, %die für Sie wichtig waren (dann in möglichst übersichtlichem Pseudo-%Code). Kleine Code-Stücke können auch zur Illustration oder als Beispiel %eingebaut werden. Längere Code-Stücke können im Anhang %untergebracht werden. Sie sollten jedoch nicht den gesamten Code im %Anhang abdrucken. Ihren Code geben Sie bitte dennoch mit ab, am %besten auf einer CD.
+%
+%Der Detailgrad sollte so sein, dass ein Leser die gleiche Arbeit noch %einmal nachimplementieren könnte. Insbesondere sollten alle Parameter, %von denen die Funktionsweise des Systems abhängt, explizit genannt %sein. Bei der Evaluation muss bei jedem Versuch angegeben werden, mit %welchen Parametern gearbeitet wird.
 \chapter{Herangehensweise}
+In diesem Kapitel wird der Weg von der Konzipierung mehrerer Konzepte für das Lernspiel bis zur Implementierung des Spiels behandelt.
+\section{Konzeptwahl des Spiels}
+In diesem Unterkapitel sollen die erarbeiten Ideen präsentiert werden und welche zur umgesetzung ausgewählt wurde.
+\subsection{Erste Idee Math Smashers} %TODO Ref!
+Die erste Idee ein Lernspiel zu entwickeln, welches Grundschüler unterstützt die Addition mit dem Konzept der Partnerzahlen zu lernen war das bereits vorhandene Spiel Math Smashers.\\
+In Math Smashers fliegen Bälle mit Zahlen herum. Als Spieler kann man eine Art Seil zwischen 2 Kugeln anbringen. Dieses Seil zieht sich zusammen um die Kugeln zu einer zusammen zu fassen. Dabei werden beide Zahlen addiert. Ziel ist es alle Bälle so zu addieren, damit man die gesuchte Zahl heraus bekommt. Dabei kann es vorkommen mehrmals die gesuchte Zahl zu bekommen.
 
-Im Hauptteil beschreiben Sie Ihre praktische Arbeit. Code gehört normalerweise nicht in eine Ausarbeitung. Ausnahmen sind Algorithmen, die für Sie wichtig waren (dann in möglichst übersichtlichem Pseudo-Code). Kleine Code-Stücke können auch zur Illustration oder als Beispiel eingebaut werden. Längere Code-Stücke können im Anhang untergebracht werden. Sie sollten jedoch nicht den gesamten Code im Anhang abdrucken. Ihren Code geben Sie bitte dennoch mit ab, am besten auf einer CD.
+%TODO BILDER einfügen: Math Smashers keine Zahlen verbunden, Bild mit Zahlen verbunden
 
-Der Detailgrad sollte so sein, dass ein Leser die gleiche Arbeit noch einmal nachimplementieren könnte. Insbesondere sollten alle Parameter, von denen die Funktionsweise des Systems abhängt, explizit genannt sein. Bei der Evaluation muss bei jedem Versuch angegeben werden, mit welchen Parametern gearbeitet wird.
-
-
-\hfil\rule{0.4\textwidth}{0.4pt}
-
-\section{Einführung in \LaTeX}
-Wenn Sie dieses Template gefunden haben, werden Sie schon erkannt haben, dass \LaTeX\ nicht ganz unwichtig ist. Falls Sie noch kaum oder keine Erfahrung damit haben, bietet sich der Kurs \qq{Einführung in \LaTeX} von Thorsten Nagel an. Er findet meistens mehrmals im Semester statt, die genauen Termine entnehmen Sie bitte dem Vorlesungsverzeichnis. Das Skript zu diesem Kurs ist online erhältlich \cite{thorstennagel2015} und enthält noch viele weitere Informationen, die in der folgenden Kurzzusammenfassung nicht berücksichtigt werden konnten.
-
-\section{Sinnvolle Programme}
-Falls Sie \verb|.tex|-Dateien nicht unbedingt in einem normalen Texteditor schreiben und auf der Kommandozeile kompilieren möchten, bietet sich ein spezieller \LaTeX-Editor wie z.B. TeXstudio \cite{texstudio} an.
-
-\section{Wichtige \LaTeX-Befehle}
-\subsection{Textgliederung}
-Mit dem Befehl \verb|\section{Überschrift}| lässt sich ein neuer Abschnitt beginnen, der automatisch nummeriert und im \hyperref[toc]{Inhaltsverzeichnis} eingetragen wird.
-Gleiches gilt für einen Unterabschnitt, der mit \verb|\subsection{Unterüberschrift}| begonnen wird.
-
-\LaTeX\ bietet noch weitere Gliederungsebenen bis hin zum Unterabsatz, die aber standardmäßig nicht mehr nummeriert werden und standardmäßig auch nicht im Inhaltsverzeichnis auftauchen. Im Normalfall sind diese aber nicht unbedingt nötig.
-\subsubsection{Unterunterüberschrift}
-\paragraph{Absatztitel} Absatztext
-\subparagraph{Unterabsatz} Absatztext
-
-Um in der PDF-Datei einen Zeilenumbruch zu erhalten, schreiben Sie im Quelltext \verb|\\|, für einen neuen Absatz lassen Sie eine Zeile frei. Ein einzelner Zeilenumbruch im Quelltext hat keine Auswirkungen.
-
-\section{Formatierungen, Listen, Aufzählungen}
-Um die \LaTeX-Befehle für die folgenden Formatierungen zu sehen, schauen Sie sich einfach den Quellcode an.
-
-Text kann man \textbf{fett} oder \textit{kursiv} schreiben. Sie können Text auch explizit \emph{betonen}, was dann ebenfalls kursiv dargestellt wird.
-
-Listen sind natürlich auch möglich, diese können beliebig verschachtelt werden.
-\begin{itemize}
-\item Listenpunkt 1
-\item Listenpunkt 2
-\begin{itemize}
-\item Unterpunkt
-\end{itemize}
-\end{itemize}
-
-Oder eine nummerierte Aufzählung:
-\begin{enumerate}
-\item Listenpunkt 1
-\item Listenpunkt 2
-\begin{enumerate}
-\item Unterpunkt
-\end{enumerate}
-\end{enumerate}
-
-\section{Tabellen}
-Tabellen können wie folgt erstellt werden (siehe \autoref{tab:tabelle-1}):
-\begin{table}[htb]
-\centering
-\caption{Formatierungsparameter zur Spaltenausrichtung in Tabellen\label{tab:tabelle-1}}
-\begin{tabular}{l|p{3.5cm}lcr}
-	                     & \textbf{Spalte 1}                   & \textbf{Spalte 2} & \textbf{Spalte 3} & \textbf{Spalte 4} \\ \hline
-	\textbf{Parameter}   & \verb|p{3.5cm}|                     & \verb|l|          &     \verb|c|      &          \verb|r| \\
-	\textbf{Ausrichtung} & linksbündig mit vorgegebener Breite & linksbündig       &     zentriert     &      rechtsbündig
-\end{tabular}
-\end{table}
-
-Für \qq{schönere} Tabellen empfiehlt sich das \LaTeX-Paket \verb|booktabs|, das in der Präambel mit \verb|\usepackage{booktabs}| eingebunden werden kann. Insbesondere die zugehörige Anleitung \cite{booktabs} ist lesenswert, da sie recht einfach vermittelt, was eine \qq{schöne} Tabelle ausmacht.
-
-\section{Mathematische Gleichungen}
-Gleichungen oder sonstige Formeln im Fließtext, wie z.B. $f(x)=ax+b$, können Sie einfach in Dollarzeichen \verb|$...$| einfassen. Größere Formeln können auch in einer eigenen Zeile stehen:
-\begin{displaymath}
-g(x) = \frac{1}{2\pi\sigma}\cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-\end{displaymath}
-Falls Sie in Ihrer Ausarbeitung viel Mathematik benötigen, lohnt sich auch ein Blick auf das \LaTeX-Paket \verb|amsmath|.
-\section{Abbildungen}
-Abbildungen und Diagramme können Sie direkt in einer \verb|.tex|-Datei \qq{malen}. Dazu bietet TikZ viele Möglichkeiten, eine Grafik mit Text zu beschreiben. Falls Sie nicht jeden Strich in einem Diagramm selbst definieren wollen, bietet sich die Verwendung von Pgfplots in Form der \verb|axis|-Umgebung an, wie in \autoref{fig:diagramm} gezeigt.
-
-Falls Sie sich näher mit der Materie beschäftigen wollen, bietet sich das Manual für TikZ und PGF\cite{pgfmanual} an. Dieses Dokument ist zwar sehr umfangreich (über 1000 Seiten), bietet aber viele gut erklärte Beispiele, auch und gerade für den Einstieg.
-
-Die folgenden Abbildungen wurden in jeweils eine \verb|figure|-Umgebung gesteckt. Diese erzeugt eine \qq{floatende} Abbildung, die von \LaTeX\ automatisch an einer \qq{geeigneten} Stelle platziert wird, also nicht zwangsläufig dort, wo sie im Quelltext definiert wurde. Wenn Sie der Abbildung eine \verb|\caption{...}| und ein \verb|\label{key}| verpassen, können Sie über dieses Label im Text per \verb|\ref{key}| oder \verb|\autoref{key}| darauf verweisen. Bei ersterem wird nur die Nummer (\qq{\ref{fig:diagramm}}), bei letzterem zusätzlich noch der Typ (\qq{\autoref{fig:diagramm}}) ausgegeben. Analog zur \verb|figure|-Umgebung wurde oben für die Tabelle die \verb|table|-Umgebung verwendet.
-\begin{figure}[htb]
-\centering
-\begin{tikzpicture}
-  \begin{axis}[xlabel=$x$,ylabel=$y$,width=0.75\textwidth]
-    \addplot[smooth,mark=*,blue] plot coordinates {
-        (0,2)
-        (2,3)
-        (3,1)
-    };
-    \addlegendentry{Case 1}
-
-    \addplot[smooth,color=red,mark=x] plot coordinates {
-            (0,0)
-            (1,1)
-            (2,1)
-            (3,2)
-        };
-    \addlegendentry{Case 2}
-  \end{axis}
-\end{tikzpicture}
-\caption{Diagramm aus den TikZ-Beispielen für Pgfplots\label{fig:diagramm}}
-\end{figure}
-
-Falls Sie eine Abbildung schon als separate Datei (z.B. im PDF-Format) vorliegen haben, können Sie diese mit \verb|\includegraphics{}| und dem Dateinamen einbinden, wie in \autoref{fig:smileys} geschehen. Dabei wird in den in der Präambel mit \verb|\graphicspath{...}| vorgegebenen Pfaden gesucht. Die Dateiendung wird automatisch \qq{erraten}, wenn sie nicht angegeben wird.
+\subsection{Weitere Ideenfindung}
+Zunächst wurden weitere Ideen erarbeitet, wie das Konzept der Partnerzahlen noch in einem Spiel untergebracht werden kann. Dabei entstanden die folgenden 4 Ideen.
+\subsubsection{Kombination mit The Legend of Zelda} %TODO Ref!
+Diese Idee war als Anlehnung an das Spiel The Legend of Zelda gedacht. Kombiniert wurde es mit dem bereits beschriebenen Math Smashers. In diesem Fall hat man statt Bällen die aus The Legend of Zelda: Majoras Mask bekannten Schleimgegner allerdings mit Zahlen darin. Ziel ist es auch hier 2 Zahlen zu einer gesuchten zu addieren, indem man Schleimgegner mit den passenden Partnerzahlen besiegt und die im Schleim liegenden Zahlen addiert.
+%TODO Grafik einfügen
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.75\textwidth]{smileys}
-	\caption{Darstellung des Wohlbefindens anhand von Smileys\label{fig:smileys}}
+	\includegraphics[width=0.75\textwidth]{Snake-Skizze}
+	\caption{Skizze der Legend of Zelda Idee\label{fig:zelda}}
 \end{figure}
+\subsubsection{MathSnake}
+Für diese Idee wurde das Addieren von Partnerzahlen zu einer gesuchten Zahl auf Snake übertragen. In diesem Snake gibt es Zahlenäpfel. Frisst die Schlange einen dieser Äpfel hat sie einen Teil der Partnerzahl gefressen und zur Addition hinzugefügt. Frisst sie den nächsten Apfel werden beide Zahlen addiert. Natürlich wird die Schlange pro Apfel länger und schneller.
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Snake-Skizze}
+	\caption{Skizze des MathSnake Spiels\label{fig:mathsnake}}
+\end{figure}
+\subsubsection{Murmeladdierer}
+Diese Idee überträgt das Vorhaben auf ein altes Murmelspiel. Es gibt mehrere Löcher - mit Zahlen beschriftet - in die man Kugeln hinein bewegen muss. Die Bewegung der Kugeln wird erzielt durch das Kippen der Fläche in eine bestimmte Richtung. Wie in jedem Ansatz wird hier eine gesuchte Zahl bereit gestellt. Da zwei Kugeln gleichzeitig auf dem Feld zu bewegen sehr schwer sein könnte, kann man das ganze auch sequenziell mit jeweils einer Kugel spielen.
+%TODO Grafik einfügen
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Snake-Skizze}
+	\caption{Skizze des Murmeladdierer Spiels\label{fig:murmadd}}
+\end{figure}
+\subsubsection{Zahlenbausteine}
+Auch für diese Idee ist es wieder nötig Zahlen zu einer gesuchten Zahl zu addieren. Hier sind die Zahlen in Form von Ziegelsteinen gegeben und man hat ein Gebäude, welches mehrere dieser Ziegelsteine benötigt. Diese sind mit den gesuchten Zahlen beschriftet. Der Spieler muss sich dann zwei Steine auf dem Spielfeld suchen und diese aufeinander legen um sie zum gesuchten Ziegelstein zu addieren. Dieser muss dann vom Spieler an die richtige Position im Bauwerk gebracht werden.
+%TODO Grafik einfügen
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Snake-Skizze}
+	\caption{Skizze des Zahlenbaustein Spiels\label{fig:baustein}}
+\end{figure}
+\section{Wahl des Spielkonzepts und Entwicklung des Spiels}
+Letzten Endes wurde die MathSnake Variante umgesetzt, da sie einem klassischen Spiel einen neuen Reiz verleiht. Die Kombination mit The Legend of Zelda würde dies ebenfalls erfüllen, allerdings würde eine Umsetzung hier erheblich mehr Zeit in Anspruch nehmen, die dann für die Evaluation gefehlt hätte. Außerdem bietet die MathSnake Variante mehr Möglichkeiten das Spiel herausfordernder zu gestalten. Zum Beispiel durch Anstieg der Bewegungsgeschwindigkeit nach dem essen eines Apfels und die Längenzunahme der Schlange. Aber auch durch weitere Features, wie dem verfaulen der Äpfel über Zeit, lässt sich das Spiel schwieriger gestalten. Diese Aspekte waren ausschlaggebend um sich für die Snake Variante zu entscheiden.
+MathSnake wurde in der Entwicklungsumgebung von Unity umgesetzt. Als Zielplatform wurde Android gewählt um das Spiel auf einem Tablet spielen zu können. Um den Fokus in der Entwicklung mehr auf die Spielmechaniken zu legen wurde ein Asset-Pack aus dem Unity Asset Store verwendet. Durch dieses gab es bereits Grafiken für die Schlange und Gestaltungsdetails für die Umgebung. Die Umgebung selbst wurde in Blender modeliert und in Unity mit den gegebenen Details geschmückt.
+\subsection{Verschiedene Spielversionen}
+Im Zuge dieser Bachelorarbeit wurden 2 verschiedene Varianten umgesetzt und evaluiert. Zur Auswahl standen folgende Versionen mit deren erwarteten Vor- und Nachteilen.
+
+%TODO Als Tabelle umsetzen!
+\subsubsection{3D Snake mit Third-Person-Perspektive}
+\textbf{Vorteile}
+\begin{itemize}
+\item moderner
+\item mehr das Gefühl als Spieler die Schlange zu sein
+\item Spielfeld kann Abwechslungsreich gestaltet werden mit mehreren Ebenen
+\item Übersicht auf welcher Ebene man sich befindet ist sehr gut
+\item Um einfach Zahlen zu sammeln gut, da die Zahl erst gesucht werden muss und man nicht direkt weiß wo die beste Zahl liegt
+\end{itemize}
+\textbf{Nachteile:}
+\begin{itemize}
+\item wenig Übersicht über das Spielfeld, welche Zahlen wo liegen ist nicht gegeben.
+\end{itemize}
+\subsubsection{3D Snake mit TopDown-Perspektive}
+\textbf{Vorteile}
+\begin{itemize}
+\item moderner
+\item Spielfeld kann mit unterschiedlichen Ebenen gestalltet werden.
+\item Gute Übersicht darüber wo welche Zahl liegt
+\end{itemize}
+\textbf{Nachteile:}
+\begin{itemize}
+\item Übersicht über die aktuelle Ebene auf der man sich bewegt kann verwirren?
+\end{itemize}
+\subsubsection{2D Snake mit TopDown-Perspektive}
+\textbf{Vorteile}
+\begin{itemize}
+\item einfache Umsetzung
+\item Gute Übersicht darüber wo welche Zahl liegt
+\item Grafisch nicht so aufwändig
+\end{itemize}
+\textbf{Nachteile:}
+\begin{itemize}
+\item nicht viel neues zu lernen
+\item weniger Möglichkeiten um den Spieler herauszufordern
+\end{itemize}
+\subsubsection{Snake mit Grid}
+\textbf{Vorteile}
+\begin{itemize}
+\item Einfache Steuerung
+\item Einfach um neue Objekte in die Spielwelt zu legen
+\item Objekte können nicht ineinander liegen
+\end{itemize}
+\textbf{Nachteile:}
+\begin{itemize}
+\item weniger Freiheiten für den Spieler, da nur 4 Richtungen
+\item weniger Freiheiten im Leveldesign -> muss quadratisches Spielfeld sein
+\end{itemize}
+\subsubsection{Snake ohne Grid}
+\textbf{Vorteile}
+\begin{itemize}
+\item moderne Steuerung
+\item Spieler hat kann sich in mehrere Richtungen bewegen
+\item Leveldesign kann durch verschiedene Formen unterstützt werden
+\end{itemize}
+\textbf{Nachteile:}
+\begin{itemize}
+\item Objekte können ineinander liegen (Aufwändiger dies abzufangen)
+\item Aufwändiger den "Spawnbereich" zu definieren
+\end{itemize}
+
+Entschieden wurde sich dann für die beiden 3D Varianten ohne Grid, da das Ziel war beide Versionen vergleichen zu können um zu ermitteln, welche Version bei Spielern besser ankommt. Außerdem konnten wir so für beide Versionen die gleichen Grafiken verwenden. So blieb der Fokus auf der unterschiedlichen Perspektive auf das Spielgeschehen. Ebenfalls wurde sich gegen ein Grid, also eine Einteilung in mehrere Felder, auf denen sich die Schlange bewegt, entschieden um eine modernere Steuerung für Snake umzusetzen.
+\section{Aufbau und Funktionsweise des Spiels}
+\subsection{Aufbau des Spiels}
+Der Aufbau des Spiels ist sehr einfach gehalten. Der Spieler beginnt das Spiel im Hauptmenü. In diesem kann er sich für eine Spielversion entscheiden, die Highscore Tabelle begutachten oder das Spiel beenden. Startet er eine der beiden Spielversionen beginnt direkt das Spiel. 
+%TODO Skizze der Menüführung
+Der Spieler sieht hierfür am oberen Bildschirmrand die gesuchte Zahl gefolgt von einem '='. Auf dieses folgen dann alle gefressenen Zahlen mit einem '+' verbunden. Dies stellt die Gleichung dar um auf die gesuchte Zahl zu kommen. Links neben der gesuchten Zahl findet der Spieler auch seinen aktuellen Score. Dieser nimmt bei einer falschen Zahl ab und bei einer richtigen Zahl zu. Der Spieler kann die Schlange über zwei Pfeiltasten steuern. Diese zwei Tasten geben die Richtung an in die sich die Schlange bewegen soll. Der Spieler kann sie über diese Tasten also nach rechts oder links bewegen. 
+%TODO Bild des Spiels mit Beschriftung
+\subsection{Funktionsweise des Spiels}
+Das entwickelte Spiel lässt sich nun entweder in der TopDown Ansicht oder in der ThirdPerson Ansicht spielen. Die Funktionsweise bleibt bei beiden identisch. Der Spieler steuert eine Schlange und kann diese mit zwei Pfeiltasten nach rechts oder links drehen um die Bewegungsrichtung zu verändern. Am oberen Bildschirmrand wird ihm eine gesuchte Zahl angezeigt sowie seine aktuelle Punktzahl. Hat er einen Apfel mit einer Zahl gefressen erscheint diese neben der gesuchten Zahl als Gleichung. Pro gegessenem Apfel wird die Schlange schneller und länger.
+\subsubsection{Levelsystem}
+Pro zu suchende Zahl gibt es ein Level. Um das Spiel auf Dauer herausfordernder zu gestalten, wurde ein kleines Levelsystem eingeführt. Dabei varriiert der Zahlenraum je nachdem in welchem Levelbereich man ist und im höheren Bereich beginnen die Äpfel zu verfaulen. In der folgenden Tabelle ist die implementierte Zuordnung zu entnehmen.
+
+%TODO Tabelle einbauen
+\begin{table}[h]
+blabla
+\caption{Bedeutung der einzelnen Levelbereiche\label{tab:levels}}
+\end{table}
+\subsubsection{Ansicht auf das Spielgeschehen}
+Wie bereits beschrieben wurde für das Spiel jeweils eine Version mit TopDown Ansicht und eine Version mit ThirdPerson Ansicht implementiert. Während die erste Version das klassische Snake mit Ansicht aus der Vogelperspektive ist, ist die zweite Version ein modernerer Ansatz. Bei der ThirdPerson Ansicht positioniert man die Kamera direkt hinter dem Schlangenkopf. Das Spielprinzip an sich bleibt in beiden Versionen gleich.
+
+
