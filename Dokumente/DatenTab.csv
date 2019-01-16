@@ -1,0 +1,11 @@
+﻿User;First Game;Game;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;F13;F14;F15;F16;F17;F18;F19;F20;F21;F22
+1;TopDown_First;TopDown;0;1;0;3;2;0;0;3;2;2;3;4;4;4;2;0;1;0;2;1;0;1
+1;TopDown_First;ThirdPerson;1;3;0;3;1;0;0;3;1;1;3;3;3;4;3;0;1;2;1;1;1;4
+2;TopDown_First;TopDown;1;4;0;4;2;0;0;3;2;1;3;3;4;4;2;0;1;0;4;3;2;4
+2;TopDown_First;ThirdPerson;2;4;0;3;2;0;1;4;2;1;1;4;3;4;2;2;1;1;0;3;2;4
+3;TopDown_First;TopDown;0;2;0;4;1;0;0;1;0;1;1;1;4;4;;0;4;0;0;1;4;1
+3;TopDown_First;ThirdPerson;0;4;0;4;3;1;0;1;0;0;2;4;4;4;4;0;4;0;0;3;4;4
+4;ThirdPerson_First;ThirdPerson;3;4;0;4;0;0;0;4;4;0;4;4;4;4;4;0;4;0;0;4;4;0
+4;ThirdPerson_First;TopDown;1;2;0;0;4;4;0;0;2;4;2;0;0;0;2;0;2;1;4;0;1;0
+5;ThirdPerson_First;ThirdPerson;2;3;0;4;2;0;0;3;1;0;2;2;4;4;3;0;4;0;1;4;2;1
+5;ThirdPerson_First;TopDown;4;3;0;4;2;0;0;3;2;1;4;3;4;4;3;0;4;;1;3;1;2
