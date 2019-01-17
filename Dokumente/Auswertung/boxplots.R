@@ -13,14 +13,14 @@ posEff <- c('F1', 'F13', 'F14')
 tension <- c('F7', 'F18', 'F19')
 control <- c('F22')
 
-data$Challenge <- rowMeans(data[,challenge])
-data$Competence <- rowMeans(data[,competence])
-data$Flow <- rowMeans(data[,flow])
-data$Immersion <- rowMeans(data[,immersion])
-data$NegEff <- rowMeans(data[,negEff])
-data$PosEff <- rowMeans(data[,posEff])
-data$Tension <- rowMeans(data[,tension])
-data$Control <- rowMeans(data[,control])
+data$Challenge <- rowMeans(data[,challenge], na.rm = TRUE)
+data$Competence <- rowMeans(data[,competence], na.rm = TRUE)
+data$Flow <- rowMeans(data[,flow], na.rm = TRUE)
+data$Immersion <- rowMeans(data[,immersion], na.rm = TRUE)
+data$NegEff <- rowMeans(data[,negEff], na.rm = TRUE)
+data$PosEff <- rowMeans(data[,posEff], na.rm = TRUE)
+data$Tension <- rowMeans(data[,tension], na.rm = TRUE)
+data$Control <- rowMeans(data[,control], na.rm = TRUE)
 
 # Kategorie 1 (Challenge)
 
@@ -31,8 +31,8 @@ lmts <- c(0,4)
 #boxplot(challenge_Third, ylim=lmts, main="ThirdPerson")
 
 
-ggplot(data, aes(x = FirstGame, y = Tension, fill = FirstGame)) +
-facet_wrap(~ Game) +
+ggplot(data, aes(x = Game, y = Tension)) +
+#facet_wrap(~ Game) +
 theme_bw() +
 geom_boxplot() +
 labs( y = 'Rating', x = 'Perspektive', title= 'Tension')
