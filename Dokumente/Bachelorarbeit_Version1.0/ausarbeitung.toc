@@ -52,7 +52,9 @@
 \contentsline {section}{\numberline {6.4}Immersion}{30}{section.6.4}
 \contentsline {section}{\numberline {6.5}Negative Effect}{30}{section.6.5}
 \contentsline {section}{\numberline {6.6}Positive Effect}{30}{section.6.6}
-\contentsline {section}{\numberline {6.7}Tension}{30}{section.6.7}
+\contentsline {section}{\numberline {6.7}Tension}{31}{section.6.7}
 \contentsline {section}{\numberline {6.8}Startpunktzahl}{31}{section.6.8}
-\contentsline {section}{\numberline {6.9}Fazit}{31}{section.6.9}
+\contentsline {section}{\numberline {6.9}Zusammenfassung}{31}{section.6.9}
 \contentsline {section}{\numberline {6.10}Ausblick}{31}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Ausblick in Spielerweiterungen}{32}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}Ausblick auf weitere Nutzertests}{32}{subsection.6.10.2}
