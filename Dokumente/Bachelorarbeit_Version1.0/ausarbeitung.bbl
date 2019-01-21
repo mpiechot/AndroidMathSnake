@@ -13,35 +13,27 @@
   \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 
 \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
-\bibitem {thorstennagel2015}
-\btxnamefont {\btxlastnamefont {Nagel}, Thorsten}\btxauthorcolon\ \btxtitlefont
-  {\btxifchangecase {Kurs-skript \qq{Einführung in \LaTeX}}{Kurs-Skript
-  \qq{Einführung in \LaTeX}}}.
-\newblock \url{http://www.nagel-net.de/Latex/DOKU/Latexkurs_Skript.pdf},
-  \btxprintmonthyear{.}{12}{2015}{long}.
-\newblock Abgerufen 2016-07-30.
-
-\bibitem {nielsen1994usability}
-\btxnamefont {\btxlastnamefont {Nielsen}, Jakob}\btxauthorcolon\ \btxtitlefont
-  {Usability Engineering}.
-\newblock Interactive Technologies. \btxpublisherfont {Elsevier Science},
-  1994\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont {9780080520292}}}.
+\bibitem {3832533915}
+\btxnamefont {\btxlastnamefont {Hawlitschek}, Anja}\btxauthorcolon\
+  \btxtitlefont {Spielend Lernen. Didaktisches Design Digitaler Lernspiele
+  Zwischen Spielmotivation Und Cognitive Load (Wissensprozesse Und Digitale
+  Medien) (German Edition)}.
+\newblock \btxpublisherfont {Logos Verlag Berlin}, 2013\ifbtxprintISBN {,
+  \mbox{\btxISBN~\btxISBNfont {3832533915}}}.
 \newblock {\latintext
-  \btxurlfont{https://books.google.de/books?id=DBOowF7LqIQC}}.
+  \btxurlfont{https://www.amazon.com/Didaktisches-Digitaler-Lernspiele-Spielmotivation-Wissensprozesse/dp/3832533915?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&tag=chimbori05-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=3832533915}}.
 
-\bibitem {BibTexOnlineEditor}
-\btxnamefont {\btxlastnamefont {Skeidsvoll}, Peder\btxfnamespacelong
-  Lång}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Bibtex online
-  editor}{BibTex Online Editor}}.
-\newblock \url{http://truben.no/latex/bibtex/}, 2016.
-\newblock Abgerufen 2016-07-04. Achtung, manuelle Anpassung erforderlich: Die
-  Monatskürzel dürfen nicht in Anführungszeichen oder geschweifte Klammern
-  eingeschlossen werden.
-
-\bibitem {texstudio}
-\btxnamefont {\btxlastnamefont {Zander}, Benito~van~der}\btxauthorcolon\
-  \btxtitlefont {\btxifchangecase {Texstudio}{TeXstudio}}.
-\newblock \url{http://www.texstudio.org/}, 2016.
-\newblock Abgerufen 2016-07-04.
+\bibitem {JUNG2015}
+\btxnamefont {\btxlastnamefont {JUNG}, S.}, \btxnamefont {S. \btxlastnamefont
+  {ROESCH}}, \btxnamefont {Stefan \btxlastnamefont {Huber}}, \btxnamefont {J.
+  \btxlastnamefont {HELLER}}, \btxnamefont {T. \btxlastnamefont
+  {GRUST}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Hans\btxfnamespacelong
+  Christoph \btxlastnamefont {Nuerk}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {{An Interactive Web-Based Learning Platform for Arithmetic
+  and Orthography}}{{An Interactive Web-Based Learning Platform for Arithmetic
+  and Orthography}}}.
+\newblock \btxjournalfont {Advances in Computers and Technology for
+  Education–Proceedings of the 11th International Conference on Educational
+  Technologies}, \btxpageslong {}\ 13--22, 2015.
 
 \end{thebibliography}
