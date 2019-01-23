@@ -8,7 +8,7 @@ In diesem Kapitel wird der Weg von der Konzipierung mehrerer Konzepte für das L
 \section{Konzeptwahl des Spiels}
 \subsection{Erste Idee Math Smashers}
 Die erste Idee ein Lernspiel zu entwickeln, welches Grundschüler unterstützt die Addition über das Konzept der Partnerzahlen zu lernen war das bereits vorhandene Spiel \textit{Math Smashers}.\\
-In \textit{Math Smashers} fliegen Bälle mit Zahlen herum. Als Spieler kann man eine Art Seil zwischen 2 Kugeln anbringen. Dieses Seil zieht sich zusammen um die Kugeln zu einer zusammen zu fassen. Dabei werden beide Zahlen addiert. Ziel ist es alle Bälle so zu addieren, damit man die gesuchte Zahl heraus bekommt. Dabei kann es vorkommen mehrmals die gesuchte Zahl zu bekommen.
+In \textit{Math Smashers} fliegen Bälle mit Zahlen herum. Als Spieler kann man eine Art Seil zwischen 2 Kugeln anbringen. Dieses Seil zieht sich zusammen um die Kugeln zu einer zusammen zu fassen. Dabei werden beide Zahlen addiert. Ziel ist es alle Bälle so zu addieren, damit man die gesuchte Zahl heraus bekommt. Dabei kann es auch vorkommen mehrmals die gesuchte Zahl zu bekommen.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.3\textwidth]{MathSmasher-NotConnected}
@@ -33,7 +33,7 @@ Für diese Idee wurde das Addieren von Partnerzahlen zu einer gesuchten Zahl auf
 \end{figure}
 \newpage
 \subsubsection{Murmeladdierer}
-Diese Idee überträgt das Vorhaben auf ein altes Murmelspiel. Es gibt mehrere Löcher - mit Zahlen beschriftet - in die man Kugeln hinein bewegen muss. Die Bewegung der Kugeln wird erzielt durch das Kippen der Fläche in eine bestimmte Richtung. Wie in jedem Ansatz wird hier eine gesuchte Zahl bereit gestellt. Da zwei Kugeln gleichzeitig auf dem Feld zu bewegen sehr schwer sein könnte, kann man das ganze auch sequenziell mit jeweils einer Kugel spielen.
+Diese Idee überträgt das Vorhaben auf ein altes Murmelspiel. Es gibt mehrere Löcher - mit Zahlen beschriftet - in die man Kugeln hinein bewegen muss. Die Bewegung der Kugeln wird erzielt durch das Kippen des Spielfelds in eine bestimmte Richtung. Wie in jedem Ansatz wird hier eine gesuchte Zahl bereit gestellt. Da zwei Kugeln gleichzeitig auf dem Feld zu bewegen sehr schwer sein könnte, kann man das ganze auch sequenziell mit jeweils einer Kugel spielen.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.3\textwidth]{HolesImg}
@@ -47,7 +47,7 @@ Auch für diese Idee ist es wieder nötig Zahlen zu einer gesuchten Zahl zu addi
 	\caption{Skizze des Zahlenbaustein Spiels\label{fig:baustein}}
 \end{figure}
 \section{Wahl des Spielkonzepts und Entwicklung des Spiels}
-Letzten Endes wurde die MathSnake Variante umgesetzt, da sie einem klassischen Spiel einen neuen Reiz verleiht. Die Kombination mit The Legend of Zelda würde dies ebenfalls erfüllen, allerdings würde eine Umsetzung hier erheblich mehr Zeit in Anspruch nehmen, die dann für die Evaluation gefehlt hätte. Außerdem bietet die MathSnake Variante mehr Möglichkeiten das Spiel herausfordernder zu gestalten. Zum Beispiel durch Anstieg der Bewegungsgeschwindigkeit nach dem essen eines Apfels und die Längenzunahme der Schlange. Aber auch durch weitere Features, wie dem verfaulen der Äpfel über Zeit, lässt sich das Spiel schwieriger gestalten. Diese Aspekte waren ausschlaggebend um sich für die Snake Variante zu entscheiden.
+Letzten Endes wurde die MathSnake Variante umgesetzt, da sie einem klassischen Spiel einen neuen Reiz verleiht. Die Kombination mit The Legend of Zelda würde dies ebenfalls erfüllen, allerdings würde eine Umsetzung hier erheblich mehr Zeit in Anspruch nehmen, die dann für die Evaluation gefehlt hätte. Außerdem bietet die MathSnake Variante mehr Möglichkeiten das Spiel herausfordernder zu gestalten. Zum Beispiel durch Anstieg der Bewegungsgeschwindigkeit nach dem Essen eines Apfels und die Längenzunahme der Schlange. Aber auch durch weitere Features, wie dem Verfaulen der Äpfel über Zeit, lässt sich das Spiel schwieriger gestalten. Diese Aspekte waren ausschlaggebend um sich für die Snake Variante zu entscheiden.
 MathSnake wurde in der Entwicklungsumgebung von Unity umgesetzt. Als Zielplatform wurde Android gewählt um das Spiel auf einem Tablet spielen zu können. Um den Fokus in der Entwicklung mehr auf die Spielmechaniken zu legen wurde ein Asset-Pack aus dem Unity Asset Store verwendet. Durch dieses gab es bereits Grafiken für die Schlange und Gestaltungsdetails für die Umgebung. Die Umgebung selbst wurde in Blender modeliert und in Unity mit den gegebenen Details geschmückt.
 \subsection{Verschiedene Spielversionen}
 Im Zuge dieser Bachelorarbeit wurden 2 verschiedene Varianten umgesetzt und evaluiert. Zur Auswahl standen folgende Versionen mit deren erwarteten Vor- und Nachteilen.
@@ -67,6 +67,7 @@ modern                                                                          
 \end{tabular}
 \caption{Tabelle: 3D + ThirdPerson\label{fig:3dthird}}
 \end{table}
+\newpage
 \subsubsection{3D Snake mit TopDown-Perspektive}
 \begin{table}[h!]
 \centering
@@ -97,6 +98,7 @@ Gute Übersicht wo welche Zahl liegt     &                                      
 \end{table}
 \subsection{GridSpielfeld}
 Weiterhin stand zur Auswahl ob das SnakeSpiel mit einem Grid-Spielfeld oder ohne erstellt werden soll. Mit einem Grid-Spielfeld ist gemeint, dass das Spielfeld in einzelne kleinere Felder aufgeteilt ist auf denen sich die Schlange bewegen kann und pro 'Zug' jeweils ein Feld weiter rückt und dieses komplett ausfüllt.
+\newpage
 \subsubsection{Snake mit Grid}
 \begin{table}[h!]
 \centering
@@ -125,7 +127,7 @@ moderne Steuerung                                                               
 \end{tabular}
 \caption{Tabelle: Snake ohne Grid\label{fig:nogrid}}
 \end{table}
-Entschieden wurde sich dann für die beiden 3D Varianten ohne Grid, da das Ziel war beide Versionen vergleichen zu können um zu ermitteln, welche Version bei Spielern besser ankommt. Außerdem konnten wir so für beide Versionen die gleichen Grafiken verwenden. So blieb der Fokus auf der unterschiedlichen Perspektive auf das Spielgeschehen. Ebenfalls wurde sich gegen ein Grid, also eine Einteilung in mehrere Felder, auf denen sich die Schlange bewegt, entschieden um eine modernere Steuerung für Snake umzusetzen.
+Entschieden wurde sich für die beiden 3D Varianten ohne Grid, da das Ziel war beide Versionen vergleichen zu können um zu ermitteln, welche Version bei Spielern besser ankommt. Außerdem konnten wir so für beide Versionen die gleichen Grafiken verwenden. So blieb der Fokus auf der unterschiedlichen Perspektive auf das Spielgeschehen. Ebenfalls wurde sich gegen ein Grid, also eine Einteilung in mehrere Felder, auf denen sich die Schlange bewegt, entschieden um eine modernere Steuerung für Snake umzusetzen.
 \section{Aufbau und Funktionsweise des Spiels}
 \subsection{Aufbau des Spiels}
 \subsubsection{Menüführung}
@@ -181,7 +183,6 @@ Pro zu suchende Zahl gibt es ein Level. Um das Spiel auf Dauer herausfordernder 
 \end{tabular}
 \caption{Bedeutung der einzelnen Levelbereiche\label{tab:levels}}
 \end{table}
-\newpage
 \subsubsection{Ansicht auf das Spielgeschehen}
 Wie bereits beschrieben wurde für das Spiel jeweils eine Version mit TopDown Ansicht und eine Version mit ThirdPerson Ansicht implementiert. Während die erste Version das klassische Snake mit Ansicht aus der Vogelperspektive ist, ist die zweite Version ein modernerer Ansatz. Bei der ThirdPerson Ansicht positioniert man die Kamera direkt hinter dem Schlangenkopf. Das Spielprinzip an sich bleibt in beiden Versionen gleich.
 
