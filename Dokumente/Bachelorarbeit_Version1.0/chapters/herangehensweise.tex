@@ -17,35 +17,33 @@ In \textit{Math Smashers} fliegen Bälle mit Zahlen herum. Als Spieler kann man 
 \end{figure}
 \subsection{Weitere Ideenfindung}
 Zunächst wurden weitere Ideen erarbeitet, wie das Konzept der Partnerzahlen noch in einem Spiel untergebracht werden kann. Dabei entstanden die folgenden 4 Ideen.
-\subsubsection{Kombination mit The Legend of Zelda} %TODO Ref!
-Diese Idee war als Anlehnung an das Spiel The Legend of Zelda gedacht. Kombiniert wurde es mit dem bereits beschriebenen Math Smashers. In diesem Fall hat man statt Bällen die aus The Legend of Zelda: Majoras Mask bekannten Schleimgegner allerdings mit Zahlen darin. Ziel ist es auch hier 2 Zahlen zu einer gesuchten zu addieren, indem man Schleimgegner mit den passenden Partnerzahlen besiegt und die im Schleim liegenden Zahlen addiert.
-%TODO Grafik einfügen
+\subsubsection{Kombination mit The Legend of Zelda}
+Diese Idee war als Anlehnung an das Spiel \textit{The Legend of Zelda} gedacht. Kombiniert wurde es mit dem bereits beschriebenen \textit{Math Smashers}. In diesem Fall hat man statt Bällen die aus \textit{The Legend of Zelda: Majoras Mask} bekannten Schleimgegner allerdings mit Zahlen darin. Ziel ist es auch hier 2 Zahlen zu einer gesuchten zu addieren, indem man Schleimgegner mit den passenden Partnerzahlen besiegt und die im Schleim liegenden Zahlen addiert.
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Snake-Skizze}
+	\includegraphics[width=0.45\textwidth]{Zelda-Skizze}
 	\caption{Skizze der Legend of Zelda Idee\label{fig:zelda}}
 \end{figure}
 \subsubsection{MathSnake}
 Für diese Idee wurde das Addieren von Partnerzahlen zu einer gesuchten Zahl auf Snake übertragen. In diesem Snake gibt es Zahlenäpfel. Frisst die Schlange einen dieser Äpfel hat sie einen Teil der Partnerzahl gefressen und zur Addition hinzugefügt. Frisst sie den nächsten Apfel werden beide Zahlen addiert. Natürlich wird die Schlange pro Apfel länger und schneller.
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Snake-Skizze}
+	\includegraphics[width=0.49\textwidth]{Snake-Skizze}
 	\caption{Skizze des MathSnake Spiels\label{fig:mathsnake}}
 \end{figure}
+\newpage
 \subsubsection{Murmeladdierer}
 Diese Idee überträgt das Vorhaben auf ein altes Murmelspiel. Es gibt mehrere Löcher - mit Zahlen beschriftet - in die man Kugeln hinein bewegen muss. Die Bewegung der Kugeln wird erzielt durch das Kippen der Fläche in eine bestimmte Richtung. Wie in jedem Ansatz wird hier eine gesuchte Zahl bereit gestellt. Da zwei Kugeln gleichzeitig auf dem Feld zu bewegen sehr schwer sein könnte, kann man das ganze auch sequenziell mit jeweils einer Kugel spielen.
-%TODO Grafik einfügen
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Snake-Skizze}
+	\includegraphics[width=0.3\textwidth]{HolesImg}
 	\caption{Skizze des Murmeladdierer Spiels\label{fig:murmadd}}
 \end{figure}
 \subsubsection{Zahlenbausteine}
 Auch für diese Idee ist es wieder nötig Zahlen zu einer gesuchten Zahl zu addieren. Hier sind die Zahlen in Form von Ziegelsteinen gegeben und man hat ein Gebäude, welches mehrere dieser Ziegelsteine benötigt. Diese sind mit den gesuchten Zahlen beschriftet. Der Spieler muss sich dann zwei Steine auf dem Spielfeld suchen und diese aufeinander legen um sie zum gesuchten Ziegelstein zu addieren. Dieser muss dann vom Spieler an die richtige Position im Bauwerk gebracht werden.
-%TODO Grafik einfügen
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Snake-Skizze}
+	\includegraphics[width=0.4\textwidth]{BaukloetzeImg}
 	\caption{Skizze des Zahlenbaustein Spiels\label{fig:baustein}}
 \end{figure}
 \section{Wahl des Spielkonzepts und Entwicklung des Spiels}
@@ -56,80 +54,96 @@ Im Zuge dieser Bachelorarbeit wurden 2 verschiedene Varianten umgesetzt und eval
 
 %TODO Als Tabelle umsetzen!
 \subsubsection{3D Snake mit Third-Person-Perspektive}
-\textbf{Vorteile}
-\begin{itemize}
-\item moderner
-\item mehr das Gefühl als Spieler die Schlange zu sein
-\item Spielfeld kann Abwechslungsreich gestaltet werden mit mehreren Ebenen
-\item Übersicht auf welcher Ebene man sich befindet ist sehr gut
-\item Um einfach Zahlen zu sammeln gut, da die Zahl erst gesucht werden muss und man nicht direkt weiß wo die beste Zahl liegt
-\end{itemize}
-\textbf{Nachteile:}
-\begin{itemize}
-\item wenig Übersicht über das Spielfeld, welche Zahlen wo liegen ist nicht gegeben.
-\end{itemize}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Vorteile}}                                                                         & \multicolumn{1}{c|}{\textbf{Nachteile}}                                                                               \\ \hline
+modern                                                                                                        & \begin{tabular}[c]{@{}l@{}}wenig Übersicht über das Spielfeld, welche Zahl wo\\ liegen ist nicht gegeben\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}mehr das Gefühl als Spieler\\ die Schlange zu sein.\end{tabular}                     &                                                                                                                       \\ \hline
+\begin{tabular}[c]{@{}l@{}}Spielfeld kann abwechslungsreich\\ über mehrere Ebenen gestaltet werden\end{tabular} &                                                                                                                 \\ \hline
+\begin{tabular}[c]{@{}l@{}}Übersicht auf welcher Ebene man sich\\ befindet ist sehr gut\end{tabular}            &  \\ \hline
+\begin{tabular}[c]{@{}l@{}}wenig Übersicht kommt dem Such-\\ character allerdings zugute.\end{tabular}          &  \\ \hline
+\end{tabular}
+\caption{Tabelle: 3D + ThirdPerson\label{fig:3dthird}}
+\end{table}
 \subsubsection{3D Snake mit TopDown-Perspektive}
-\textbf{Vorteile}
-\begin{itemize}
-\item moderner
-\item Spielfeld kann mit unterschiedlichen Ebenen gestalltet werden.
-\item Gute Übersicht darüber wo welche Zahl liegt
-\end{itemize}
-\textbf{Nachteile:}
-\begin{itemize}
-\item Übersicht über die aktuelle Ebene auf der man sich bewegt kann verwirren?
-\end{itemize}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Vorteile}} & \multicolumn{1}{c|}{\textbf{Nachteile}}                                                                 \\ \hline
+modern                                  & \begin{tabular}[c]{@{}l@{}}Schlechte Übersicht darüber auf welcher\\ Ebene man sich bewegt\end{tabular} \\ \hline
+mehrere Spielfeldebenen möglich         &                                                                                                         \\ \hline
+Gute Übersicht wo welche Zahl liegt     &                                                                                                         \\ \hline
+                                        &                                                                                                         \\ \hline
+                                        &                                                                                                         \\ \hline
+\end{tabular}
+\caption{Tabelle: 3D + TopDown\label{fig:3dTop}}
+\end{table}
 \subsubsection{2D Snake mit TopDown-Perspektive}
-\textbf{Vorteile}
-\begin{itemize}
-\item einfache Umsetzung
-\item Gute Übersicht darüber wo welche Zahl liegt
-\item Grafisch nicht so aufwändig
-\end{itemize}
-\textbf{Nachteile:}
-\begin{itemize}
-\item nicht viel neues zu lernen
-\item weniger Möglichkeiten um den Spieler herauszufordern
-\end{itemize}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Vorteile}} & \multicolumn{1}{c|}{\textbf{Nachteile}}                                                                         \\ \hline
+einfache Umsetzung                      & nichts neues                                                                                                    \\ \hline
+Grafisch nicht so aufwändig             & \begin{tabular}[c]{@{}l@{}}weniger Möglichkeiten den Spieler\\ über Level-Elemente herauszufordern\end{tabular} \\ \hline
+Gute Übersicht wo welche Zahl liegt     &                                                                                                                 \\ \hline
+                                        &                                                                                                                 \\ \hline
+                                        &                                                                                                                 \\ \hline
+\end{tabular}
+\caption{Tabelle: 2D + TopDown\label{fig:2dTop}}
+\end{table}
+\subsection{GridSpielfeld}
+Weiterhin stand zur Auswahl ob das SnakeSpiel mit einem Grid-Spielfeld oder ohne erstellt werden soll. Mit einem Grid-Spielfeld ist gemeint, dass das Spielfeld in einzelne kleinere Felder aufgeteilt ist auf denen sich die Schlange bewegen kann und pro 'Zug' jeweils ein Feld weiter rückt und dieses komplett ausfüllt.
 \subsubsection{Snake mit Grid}
-\textbf{Vorteile}
-\begin{itemize}
-\item Einfache Steuerung
-\item Einfach um neue Objekte in die Spielwelt zu legen
-\item Objekte können nicht ineinander liegen
-\end{itemize}
-\textbf{Nachteile:}
-\begin{itemize}
-\item weniger Freiheiten für den Spieler, da nur 4 Richtungen
-\item weniger Freiheiten im Leveldesign -> muss quadratisches Spielfeld sein
-\end{itemize}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Vorteile}}                                                     & \multicolumn{1}{c|}{\textbf{Nachteile}}                                                      \\ \hline
+einfache Steuerung                                                                          & \begin{tabular}[c]{@{}l@{}}weniger Freiheiten für den Spieler\\ sich zu bewegen\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}einfach um neue Objekte in die\\ Spielwelt zu legen\end{tabular} & weniger Freiheiten im Leveldesign                                                            \\ \hline
+\begin{tabular}[c]{@{}l@{}}Objekte können nicht ineinander\\ liegen\end{tabular}            &                                                                                              \\ \hline
+                                                                                            &                                                                                              \\ \hline
+                                                                                            &                                                                                              \\ \hline
+\end{tabular}
+\caption{Tabelle: Snake mit Grid\label{fig:grid}}
+\end{table}
 \subsubsection{Snake ohne Grid}
-\textbf{Vorteile}
-\begin{itemize}
-\item moderne Steuerung
-\item Spieler hat kann sich in mehrere Richtungen bewegen
-\item Leveldesign kann durch verschiedene Formen unterstützt werden
-\end{itemize}
-\textbf{Nachteile:}
-\begin{itemize}
-\item Objekte können ineinander liegen (Aufwändiger dies abzufangen)
-\item Aufwändiger den "Spawnbereich" zu definieren
-\end{itemize}
-
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Vorteile}}                                                                 & \multicolumn{1}{c|}{\textbf{Nachteile}} \\ \hline
+moderne Steuerung                                                                                       & Objekte können ineinander liegen        \\ \hline
+\begin{tabular}[c]{@{}l@{}}Spieler kann sich in mehr als\\ 4 Richtungen bewegen\end{tabular}            & Aufwändiger in der Umsetzung            \\ \hline
+\begin{tabular}[c]{@{}l@{}}Leveldesign kann durch verschiedene\\ Formen unterstützt werden\end{tabular} &                                         \\ \hline
+                                                                                                        &                                         \\ \hline
+                                                                                                        &                                         \\ \hline
+\end{tabular}
+\caption{Tabelle: Snake ohne Grid\label{fig:nogrid}}
+\end{table}
 Entschieden wurde sich dann für die beiden 3D Varianten ohne Grid, da das Ziel war beide Versionen vergleichen zu können um zu ermitteln, welche Version bei Spielern besser ankommt. Außerdem konnten wir so für beide Versionen die gleichen Grafiken verwenden. So blieb der Fokus auf der unterschiedlichen Perspektive auf das Spielgeschehen. Ebenfalls wurde sich gegen ein Grid, also eine Einteilung in mehrere Felder, auf denen sich die Schlange bewegt, entschieden um eine modernere Steuerung für Snake umzusetzen.
 \section{Aufbau und Funktionsweise des Spiels}
 \subsection{Aufbau des Spiels}
 \subsubsection{Menüführung}
-Der Aufbau des Spiels ist sehr einfach gehalten. Der Spieler beginnt das Spiel im Hauptmenü, welches in Abbildung \ref{fig:mathsnake-menu} dargestellt wird. In diesem kann er sich für eine Spielversion entscheiden, die Highscore Tabelle begutachten oder das Spiel beenden. Startet er eine der beiden Spielversionen beginnt direkt das Spiel. 
+Der Aufbau des Spiels ist sehr einfach gehalten. Der Spieler beginnt das Spiel im Hauptmenü, welches in Abbildung \ref{fig:mathsnake-menu}, in Form eines Ablaufplans, dargestellt wird. In diesem kann er sich für eine Spielversion entscheiden, die Highscore Tabelle begutachten oder das Spiel beenden. Startet er eine der beiden Spielversionen beginnt direkt das Spiel. 
 %TODO Skizze der Menüführung
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.65\textwidth]{MathSnake-MainMenu}
+	\includegraphics[width=0.85\textwidth]{MathSnake-Overview}
 	\caption{Hauptmenü von MathSnake\label{fig:mathsnake-menu}}
 \end{figure}
 \subsubsection{Spielfeldaufbau}
-Der Spieler sieht am oberen Bildschirmrand die gesuchte Zahl gefolgt von einem '='. Auf dieses folgen dann alle gefressenen Zahlen mit einem '+' verbunden. Dies stellt die Gleichung dar, die erfüllt sein muss um die Aufgabe zu bestehen. Links neben der gesuchten Zahl findet der Spieler auch seinen aktuellen Score. Dieser nimmt bei einer falschen Zahl ab und bei einer richtigen Zahl zu. Der Spieler kann die Schlange über zwei Pfeiltasten steuern. Diese zwei Tasten geben die Richtung an in die sich die Schlange bewegen soll. Der Spieler kann sie über diese Tasten also nach rechts oder links bewegen. 
+Der Spieler sieht am oberen Bildschirmrand die gesuchte Zahl gefolgt von einem '='. Auf dieses folgen dann alle gefressenen Zahlen mit einem '+' verbunden. Dies stellt die Gleichung dar, die erfüllt sein muss um die Aufgabe zu bestehen. Links neben der gesuchten Zahl findet der Spieler auch seinen aktuellen Score. Dieser nimmt bei einer falschen Zahl ab und bei einer richtigen Zahl zu. Der Spieler kann die Schlange über zwei Pfeiltasten steuern. Diese zwei Tasten geben die Richtung an in die sich die Schlange bewegen soll. Der Spieler kann sie über diese Tasten also nach rechts oder links bewegen. Die einzelnen Felder werden auch nochmals in der Abbildung \ref{fig:mathsnake-setup} verdeutlicht.
 %TODO Bild des Spiels mit Beschriftung
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.75\textwidth]{MathSnake-setup}
+	\caption{Ansicht auf den Aufbau des Spiels\label{fig:mathsnake-setup}}
+\end{figure}
 \subsubsection{Highscore}
 Das Spiel stellt auch eine simple Highscore Liste breit um weiteren Anreiz zu schaffen. Dieser wurde allerdings für den Nutzertest deaktiviert, da die Nutzer sich voll auf die Bewertung des Spiels an sich konzentrieren sollten und der Highscore nicht Teil der Forschungsfragen war.\\
 Ist der Highscore aktiviert, wird einem nach dem Ende einer Spielrunde eine Nachricht angezeigt ob man genügend Punkte gesammelt hat um sich in der Highscore Liste eintragen zu können. Dies geschieht dann über ein Textfeld in dessen man Name eingeben soll, wie in Abbildung \ref{fig:mathsnake-newHighscore} zu sehen ist.
