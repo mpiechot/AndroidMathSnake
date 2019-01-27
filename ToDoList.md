@@ -29,27 +29,27 @@
 * <font color="lightgreen">Entwicklung des Nutzertests abschliessen **✓**</font>
 
 
-#### ToDo List: 12.12.2018 - 2.1.2019: <font color="red">(0%)</font>
+#### ToDo List: 12.12.2018 - 2.1.2019: <font color="red">**✓**</font>
 * <font color="lightgreen">Nutzertest durchführen **✓**</font>
 
-#### ToDo List: 2.1.2019 - 9.1.2019: <font color="red">(0%)</font>
-* Nutzertest auswerten<font color="red">(50%)</font>
-* Über Auswertung des Nutzertests weiter informieren<font color="red">(50%)</font>
-* Einleitung schreiben<font color="red">(0%)</font>
-* Stand der Forschung schreiben<font color="red">(0%)</font>
+#### ToDo List: 2.1.2019 - 9.1.2019: <font color="red">**✓**</font>
+* Nutzertest auswerten<font color="red">**✓**</font>
+* Über Auswertung des Nutzertests weiter informieren<font color="red">**✓**</font>
+* Einleitung schreiben<font color="red">**✓**</font>
+* Stand der Forschung schreiben<font color="red">**✓**</font>
 
-#### ToDo List: 9.1.2019 - 16.1.2019: <font color="red">(0%)</font>
-* Herangehensweise schreiben (Hauptkapitel! über Implementation der Spiele und Aufbau des Nutzertests)<font color="red">(10%)</font>
-* Evaluation beginnen<font color="red">(0%)</font>
+#### ToDo List: 9.1.2019 - 16.1.2019: <font color="red">**✓**</font>
+* Herangehensweise schreiben (Hauptkapitel! über Implementation der Spiele und Aufbau des Nutzertests)<font color="red">**✓**</font>
+* Evaluation beginnen<font color="red">**✓**</font>
 
-#### ToDo List: 16.1.2019 - 23.1.2019: <font color="red">(0%)</font>
-* Evaluation abschließen<font color="red">(0%)</font>
-* Diskussion schreiben (Ausblick hier rein?)<font color="red">(0%)</font>
-* Zusammenfassung schreiben<font color="red">(0%)</font>
-* Literaturverzeichnis zusammen stellen<font color="red">(0%)</font>
+#### ToDo List: 16.1.2019 - 23.1.2019: <font color="red">**✓**</font>
+* Evaluation abschließen<font color="red">**✓**</font>
+* Diskussion schreiben (Ausblick hier rein?)<font color="red">**✓**</font>
+* Zusammenfassung schreiben<font color="red">**✓**</font>
+* Literaturverzeichnis zusammen stellen<font color="red">**✓**</font>
 
 #### ToDo List: 23.1.2019 - 30.1.2019: <font color="red">(0%)</font>
-* Bachelorarbeit korrektur lesen lassen<font color="red">(0%)</font>
+* Bachelorarbeit korrektur lesen lassen<font color="red">(50%)</font>
 * Bachelorarbeit korrigieren<font color="red">(0%)</font>
 * Bachelorarbeit drucken<font color="red">(0%)</font>
 * Bachelorarbeit abgeben<font color="red">(0%)</font>
