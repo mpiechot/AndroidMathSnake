@@ -3,51 +3,68 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ausarbeitung.aux
 The style file: babplain.bst
 Database file #1: Bachelorthesis.bib
+I was expecting a `,' or a `}'---line 143 of file Bachelorthesis.bib
+ : 
+ : @misc{kingdom,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 180 of file Bachelorthesis.bib
+ : @incollection{Ninaus2016
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in who
+Warning--to sort, need author or key in ludoscience
+Warning--to sort, need author or key in meisterCody
+Warning--to sort, need author or key in kingdom
+Warning--to sort, need author or key in zelda
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Warning--empty language in Dyskalkulie2018
+Warning--empty language in who
+Warning--there's a number but no volume in Ariffin2017
+Warning--empty booktitle in Deci2000TheW
 Warning--empty journal in Dyskalkulie2018
 Warning--empty journal in IJsselsteijn2013
+Warning--empty booktitle in Poels2008b
 Warning--empty journal in Sch2016
 Warning--there's a number but no volume in Sch2016
-You've used 11 entries,
+You've used 24 entries,
             2788 wiz_defined-function locations,
-            703 strings with 9048 characters,
-and the built_in function-call counts, 4070 in all, are:
-= -- 338
-> -- 162
-< -- 1
-+ -- 65
-- -- 54
-* -- 442
-:= -- 598
-add.period$ -- 27
-call.type$ -- 11
-change.case$ -- 56
+            783 strings with 11888 characters,
+and the built_in function-call counts, 9270 in all, are:
+= -- 751
+> -- 371
+< -- 3
++ -- 151
+- -- 125
+* -- 1051
+:= -- 1273
+add.period$ -- 55
+call.type$ -- 24
+change.case$ -- 128
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 213
-empty$ -- 380
-format.name$ -- 102
-if$ -- 829
+cite$ -- 37
+duplicate$ -- 477
+empty$ -- 906
+format.name$ -- 246
+if$ -- 1918
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 20
-newline$ -- 65
-num.names$ -- 22
-pop$ -- 94
+int.to.str$ -- 24
+missing$ -- 31
+newline$ -- 118
+num.names$ -- 40
+pop$ -- 225
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 109
 quote$ -- 0
-skip$ -- 103
+skip$ -- 258
 stack$ -- 0
-substring$ -- 117
-swap$ -- 80
-text.length$ -- 1
+substring$ -- 316
+swap$ -- 196
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
-warning$ -- 5
-while$ -- 29
-width$ -- 13
-write$ -- 130
-(There were 5 warnings)
+type$ -- 88
+warning$ -- 13
+while$ -- 58
+width$ -- 26
+write$ -- 248
+(There were 2 error messages)

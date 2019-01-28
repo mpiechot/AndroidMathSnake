@@ -13,6 +13,67 @@
   \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 
 \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {who}
+{\latintext \btxurlfont{https://icd.who.int/browse10/2015/en#/F80-F89}}.
+
+\bibitem {kingdom}
+\btxtitlefont {\btxifchangecase {The counting kingdom}{The Counting Kingdom}}.
+\newblock {\latintext \btxurlfont{http://www.countingkingdomgame.com/}}.
+
+\bibitem {ludoscience}
+\btxtitlefont {\btxifchangecase {Ludoscience}{LudoScience}}.
+\newblock {\latintext
+  \btxurlfont{http://www.ludoscience.com/EN/games/1405-Math-Smashers.html}}.
+
+\bibitem {meisterCody}
+\btxtitlefont {\btxifchangecase {Meister cody - die clevere förderlösung für
+  mathe und deutsch}{Meister Cody - Die clevere Förderlösung für Mathe und
+  Deutsch}}.
+\newblock {\latintext \btxurlfont{https://www.meistercody.com/}}.
+
+\bibitem {zelda}
+\btxtitlefont {\btxifchangecase {Official site - the legend of zelda: Majora's
+  mask 3d for nintendo 3ds}{Official Site - The Legend of Zelda: Majora's Mask
+  3D for Nintendo 3DS}}.
+\newblock {\latintext \btxurlfont{https://www.zelda.com/majoras-mask/}}.
+
+\bibitem {Ariffin2017}
+\btxnamefont {\btxlastnamefont {Ariffin}, Mazeyanti\btxfnamespacelong Mohd},
+  \btxnamefont {Fiqa \btxlastnamefont {Azureen}}, \btxnamefont {Abd
+  \btxlastnamefont {Halim}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {Norshakirah \btxlastnamefont {Abd}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {{Mobile Application for Dyscalculia Children in}}{{Mobile
+  Application for Dyscalculia Children in}}}.
+\newblock \btxjournalfont {Proceedings of the 6th International Conference on
+  Computing and Informatics, ICOCI 2017}, (099):467--472, 2017\ifbtxprintISSN
+  {, \mbox{\btxISSN~\btxISSNfont {1091-6490}}}.
+
+\bibitem {Boyle2016}
+\btxnamefont {\btxlastnamefont {Boyle}, Elizabeth\btxfnamespacelong A.},
+  \btxnamefont {Thomas \btxlastnamefont {Hainey}}, \btxnamefont
+  {Thomas\btxfnamespacelong M. \btxlastnamefont {Connolly}}, \btxnamefont
+  {Grant \btxlastnamefont {Gray}}, \btxnamefont {Jeffrey \btxlastnamefont
+  {Earp}}, \btxnamefont {Michela \btxlastnamefont {Ott}}, \btxnamefont
+  {Theodore \btxlastnamefont {Lim}}, \btxnamefont {Manuel \btxlastnamefont
+  {Ninaus}}, \btxnamefont {Claudia \btxlastnamefont {Ribeiro}}\btxandcomma {}
+  \btxandlong {}\ \btxnamefont {Jo{\~{a}}o \btxlastnamefont
+  {Pereira}}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase {{An update to
+  the systematic literature review of empirical evidence of the impacts and
+  outcomes of computer games and serious games}}{{An update to the systematic
+  literature review of empirical evidence of the impacts and outcomes of
+  computer games and serious games}}}.
+\newblock \btxjournalfont {Computers and Education}, 94:178--192,
+  2016\ifbtxprintISSN {, \mbox{\btxISSN~\btxISSNfont {03601315}}}.
+
+\bibitem {Deci2000TheW}
+\btxnamefont {\btxlastnamefont {Deci}, Edward\btxfnamespacelong L.} \btxandlong
+  {}\ \btxnamefont {Richard\btxfnamespacelong M. \btxlastnamefont
+  {Ryan}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {The “ what ” and
+  “ why ” of goal pursuits : Human needs and the self-determination of
+  behavior}{The “ What ” and “ Why ” of Goal Pursuits : Human Needs and
+  the Self-Determination of Behavior}}.
+\newblock 2000.
+
 \bibitem {Dyskalkulie2018}
 \btxnamefont {\btxlastnamefont {Dyskalkulie}, Thema}\btxauthorcolon\
   \btxjtitlefont {\btxifchangecase {{Dyskalkulie 2. Ratgeber zum Thema
@@ -29,6 +90,20 @@
   \mbox{\btxISBN~\btxISBNfont {3407831641}}}.
 \newblock {\latintext
   \btxurlfont{https://www.amazon.com/Handbuch-Rechenschw%C3%A4che/dp/3407831641?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&tag=chimbori05-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=3407831641}}.
+
+\bibitem {Hainey2016}
+\btxnamefont {\btxlastnamefont {Hainey}, Thomas}, \btxnamefont
+  {Thomas\btxfnamespacelong M. \btxlastnamefont {Connolly}}, \btxnamefont
+  {Elizabeth\btxfnamespacelong A. \btxlastnamefont {Boyle}}, \btxnamefont
+  {Amanda \btxlastnamefont {Wilson}}\btxandcomma {} \btxandlong {}\
+  \btxnamefont {Aisya \btxlastnamefont {Razak}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {{A systematic literature review of games-based learning
+  empirical evidence in primary education}}{{A systematic literature review of
+  games-based learning empirical evidence in primary education}}}.
+\newblock \btxjournalfont {Computers and Education}, 102:202--223,
+  2016\ifbtxprintISSN {, \mbox{\btxISSN~\btxISSNfont {03601315}}}.
+\newblock {\latintext
+  \btxurlfont{http://dx.doi.org/10.1016/j.compedu.2016.09.001}}.
 
 \bibitem {hawlitschek2013}
 \btxnamefont {\btxlastnamefont {Hawlitschek}, Anja}\btxauthorcolon\
@@ -76,6 +151,29 @@
 \newblock {\latintext
   \btxurlfont{http://econtent.hogrefe.com/doi/abs/10.1024/2235-0977/a000112}}.
 
+\bibitem {Lamsa2018}
+\btxnamefont {\btxlastnamefont {L{\"{a}}ms{\"{a}}}, Joni}, \btxnamefont {Raija
+  \btxlastnamefont {H{\"{a}}m{\"{a}}l{\"{a}}inen}}, \btxnamefont {Mikko
+  \btxlastnamefont {Aro}}, \btxnamefont {Raine \btxlastnamefont
+  {Koskimaa}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {Sanna\btxfnamespacelong Mari \btxlastnamefont
+  {{\"{A}}yr{\"{a}}m{\"{o}}}}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase
+  {{Games for enhancing basic reading and maths skills: A systematic review of
+  educational game design in supporting learning by people with learning
+  disabilities}}{{Games for enhancing basic reading and maths skills: A
+  systematic review of educational game design in supporting learning by people
+  with learning disabilities}}}.
+\newblock \btxjournalfont {British Journal of Educational Technology},
+  49(4):596--607, 2018\ifbtxprintISSN {, \mbox{\btxISSN~\btxISSNfont
+  {14678535}}}.
+
+\bibitem {semideus}
+\btxnamefont {\btxlastnamefont {Ltd}, Flow\btxfnamespacelong
+  Factory}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {‎semideus
+  school}{‎Semideus School}}, \btxprintmonthyear{.}{Mar}{2016}{long}.
+\newblock {\latintext
+  \btxurlfont{https://itunes.apple.com/de/app/semideus-school/id1094392193?mt=8}}.
+
 \bibitem {moeslein2018}
 \btxnamefont {\btxlastnamefont {Möslein-Tröppner}, Bodo} \btxandlong {}\
   \btxnamefont {Willi \btxlastnamefont {Bernhard}}\btxauthorcolon\
@@ -84,6 +182,31 @@
 \newblock \btxpublisherfont {Springer Gabler}, 2018.
 \newblock {\latintext
   \btxurlfont{https://www.amazon.com/Digitale-Gamebooks-Bildung-Spielerisch-interaktiven-ebook/dp/B07CPNTQLX?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&tag=chimbori05-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B07CPNTQLX}}.
+
+\bibitem {Ninaus2016}
+\btxnamefont {\btxlastnamefont {Ninaus}, Manuel}, \btxnamefont {Kristian
+  \btxlastnamefont {Kiili}}, \btxnamefont {Jake \btxlastnamefont
+  {McMullen}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Korbinian
+  \btxlastnamefont {Moeller}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase
+  {{A Game-Based Approach to Examining Students' Conceptual Knowledge of
+  Fractions}}{{A Game-Based Approach to Examining Students' Conceptual
+  Knowledge of Fractions}}}.
+\newblock \Btxinlong {}\ \btxnamefont {\btxlastnamefont {Bottino}, Rosa},
+  \btxnamefont {Johan \btxlastnamefont {Jeuring}}\btxandcomma {} \btxandlong
+  {}\ \btxnamefont {Remco\btxfnamespacelong C. \btxlastnamefont {Veltkamp}}\
+  (\btxeditorslong {}): \btxtitlefont {Games and Learning Alliance: 5th
+  International Conference, GALA 2016, Utrecht, The Netherlands, December 5--7,
+  2016, Proceedings}, \btxpageslong {}\ 37--49. \btxpublisherfont {Springer
+  International Publishing}, \btxprintmonthyear{.}{dec}{2016}{long}.
+\newblock {\latintext
+  \btxurlfont{http://link.springer.com/10.1007/978-3-319-50182-6{\_}4}}.
+
+\bibitem {Poels2008b}
+\btxnamefont {\btxlastnamefont {Poels}, Karolien}, \btxnamefont {Wijnand
+  \btxlastnamefont {Ijsselsteijn}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {Yvonne\btxfnamespacelong De \btxlastnamefont {Kort}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {{KidsGEQ}}{{KidsGEQ}}}.
+\newblock \btxpagelong {}\ 2008, 2008.
 
 \bibitem {Randel1992}
 \btxnamefont {\btxlastnamefont {Randel}, Josephine\btxfnamespacelong M.},
