@@ -7,25 +7,25 @@
 In diesem Kapitel wird der Weg von der Konzipierung mehrerer Konzepte für das Lernspiel bis zur Implementierung des Spiels behandelt.
 \section{Konzeptwahl des Spiels}
 \subsection{Erste Idee Math Smashers}
-Die erste Idee ein Lernspiel zu entwickeln, welches Grundschüler unterstützt die Addition über das Konzept der Partnerzahlen zu lernen war das bereits vorhandene Spiel \textit{Math Smashers}.\\
-In \textit{Math Smashers} fliegen Bälle mit Zahlen herum. Als Spieler kann man eine Art Seil als Verbindung zwischen 2 Kugeln anbringen. Dieses Seil zieht sich zusammen um die Kugeln zu einer zusammen zu fassen (siehe \ref{fig:mathsmashers}) und deren Zahlen zu addieren (z.B. eine Kugel mit der Zahl 18 und eine mit der Zahl 4 gibt zusammengefasst eine Kugel mit der Zahl 22). Ziel ist es alle Bälle so zu addieren, damit man eine gesuchte Zahl (z.B. 22) heraus bekommt. Dabei kann es auch vorkommen mehrmals die gesuchte Zahl zu bekommen.
+Die erste Idee ein Lernspiel zu entwickeln, welches Grundschüler unterstützt die Addition über das Konzept der Partnerzahlen zu erlernen, war das bereits vorhandene Spiel \textit{Math Smashers}.\\
+In \textit{Math Smashers} fliegen Bälle mit Zahlen herum. Als Spieler kann man eine Art Seil als Verbindung zwischen zwei Kugeln anbringen. Dieses Seil zieht sich zusammen um die Kugeln zusammenzufassen (siehe \ref{fig:mathsmashers}) und deren Zahlen zu addieren (z.B. eine Kugel mit der Zahl 18 und eine mit der Zahl 4 gibt zusammengefasst eine Kugel mit der Zahl 22). Ziel ist es alle Bälle so zu addieren, damit man eine gesuchte Zahl (z.B. 22) heraus bekommt. Dabei kann es auch vorkommen mehrmals die gesuchte Zahl zu bekommen.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.3\textwidth]{MathSmasher-NotConnected}
 	\includegraphics[width=0.3\textwidth]{MathSmasher-Connected}
-	\caption{MathSmashers links zwei nicht verbundene Zahlen. Rechts beide Zahlen verbunden\label{fig:mathsmashers}}
+	\caption{MathSmashers links zwei nicht verbundene Zahlen. Rechts beide Zahlen verbunden.\label{fig:mathsmashers}}
 \end{figure}
 \subsection{Weitere Ideenfindung}
 Zunächst wurden weitere Ideen erarbeitet, wie das Konzept der Partnerzahlen noch in einem Spiel untergebracht werden kann. Dabei entstanden die folgenden vier Ideen.
-\subsubsection{Kombination mit The Legend of Zelda}
-Diese Idee ist als Anlehnung an das Spiel \textit{The Legend of Zelda} gedacht. Kombiniert wird es mit dem bereits beschriebenen \textit{Math Smashers}. In diesem Fall werden, statt Bällen, die aus \textit{The Legend of Zelda: Majoras Mask}\cite{zelda} bekannten Schleimgegner, mit Zahlen darin, verwendet. Ziel ist es auch hier 2 Zahlen zu einer gesuchten zu addieren, indem Schleimgegner mit den passenden Partnerzahlen besiegt und die im Schleim liegenden Zahlen addiert.
+\subsubsection{Kombination mit \qq{The Legend of Zelda}}
+Diese Idee ist als Anlehnung an das Spiel \textit{The Legend of Zelda} gedacht. Kombiniert wird es mit dem bereits beschriebenen \textit{Math Smashers}. In diesem Fall werden, statt Bällen, die aus \textit{The Legend of Zelda: Majoras Mask}\cite{zelda} bekannten Schleimgegner, die Zahlen enthalten, verwendet. Ziel ist es auch hier zwei Zahlen zu einer Gesuchten zu addieren, indem Schleimgegner mit den passenden Partnerzahlen besiegt und die im Schleim liegenden Zahlen addiert.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.45\textwidth]{Zelda-Skizze}
 	\caption{Skizze der Legend of Zelda Idee\label{fig:zelda}}
 \end{figure}
 \subsubsection{Murmeladdierer}
-Diese Idee überträgt das Vorhaben auf ein altes Murmelspiel. Es gibt mehrere Löcher - mit Zahlen beschriftet - in die Kugeln hinein manövriert werden müssen. Die Bewegung der Kugeln wird erzielt durch das Kippen des Spielfelds in eine bestimmte Richtung. Wie in jedem Ansatz wird hier eine gesuchte Zahl bereitgestellt. Da zwei Kugeln gleichzeitig auf dem Feld zu bewegen sehr schwer sein könnte, kann man das ganze auch sequenziell mit jeweils einer Kugel spielen.
+Diese Idee überträgt das Vorhaben auf ein altes Murmelspiel. Es gibt mehrere Löcher, die mit Zahlen beschriftet sind, in welche die Kugeln hinein manövriert werden müssen. Die Bewegung der Kugeln wird durch das Kippen des Spielfelds in eine bestimmte Richtung erzielt. Wie in jedem der vorgestellten Ansätze wird hier eine gesuchte Zahl bereitgestellt. Da zwei Kugeln gleichzeitig auf dem Feld zu bewegen sehr schwer sein könnte, kann man das ganze auch sequenziell mit jeweils einer Kugel spielen.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.3\textwidth]{HolesImg}
@@ -46,7 +46,7 @@ Für diese Idee wird das Addieren von Partnerzahlen zu einer gesuchten Zahl auf 
 	\caption{Skizze des MathSnake Spiels\label{fig:mathsnake}}
 \end{figure}
 \section{Wahl des Spielkonzepts und Entwicklung des Spiels}
-Aus den erarbeiteten Konzepten habe ich mich für MathSmashers entschieden, da diese Idee einem klassischen Spiel einen neuen Reiz verleiht. Die Kombination mit The Legend of Zelda würde dies ebenfalls erfüllen, allerdings würde eine Umsetzung hier erheblich mehr Zeit in Anspruch nehmen, welche dann für die Evaluation gefehlt hätte. Außerdem bietet die MathSnake Variante mehr Möglichkeiten das Spiel herausfordernder zu gestalten. Zum Beispiel durch Anstieg der Bewegungsgeschwindigkeit nach dem Essen eines Apfels und die Längenzunahme der Schlange. Aber auch durch weitere Features, wie dem Verfaulen der Äpfel über Zeit, lässt sich das Spiel schwieriger gestalten. Diese Aspekte waren ausschlaggebend um sich für die Snake Variante zu entscheiden.
+Aus den erarbeiteten Konzepten habe ich mich für MathSnake entschieden, da diese Idee einem klassischen Spiel einen neuen Reiz verleiht. Die Kombination mit \textit{The Legend of Zelda} würde dies ebenfalls erfüllen, allerdings würde eine Umsetzung hier erheblich mehr Zeit in Anspruch nehmen, welche dann für die Evaluation gefehlt hätte. Außerdem bietet die MathSnake Variante mehr Möglichkeiten, das Spiel herausfordernder zu gestalten. Zum Beispiel durch Anstieg der Bewegungsgeschwindigkeit nach dem Essen eines Apfels und die Längenzunahme der Schlange. Aber auch durch weitere Features, wie dem Verfaulen der Äpfel über eine gewisse Zeit, lässt sich das Spiel schwieriger gestalten. Diese Aspekte waren ausschlaggebend um sich für die Snake Variante zu entscheiden.
 MathSnake wurde in der Entwicklungsumgebung Unity umgesetzt, da diese sehr Einsteigerfreundlich ist und man bereits in kurzer Zeit gute Ergebnisse erzielen kann. Als Zielplatftorm wurde Android gewählt, um das Spiel auf einem bereitgestellten Tablet spielen zu können. Damit das Spiel möglichst professionell und kinderfreundlich aussieht, wurde sich für ein Asset-Pack aus dem Unity Asset Store entschiden. Durch dieses gab es bereits Grafiken für die Schlange und Gestaltungsdetails für die Umgebung. Die Umgebung selbst wurde in Blender modeliert und in Unity mit den gegebenen Details geschmückt.
 \subsection{Verschiedene Spielversionen}
 Im Zuge dieser Bachelorarbeit wurden zwei verschiedene Varianten umgesetzt und evaluiert. Zur Auswahl standen folgende Versionen mit deren erwarteten Vor- und Nachteilen.
@@ -64,7 +64,7 @@ modern                                                                          
 \begin{tabular}[c]{@{}l@{}}Übersicht auf welcher Ebene man sich\\ befindet ist sehr gut\end{tabular}            &  \\ \hline
 \begin{tabular}[c]{@{}l@{}}wenig Übersicht kommt dem Such-\\ charakter allerdings zugute.\end{tabular}          &  \\ \hline
 \end{tabular}
-\caption{Tabelle: 3D + ThirdPerson\label{fig:3dthird}}
+\caption{Gegenüberstellung von Vor- und Nachteilen der Variante 3D Snake mit Third-Person-Perspektive\label{fig:3dthird}}
 \end{table}
 \subsubsection{3D Snake mit TopDown-Perspektive}
 \begin{table}[h!]
@@ -78,7 +78,7 @@ Gute Übersicht wo welche Zahl liegt     &                                      
                                         &                                                                                                         \\ \hline
                                         &                                                                                                         \\ \hline
 \end{tabular}
-\caption{Tabelle: 3D + TopDown\label{fig:3dTop}}
+\caption{Gegenüberstellung von Vor- und Nachteilen der Variante 3D Snake mit TopDown-Perspektive\label{fig:3dTop}}
 \end{table}
 \subsubsection{2D Snake mit TopDown-Perspektive}
 \begin{table}[h!]
@@ -92,11 +92,10 @@ Gute Übersicht wo welche Zahl liegt     &                                      
                                         &                                                                                                                 \\ \hline
                                         &                                                                                                                 \\ \hline
 \end{tabular}
-\caption{Tabelle: 2D + TopDown\label{fig:2dTop}}
+\caption{Gegenüberstellung von Vor- und Nachteilen der Variante 2D Snake mit TopDown-Perspektive\label{fig:2dTop}}
 \end{table}
 \subsection{Grid-Spielfeld}
-Weiterhin stand zur Auswahl ob das SnakeSpiel mit einem Grid-Spielfeld oder ohne erstellt werden soll. Mit einem Grid-Spielfeld ist gemeint, dass das Spielfeld in einzelne kleinere Felder aufgeteilt ist auf denen sich die Schlange bewegen kann und pro 'Zug' jeweils ein Feld weiter rückt und dieses komplett ausfüllt.
-\newpage
+Weiterhin stand zur Auswahl ob das SnakeSpiel mit oder ohne einem Grid-Spielfeld erstellt werden soll. Unter einem Grid-Spielfeld wird ein Spielfeld verstanden, dass in einzelne kleinere Felder aufgeteilt ist, auf denen sich die Schlange bewegen kann. Pro 'Zug' bewegt sich die Schlange jeweils ein Feld weiter und füllt dieses Feld komplett aus.
 \subsubsection{Snake mit Grid}
 \begin{table}[h!]
 \centering
@@ -109,7 +108,7 @@ einfache Steuerung                                                              
                                                                                             &                                                                                              \\ \hline
                                                                                             &                                                                                              \\ \hline
 \end{tabular}
-\caption{Tabelle: Snake mit Grid\label{fig:grid}}
+\caption{Gegenüberstellung von Vor- und Nachteilen des Snake-Spiels mit einem Grid-Spielfeld\label{fig:grid}}
 \end{table}
 \subsubsection{Snake ohne Grid}
 \begin{table}[h!]
@@ -123,9 +122,9 @@ moderne Steuerung                                                               
                                                                                                         &                                         \\ \hline
                                                                                                         &                                         \\ \hline
 \end{tabular}
-\caption{Tabelle: Snake ohne Grid\label{fig:nogrid}}
+\caption{Gegenüberstellung von Vor- und Nachteilen des Snake-Spiels ohne einem Grid-Spielfeld\label{fig:nogrid}}
 \end{table}
-Entschieden wurde sich für die beiden 3D Varianten ohne Grid, da das Ziel ist beide Versionen vergleichen zu können um zu ermitteln, welche Version bei Spielern besser ankommt. Ein großer Vorteil, die beiden 3D Varianten zu implementieren, ist auch, dass so nur die Perspektive geändert werden kann ohne die Grafiken neu anpassen zu müssen. So blieb der Fokus auf der unterschiedlichen Perspektive auf das Spielgeschehen. Um eine moderne Steuerung zu ermöglichen, habe ich mich gegen ein Spielfeld mit Grid entschieden.
+Entschieden wurde sich für die beiden 3D Varianten ohne Grid, da das Ziel ist, beide Versionen vergleichen zu können um zu ermitteln, welche Version bei Spielern besser ankommt. Ein großer Vorteil, die beiden 3D Varianten zu implementieren, ist auch, dass so nur die Perspektive geändert werden kann ohne die Grafiken neu anpassen zu müssen. So blieb der Fokus auf der unterschiedlichen Perspektive auf das Spielgeschehen. Um eine moderne Steuerung zu ermöglichen, habe ich mich außerdem gegen ein Spielfeld mit Grid entschieden. 
 \section{Aufbau und Funktionsweise des Spiels}
 \subsection{Aufbau des Spiels}
 \subsubsection{Menüführung}
@@ -136,7 +135,7 @@ Der Aufbau des Spiels ist einfach gehalten. Der Spieler beginnt das Spiel im Hau
 	\caption{Hauptmenü von MathSnake\label{fig:mathsnake-menu}}
 \end{figure}
 \subsubsection{Spielfeldaufbau}
-Der Spieler sieht am oberen Bildschirmrand die gesuchte Zahl gefolgt von einem '=' ( Beispielsweise ' 5 = ' ). Auf dieses folgen dann alle gefressenen Zahlen mit einem '+' verbunden ( z.B. 5 = 1 + 1 + 3 ). Dies stellt die Gleichung dar, die erfüllt sein muss, um die Aufgabe zu bestehen. Links neben der gesuchten Zahl findet der Spieler auch seinen aktuellen Score. Dieser nimmt bei einer falschen Zahl ab und bei einer richtigen Zahl zu. Der Spieler kann die Schlange über zwei Pfeiltasten steuern. Diese zwei Tasten geben die Richtung an in die sich die Schlange bewegen soll. Der Spieler kann sie über diese Tasten also nach rechts oder links bewegen. Die einzelnen Felder werden auch nochmals in der Abbildung \ref{fig:mathsnake-setup} verdeutlicht.
+Der Spieler sieht am oberen Bildschirmrand die gesuchte Zahl gefolgt von einem '=' ( Beispielsweise ' 5 = ' ). Auf dieses folgen dann alle gefressenen Zahlen mit einem '+' verbunden ( z.B. 5 = 1 + 1 + 3 ). Dies stellt die Gleichung dar, die erfüllt sein muss, um die Aufgabe zu bestehen. Links neben der gesuchten Zahl findet der Spieler auch seinen aktuellen Score. Dieser nimmt bei einer falschen Zahl ab und bei einer richtigen Zahl zu. Der Spieler kann die Schlange über zwei Pfeiltasten steuern. Diese zwei Tasten geben die Richtung an, in die sich die Schlange bewegen soll. Der Spieler kann sie über diese Tasten nach rechts oder links bewegen. Die einzelnen Felder werden auch nochmals in der Abbildung \ref{fig:mathsnake-setup} verdeutlicht.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.75\textwidth]{MathSnake-setup}
@@ -150,14 +149,14 @@ Ist der Highscore aktiviert, wird dem Spieler nach dem Ende einer Spielrunde ein
 	\includegraphics[width=0.65\textwidth]{MathSnake-Highscore1}
 	\caption{Erstellen eines neuen Highscore-Eintrags\label{fig:mathsnake-newHighscore}}
 \end{figure}
-Im Hauptmenü kann, wie in Abbildung \ref{fig:mathsnake-menu} zu erkennen ist, die aktuelle Highscore-Tabelle angezeigt werden. Diese ist so aufgebaut, dass Platz 1 mit der höchsten Punktzahl oben steht. Gibt es Spieler mit der gleichen Punktzahl schlägt ein neueres Ergebnis ein älteres. In Abbildung \ref{fig:mathsnake-HighscoreTable} ist eine beispielhafte Ansicht der Highscore-Tabelle abgebildet.
+Im Hauptmenü kann, wie in Abbildung \ref{fig:mathsnake-menu} zu erkennen ist, die aktuelle Highscore-Tabelle angezeigt werden. Diese ist so aufgebaut, dass Platz 1 mit der höchsten Punktzahl oben steht. Gibt es Spieler mit der gleichen Punktzahl schlägt ein neueres Ergebnis ein Älteres. In Abbildung \ref{fig:mathsnake-HighscoreTable} ist eine beispielhafte Ansicht der Highscore-Tabelle abgebildet.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.65\textwidth]{MathSnake-Highscore2}
 	\caption{Ansicht der Highscore-Tabelle\label{fig:mathsnake-HighscoreTable}}
 \end{figure}
 \subsection{Funktionsweise des Spiels}
-Das entwickelte Spiel lässt sich nun entweder in der TopDown Ansicht oder in der ThirdPerson Ansicht spielen. Die Funktionsweise bleibt bei beiden identisch. Der Spieler steuert eine Schlange und kann diese mit zwei Pfeiltasten nach rechts oder links drehen, um die Bewegungsrichtung zu verändern. Am oberen Bildschirmrand wird ihm eine gesuchte Zahl angezeigt sowie seine aktuelle Punktzahl. Hat die Schlange einen Apfel mit einer Zahl gefressen wird diese durch ein + getrennt dem Gleichtungsbereich(siehe \ref{fig:mathsnake-setup}) hinzugefügt. Pro gegessenem Apfel wird die Schlange schneller und länger.
+Das entwickelte Spiel lässt sich nun entweder in der TopDown Ansicht oder in der ThirdPerson Ansicht spielen. Die Funktionsweise bleibt bei beiden identisch. Der Spieler steuert eine Schlange und kann diese mit zwei Pfeiltasten nach rechts oder links drehen, um die Bewegungsrichtung zu verändern. Am oberen Bildschirmrand wird ihm eine gesuchte Zahl, sowie seine aktuelle Punktzahl, angezeigt. Hat die Schlange einen Apfel mit einer Zahl gefressen wird diese durch ein + getrennt dem Gleichtungsbereich(siehe \ref{fig:mathsnake-setup}) hinzugefügt. Mit jedem gegessenem Apfel wird die Schlange schneller und länger.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.35\textwidth]{MathSnake-ThirdPerson}
@@ -165,7 +164,7 @@ Das entwickelte Spiel lässt sich nun entweder in der TopDown Ansicht oder in de
 	\caption{ThirdPerson und TopDown Perspektiven\label{fig:mathsnake-perspektives}}
 \end{figure}
 \subsubsection{Levelsystem}
-Pro zu suchender Zahl gibt es ein Level. Um das Spiel auf Dauer herausfordernder zu gestalten, wurde ein kleines Levelsystem eingeführt. Dabei varriiert der Zahlenraum je nachdem in welchem Levelbereich der Spieler ist. Im höchsten Bereich beginnen die Äpfel zu verfaulen. In der Tabelle \ref{tab:levels} ist die implementierte Zuordnung zu entnehmen.
+Pro zu suchender Zahl gibt es ein Level. Um das Spiel auf Dauer herausfordernder zu gestalten, wurde ein kleines Levelsystem eingeführt. Dabei varriiert der Zahlenraum je nachdem in welchem Levelbereich der Spieler sich befindet. Im höchsten Bereich beginnen die Äpfel zu verfaulen. Die implementierte Zuordnung ist der Tabelle \ref{tab:levels} zu entnehmen.
 \begin{table}[h!]
 \centering
 \begin{tabular}{|l|l|l|}
