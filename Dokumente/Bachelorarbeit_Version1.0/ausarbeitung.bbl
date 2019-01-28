@@ -13,9 +13,6 @@
   \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 
 \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
-\bibitem {who}
-{\latintext \btxurlfont{https://icd.who.int/browse10/2015/en#/F80-F89}}.
-
 \bibitem {kingdom}
 \btxtitlefont {\btxifchangecase {The counting kingdom}{The Counting Kingdom}}.
 \newblock {\latintext \btxurlfont{http://www.countingkingdomgame.com/}}.
@@ -36,6 +33,12 @@
   mask 3d for nintendo 3ds}{Official Site - The Legend of Zelda: Majora's Mask
   3D for Nintendo 3DS}}.
 \newblock {\latintext \btxurlfont{https://www.zelda.com/majoras-mask/}}.
+
+\bibitem {who}
+\btxtitlefont {\btxifchangecase {World health organization}{World Health
+  Organization}}.
+\newblock {\latintext
+  \btxurlfont{https://icd.who.int/browse10/2015/en#/F80-F89}}.
 
 \bibitem {Ariffin2017}
 \btxnamefont {\btxlastnamefont {Ariffin}, Mazeyanti\btxfnamespacelong Mohd},
@@ -169,8 +172,8 @@
 
 \bibitem {semideus}
 \btxnamefont {\btxlastnamefont {Ltd}, Flow\btxfnamespacelong
-  Factory}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {‎semideus
-  school}{‎Semideus School}}, \btxprintmonthyear{.}{Mar}{2016}{long}.
+  Factory}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Semideus
+  school}{Semideus School}}, \btxprintmonthyear{.}{Mar}{2016}{long}.
 \newblock {\latintext
   \btxurlfont{https://itunes.apple.com/de/app/semideus-school/id1094392193?mt=8}}.
 

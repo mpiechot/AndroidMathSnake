@@ -1,39 +1,44 @@
 \BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Herangehensweise}{}% 2
-\BOOKMARK [1][-]{section.2.1}{Konzeptwahl des Spiels}{chapter.2}% 3
-\BOOKMARK [2][-]{subsection.2.1.1}{Erste Idee Math Smashers}{section.2.1}% 4
-\BOOKMARK [2][-]{subsection.2.1.2}{Weitere Ideenfindung}{section.2.1}% 5
-\BOOKMARK [1][-]{section.2.2}{Wahl des Spielkonzepts und Entwicklung des Spiels}{chapter.2}% 6
-\BOOKMARK [2][-]{subsection.2.2.1}{Verschiedene Spielversionen}{section.2.2}% 7
-\BOOKMARK [2][-]{subsection.2.2.2}{Grid-Spielfeld}{section.2.2}% 8
-\BOOKMARK [1][-]{section.2.3}{Aufbau und Funktionsweise des Spiels}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.3.1}{Aufbau des Spiels}{section.2.3}% 10
-\BOOKMARK [2][-]{subsection.2.3.2}{Funktionsweise des Spiels}{section.2.3}% 11
-\BOOKMARK [0][-]{chapter.3}{Evaluation}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Game Experience Questionnaire}{chapter.3}% 13
-\BOOKMARK [2][-]{subsection.3.1.1}{Core questionaire}{section.3.1}% 14
-\BOOKMARK [1][-]{section.3.2}{Umsetzung des KidsGEQ}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.3}{Durchf\374hrung des Nutzertests}{chapter.3}% 16
-\BOOKMARK [0][-]{chapter.4}{Ergebnisse}{}% 17
-\BOOKMARK [1][-]{section.4.1}{Challenge}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.2}{Competence}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.3}{Flow}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.4}{Immersion}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.5}{Positive Affect}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.6}{Negative Affect}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.7}{Tension}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.8}{Schriftliche Fragen}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.8.1}{Welches Spiel hat dir mehr Spa\337 gemacht?}{section.4.8}% 26
-\BOOKMARK [2][-]{subsection.4.8.2}{Welches Spiel fandest du schwieriger?}{section.4.8}% 27
-\BOOKMARK [2][-]{subsection.4.8.3}{Hattest du Probleme dich im Spiel zurecht zu finden?}{section.4.8}% 28
-\BOOKMARK [0][-]{chapter.5}{Diskussion}{}% 29
-\BOOKMARK [1][-]{section.5.1}{Challenge}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.2}{Competence}{chapter.5}% 31
-\BOOKMARK [1][-]{section.5.3}{Flow}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.4}{Immersion}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.5}{Positive Affect}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.6}{Negative Affect}{chapter.5}% 35
-\BOOKMARK [1][-]{section.5.7}{Tension}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.8}{Startpunktzahl}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.9}{Zusammenfassung und Ausblick}{chapter.5}% 38
-\BOOKMARK [0][-]{chapter*.24}{Literaturverzeichnis}{}% 39
+\BOOKMARK [0][-]{chapter.2}{Stand der Forschung}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Dyskalkulie}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Lernplattformen}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Ver\366ffentlichte Lernspiele in der Mathematik}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Fazit}{chapter.2}% 6
+\BOOKMARK [0][-]{chapter.3}{Herangehensweise}{}% 7
+\BOOKMARK [1][-]{section.3.1}{Konzeptwahl des Spiels}{chapter.3}% 8
+\BOOKMARK [2][-]{subsection.3.1.1}{Erste Idee Math Smashers}{section.3.1}% 9
+\BOOKMARK [2][-]{subsection.3.1.2}{Weitere Ideenfindung}{section.3.1}% 10
+\BOOKMARK [1][-]{section.3.2}{Wahl des Spielkonzepts und Entwicklung des Spiels}{chapter.3}% 11
+\BOOKMARK [2][-]{subsection.3.2.1}{Verschiedene Spielversionen}{section.3.2}% 12
+\BOOKMARK [2][-]{subsection.3.2.2}{Grid-Spielfeld}{section.3.2}% 13
+\BOOKMARK [1][-]{section.3.3}{Aufbau und Funktionsweise des Spiels}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.3.1}{Aufbau des Spiels}{section.3.3}% 15
+\BOOKMARK [2][-]{subsection.3.3.2}{Funktionsweise des Spiels}{section.3.3}% 16
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 17
+\BOOKMARK [1][-]{section.4.1}{Game Experience Questionnaire}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.1.1}{Core questionaire}{section.4.1}% 19
+\BOOKMARK [1][-]{section.4.2}{Umsetzung des KidsGEQ}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.3}{Durchf\374hrung des Nutzertests}{chapter.4}% 21
+\BOOKMARK [0][-]{chapter.5}{Ergebnisse}{}% 22
+\BOOKMARK [1][-]{section.5.1}{Challenge}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.2}{Competence}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.3}{Flow}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.4}{Immersion}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.5}{Positive Affect}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.6}{Negative Affect}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.7}{Tension}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.8}{Schriftliche Fragen}{chapter.5}% 30
+\BOOKMARK [2][-]{subsection.5.8.1}{Welches Spiel hat dir mehr Spa\337 gemacht?}{section.5.8}% 31
+\BOOKMARK [2][-]{subsection.5.8.2}{Welches Spiel fandest du schwieriger?}{section.5.8}% 32
+\BOOKMARK [2][-]{subsection.5.8.3}{Hattest du Probleme dich im Spiel zurecht zu finden?}{section.5.8}% 33
+\BOOKMARK [0][-]{chapter.6}{Diskussion}{}% 34
+\BOOKMARK [1][-]{section.6.1}{Challenge}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.2}{Competence}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.3}{Flow}{chapter.6}% 37
+\BOOKMARK [1][-]{section.6.4}{Immersion}{chapter.6}% 38
+\BOOKMARK [1][-]{section.6.5}{Positive Affect}{chapter.6}% 39
+\BOOKMARK [1][-]{section.6.6}{Negative Affect}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.7}{Tension}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.8}{Startpunktzahl}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.9}{Zusammenfassung und Ausblick}{chapter.6}% 43
+\BOOKMARK [0][-]{chapter*.24}{Literaturverzeichnis}{}% 44

@@ -3,22 +3,13 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ausarbeitung.aux
 The style file: babplain.bst
 Database file #1: Bachelorthesis.bib
-I was expecting a `,' or a `}'---line 143 of file Bachelorthesis.bib
- : 
- : @misc{kingdom,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Repeated entry---line 193 of file Bachelorthesis.bib
- : @incollection{Ninaus2016
- :                         ,
-I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in who
 Warning--to sort, need author or key in ludoscience
 Warning--to sort, need author or key in meisterCody
 Warning--to sort, need author or key in kingdom
 Warning--to sort, need author or key in zelda
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Warning--empty language in who
+Warning--empty language in kingdom
 Warning--there's a number but no volume in Ariffin2017
 Warning--empty booktitle in Deci2000TheW
 Warning--empty journal in Dyskalkulie2018
@@ -28,37 +19,37 @@ Warning--empty journal in Sch2016
 Warning--there's a number but no volume in Sch2016
 You've used 24 entries,
             2788 wiz_defined-function locations,
-            783 strings with 11888 characters,
-and the built_in function-call counts, 9270 in all, are:
-= -- 751
+            783 strings with 11874 characters,
+and the built_in function-call counts, 9294 in all, are:
+= -- 754
 > -- 371
 < -- 3
 + -- 151
 - -- 125
-* -- 1051
-:= -- 1273
-add.period$ -- 55
+* -- 1057
+:= -- 1279
+add.period$ -- 56
 call.type$ -- 24
-change.case$ -- 128
+change.case$ -- 129
 chr.to.int$ -- 0
 cite$ -- 37
-duplicate$ -- 477
-empty$ -- 906
+duplicate$ -- 478
+empty$ -- 907
 format.name$ -- 246
-if$ -- 1918
+if$ -- 1922
 int.to.chr$ -- 0
 int.to.str$ -- 24
 missing$ -- 31
-newline$ -- 118
+newline$ -- 119
 num.names$ -- 40
 pop$ -- 225
 preamble$ -- 1
 purify$ -- 109
 quote$ -- 0
-skip$ -- 258
+skip$ -- 255
 stack$ -- 0
 substring$ -- 316
-swap$ -- 196
+swap$ -- 197
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
@@ -66,5 +57,5 @@ type$ -- 88
 warning$ -- 13
 while$ -- 58
 width$ -- 26
-write$ -- 248
-(There were 2 error messages)
+write$ -- 250
+(There were 13 warnings)
