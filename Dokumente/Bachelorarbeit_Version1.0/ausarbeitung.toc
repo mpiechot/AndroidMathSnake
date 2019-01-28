@@ -16,31 +16,30 @@
 \contentsline {subsubsection}{\nonumberline MathSnake}{13}{section*.6}
 \contentsline {section}{\numberline {3.2}Wahl des Spielkonzepts und Entwicklung des Spiels}{14}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Verschiedene Spielversionen}{14}{subsection.3.2.1}
-\contentsline {subsubsection}{\nonumberline 3D Snake mit Third-Person-Perspektive}{16}{section*.7}
-\contentsline {subsubsection}{\nonumberline 3D Snake mit TopDown-Perspektive}{16}{section*.8}
-\contentsline {subsubsection}{\nonumberline 2D Snake mit TopDown-Perspektive}{16}{section*.9}
-\contentsline {subsection}{\numberline {3.2.2}Grid-Spielfeld}{16}{subsection.3.2.2}
+\contentsline {subsubsection}{\nonumberline 3D Snake mit Third-Person-Perspektive}{15}{section*.7}
+\contentsline {subsubsection}{\nonumberline 3D Snake mit TopDown-Perspektive}{15}{section*.8}
+\contentsline {subsubsection}{\nonumberline 2D Snake mit TopDown-Perspektive}{15}{section*.9}
+\contentsline {subsection}{\numberline {3.2.2}Grid-Spielfeld}{15}{subsection.3.2.2}
 \contentsline {subsubsection}{\nonumberline Snake mit Grid}{16}{section*.10}
 \contentsline {subsubsection}{\nonumberline Snake ohne Grid}{16}{section*.11}
 \contentsline {section}{\numberline {3.3}Aufbau und Funktionsweise des Spiels}{17}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Aufbau des Spiels}{17}{subsection.3.3.1}
 \contentsline {subsubsection}{\nonumberline Men\IeC {\"u}f\IeC {\"u}hrung}{17}{section*.12}
-\contentsline {subsubsection}{\nonumberline Spielfeldaufbau}{18}{section*.13}
+\contentsline {subsubsection}{\nonumberline Spielfeldaufbau}{17}{section*.13}
 \contentsline {subsubsection}{\nonumberline Highscore}{18}{section*.14}
-\contentsline {subsection}{\numberline {3.3.2}Funktionsweise des Spiels}{19}{subsection.3.3.2}
-\contentsline {subsubsection}{\nonumberline Levelsystem}{20}{section*.15}
-\contentsline {subsubsection}{\nonumberline Ansicht auf das Spielgeschehen}{20}{section*.16}
+\contentsline {subsection}{\numberline {3.3.2}Funktionsweise des Spiels}{18}{subsection.3.3.2}
+\contentsline {subsubsection}{\nonumberline Levelsystem}{19}{section*.15}
 \contentsline {chapter}{\numberline {4}Evaluation}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}Game Experience Questionnaire}{21}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Core questionaire}{21}{subsection.4.1.1}
-\contentsline {subsubsection}{\nonumberline Challenge}{22}{section*.17}
-\contentsline {subsubsection}{\nonumberline Competence}{22}{section*.18}
-\contentsline {subsubsection}{\nonumberline Flow}{22}{section*.19}
-\contentsline {subsubsection}{\nonumberline Immersion}{22}{section*.20}
-\contentsline {subsubsection}{\nonumberline Positive Affect}{22}{section*.21}
-\contentsline {subsubsection}{\nonumberline Negative Affect}{23}{section*.22}
-\contentsline {subsubsection}{\nonumberline Tension}{23}{section*.23}
-\contentsline {subsubsection}{\nonumberline Bestimmung der Kategoriewerte}{23}{section*.24}
+\contentsline {subsubsection}{\nonumberline Challenge}{22}{section*.16}
+\contentsline {subsubsection}{\nonumberline Competence}{22}{section*.17}
+\contentsline {subsubsection}{\nonumberline Flow}{22}{section*.18}
+\contentsline {subsubsection}{\nonumberline Immersion}{22}{section*.19}
+\contentsline {subsubsection}{\nonumberline Positive Affect}{22}{section*.20}
+\contentsline {subsubsection}{\nonumberline Negative Affect}{23}{section*.21}
+\contentsline {subsubsection}{\nonumberline Tension}{23}{section*.22}
+\contentsline {subsubsection}{\nonumberline Bestimmung der Kategoriewerte}{23}{section*.23}
 \contentsline {section}{\numberline {4.2}Umsetzung des KidsGEQ}{23}{section.4.2}
 \contentsline {section}{\numberline {4.3}Durchf\IeC {\"u}hrung des Nutzertests}{24}{section.4.3}
 \contentsline {chapter}{\numberline {5}Ergebnisse}{25}{chapter.5}
@@ -65,7 +64,7 @@
 \contentsline {section}{\numberline {6.7}Tension}{32}{section.6.7}
 \contentsline {section}{\numberline {6.8}Startpunktzahl}{33}{section.6.8}
 \contentsline {section}{\numberline {6.9}Zusammenfassung und Ausblick}{34}{section.6.9}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{37}{chapter*.25}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{37}{chapter*.24}
 \select@language {ngerman}
 \select@language {ngerman}
 \select@language {ngerman}

@@ -7,7 +7,7 @@
 In diesem Kapitel wird der Weg von der Konzipierung mehrerer Konzepte für das Lernspiel bis zur Implementierung des Spiels behandelt.
 \section{Konzeptwahl des Spiels}
 \subsection{Erste Idee Math Smashers}
-Die erste Idee ein Lernspiel zu entwickeln, welches Grundschüler unterstützt die Addition über das Konzept der Partnerzahlen zu erlernen, war das bereits vorhandene Spiel \textit{Math Smashers}.\\
+Die erste Idee ein Lernspiel zu entwickeln, welches Grundschüler unterstützt die Addition über das Konzept der Partnerzahlen zu erlernen, war das bereits vorhandene Spiel \textit{Math Smashers}\cite{ludoscience}.\\
 In \textit{Math Smashers} fliegen Bälle mit Zahlen herum. Als Spieler kann man eine Art Seil als Verbindung zwischen zwei Kugeln anbringen. Dieses Seil zieht sich zusammen um die Kugeln zusammenzufassen (siehe \ref{fig:mathsmashers}) und deren Zahlen zu addieren (z.B. eine Kugel mit der Zahl 18 und eine mit der Zahl 4 gibt zusammengefasst eine Kugel mit der Zahl 22). Ziel ist es alle Bälle so zu addieren, damit man eine gesuchte Zahl (z.B. 22) heraus bekommt. Dabei kann es auch vorkommen mehrmals die gesuchte Zahl zu bekommen.
 \begin{figure}[htb]
 	\centering
@@ -49,9 +49,10 @@ Für diese Idee wird das Addieren von Partnerzahlen zu einer gesuchten Zahl auf 
 Aus den erarbeiteten Konzepten habe ich mich für MathSnake entschieden, da diese Idee einem klassischen Spiel einen neuen Reiz verleiht. Die Kombination mit \textit{The Legend of Zelda} würde dies ebenfalls erfüllen, allerdings würde eine Umsetzung hier erheblich mehr Zeit in Anspruch nehmen, welche dann für die Evaluation gefehlt hätte. Außerdem bietet die MathSnake Variante mehr Möglichkeiten, das Spiel herausfordernder zu gestalten. Zum Beispiel durch Anstieg der Bewegungsgeschwindigkeit nach dem Essen eines Apfels und die Längenzunahme der Schlange. Aber auch durch weitere Features, wie dem Verfaulen der Äpfel über eine gewisse Zeit, lässt sich das Spiel schwieriger gestalten. Diese Aspekte waren ausschlaggebend um sich für die Snake Variante zu entscheiden.
 MathSnake wurde in der Entwicklungsumgebung Unity umgesetzt, da diese sehr Einsteigerfreundlich ist und man bereits in kurzer Zeit gute Ergebnisse erzielen kann. Als Zielplatftorm wurde Android gewählt, um das Spiel auf einem bereitgestellten Tablet spielen zu können. Damit das Spiel möglichst professionell und kinderfreundlich aussieht, wurde sich für ein Asset-Pack aus dem Unity Asset Store entschiden. Durch dieses gab es bereits Grafiken für die Schlange und Gestaltungsdetails für die Umgebung. Die Umgebung selbst wurde in Blender modeliert und in Unity mit den gegebenen Details geschmückt.
 \subsection{Verschiedene Spielversionen}
-Im Zuge dieser Bachelorarbeit wurden zwei verschiedene Varianten umgesetzt und evaluiert. Zur Auswahl standen folgende Versionen mit deren erwarteten Vor- und Nachteilen.
+Im Zuge dieser Bachelorarbeit wurden zwei verschiedene Varianten umgesetzt und evaluiert. Zur Auswahl standen folgende Versionen mit deren erwarteten Vor- und Nachteilen.\\
+\\
+Dabei handelt es sich bei der TopDown-Perspektive um die Ansicht aus der Vogelperspektive auf das Spielgeschehen. Das heißt von oben mit Blick senkrecht nach unten. Während bei der Third-Person-Perspektive die Kamera direkt hinter dem Schlangenkopf positioniert wird. Die Unterschiede lassen sich in Abbildung \ref{fig:mathsnake-perspektives} erkennen.
 
-%TODO TopDown und ThirdPerson erklären?
 \subsubsection{3D Snake mit Third-Person-Perspektive}
 \begin{table}[h!]
 \centering
@@ -156,12 +157,12 @@ Im Hauptmenü kann, wie in Abbildung \ref{fig:mathsnake-menu} zu erkennen ist, d
 	\caption{Ansicht der Highscore-Tabelle\label{fig:mathsnake-HighscoreTable}}
 \end{figure}
 \subsection{Funktionsweise des Spiels}
-Das entwickelte Spiel lässt sich nun entweder in der TopDown Ansicht oder in der ThirdPerson Ansicht spielen. Die Funktionsweise bleibt bei beiden identisch. Der Spieler steuert eine Schlange und kann diese mit zwei Pfeiltasten nach rechts oder links drehen, um die Bewegungsrichtung zu verändern. Am oberen Bildschirmrand wird ihm eine gesuchte Zahl, sowie seine aktuelle Punktzahl, angezeigt. Hat die Schlange einen Apfel mit einer Zahl gefressen wird diese durch ein + getrennt dem Gleichtungsbereich(siehe \ref{fig:mathsnake-setup}) hinzugefügt. Mit jedem gegessenem Apfel wird die Schlange schneller und länger.
+Das entwickelte Spiel lässt sich nun entweder in der TopDown Ansicht oder in der Third-Person Ansicht spielen. Die Funktionsweise bleibt bei beiden identisch. Der Spieler steuert eine Schlange und kann diese mit zwei Pfeiltasten nach rechts oder links drehen, um die Bewegungsrichtung zu verändern. Am oberen Bildschirmrand wird ihm eine gesuchte Zahl, sowie seine aktuelle Punktzahl, angezeigt. Hat die Schlange einen Apfel mit einer Zahl gefressen wird diese durch ein + getrennt dem Gleichtungsbereich(siehe \ref{fig:mathsnake-setup}) hinzugefügt. Mit jedem gegessenem Apfel wird die Schlange schneller und länger.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.35\textwidth]{MathSnake-ThirdPerson}
 	\includegraphics[width=0.35\textwidth]{MathSnake-TopDown}
-	\caption{ThirdPerson und TopDown Perspektiven\label{fig:mathsnake-perspektives}}
+	\caption{Links: Third-Person und Rechts: TopDown Perspektive\label{fig:mathsnake-perspektives}}
 \end{figure}
 \subsubsection{Levelsystem}
 Pro zu suchender Zahl gibt es ein Level. Um das Spiel auf Dauer herausfordernder zu gestalten, wurde ein kleines Levelsystem eingeführt. Dabei varriiert der Zahlenraum je nachdem in welchem Levelbereich der Spieler sich befindet. Im höchsten Bereich beginnen die Äpfel zu verfaulen. Die implementierte Zuordnung ist der Tabelle \ref{tab:levels} zu entnehmen.
@@ -178,9 +179,3 @@ Pro zu suchender Zahl gibt es ein Level. Um das Spiel auf Dauer herausfordernder
 \end{tabular}
 \caption{Bedeutung der einzelnen Levelbereiche\label{tab:levels}}
 \end{table}
-
-%TODO ÜBERARBEITET BIS HIER
-\subsubsection{Ansicht auf das Spielgeschehen}
-Wie bereits beschrieben wurde für das Spiel jeweils eine Version mit TopDown Ansicht und eine Version mit ThirdPerson Ansicht implementiert. Während die erste Version das klassische Snake mit Ansicht aus der Vogelperspektive ist, ist die zweite Version ein modernerer Ansatz. Bei der ThirdPerson Ansicht positioniert man die Kamera direkt hinter dem Schlangenkopf. Das Spielprinzip an sich bleibt in beiden Versionen gleich.
-
-
