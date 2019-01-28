@@ -59,7 +59,7 @@
 \contentsline {section}{\numberline {6.2}Competence}{31}{section.6.2}
 \contentsline {section}{\numberline {6.3}Flow}{31}{section.6.3}
 \contentsline {section}{\numberline {6.4}Immersion}{32}{section.6.4}
-\contentsline {section}{\numberline {6.5}Positive Effect}{32}{section.6.5}
+\contentsline {section}{\numberline {6.5}Positive Affect}{32}{section.6.5}
 \contentsline {section}{\numberline {6.6}Negative Affect}{32}{section.6.6}
 \contentsline {section}{\numberline {6.7}Tension}{32}{section.6.7}
 \contentsline {section}{\numberline {6.8}Startpunktzahl}{33}{section.6.8}
