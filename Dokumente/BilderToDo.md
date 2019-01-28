@@ -1,5 +1,5 @@
-- Menü Aufbau Button clicks führen wohin?
-- Spiel aufbau Erklärung der einzelnen Bereiche im Spielbildschirm
-- Boxplots zurecht schneiden?
-- Perspektiv und Grid Gegenüberstellung als Tabelle oder so?
-- Spielideen Grafiken erstellen
+- Menü Aufbau Button clicks führen wohin? x
+- Spiel aufbau Erklärung der einzelnen Bereiche im Spielbildschirm  x
+- Boxplots zurecht schneiden? x
+- Perspektiv und Grid Gegenüberstellung als Tabelle oder so? x
+- Spielideen Grafiken erstellen x
