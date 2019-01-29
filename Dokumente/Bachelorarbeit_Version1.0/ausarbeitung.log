@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.7)  29 JAN 2019 08:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.7)  29 JAN 2019 09:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1643,148 +1643,148 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 3.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 3.
-<figures/topDownPlot.png, id=451, 560.0925pt x 388.45125pt>
+<figures/topDownPlot.png, id=451, 511.15968pt x 176.15813pt>
 File: figures/topDownPlot.png Graphic file (type png)
 
 <use figures/topDownPlot.png>
 Package pdftex.def Info: figures/topDownPlot.png used on input line 8.
-(pdftex.def)             Requested size: 286.80353pt x 198.91954pt.
+(pdftex.def)             Requested size: 448.13095pt x 154.43633pt.
 
-<figures/thirdPersonPlot.png, id=452, 560.0925pt x 388.45125pt>
+<figures/thirdPersonPlot.png, id=452, 509.65407pt x 175.40532pt>
 File: figures/thirdPersonPlot.png Graphic file (type png)
 
 <use figures/thirdPersonPlot.png>
 Package pdftex.def Info: figures/thirdPersonPlot.png used on input line 9.
-(pdftex.def)             Requested size: 286.80353pt x 198.91954pt.
+(pdftex.def)             Requested size: 448.13095pt x 154.23938pt.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 12.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 12.
-
-<figures/challengePlot.png, id=453, 421.575pt x 200.75pt>
-File: figures/challengePlot.png Graphic file (type png)
-
-<use figures/challengePlot.png>
-Package pdftex.def Info: figures/challengePlot.png used on input line 15.
-(pdftex.def)             Requested size: 291.28238pt x 138.70755pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 17.
+(babel)             in language  on input line 12.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 17.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 17.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 17.
+(babel)             in language  on input line 12.
  [25
 
 
 
  <./figures/topDownPlot.png> <./figures/thirdPersonPlot.png>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 19.
- <figures/competencePlot.png, id=462, 421.575pt x 200.75pt>
+(babel)             in language  on input line 13.
+ <figures/challengePlot.png, id=461, 421.575pt x 200.75pt>
+File: figures/challengePlot.png Graphic file (type png)
+
+<use figures/challengePlot.png>
+Package pdftex.def Info: figures/challengePlot.png used on input line 16.
+(pdftex.def)             Requested size: 291.28238pt x 138.70755pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 20.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 20.
+
+<figures/competencePlot.png, id=462, 421.575pt x 200.75pt>
 File: figures/competencePlot.png Graphic file (type png)
 
 <use figures/competencePlot.png>
-Package pdftex.def Info: figures/competencePlot.png used on input line 22.
+Package pdftex.def Info: figures/competencePlot.png used on input line 23.
 (pdftex.def)             Requested size: 291.28238pt x 138.70755pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 27.
  [26 <./figures/challengePlot.png> <./figures/competencePlot.png>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 27.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 27.
+(babel)             in language  on input line 28.
  <figures/flowPlot.png, id=473, 421.575pt x 200.75pt>
 File: figures/flowPlot.png Graphic file (type png)
 
 <use figures/flowPlot.png>
-Package pdftex.def Info: figures/flowPlot.png used on input line 30.
+Package pdftex.def Info: figures/flowPlot.png used on input line 31.
 (pdftex.def)             Requested size: 291.28238pt x 138.70755pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 34.
+(babel)             in language  on input line 35.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 34.
+(babel)             in language  on input line 35.
 
 <figures/immersionPlot.png, id=474, 421.575pt x 200.75pt>
 File: figures/immersionPlot.png Graphic file (type png)
 
 <use figures/immersionPlot.png>
-Package pdftex.def Info: figures/immersionPlot.png used on input line 37.
+Package pdftex.def Info: figures/immersionPlot.png used on input line 38.
 (pdftex.def)             Requested size: 291.28238pt x 138.70755pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 42.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 42.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 42.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 42.
  [27 <./figures/flowPlot.png> <./figures/immersionPlot.png>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 42.
+(babel)             in language  on input line 43.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 42.
+(babel)             in language  on input line 43.
  <figures/posEffPlot.png, id=483, 421.575pt x 200.75pt>
 File: figures/posEffPlot.png Graphic file (type png)
 
 <use figures/posEffPlot.png>
-Package pdftex.def Info: figures/posEffPlot.png used on input line 45.
+Package pdftex.def Info: figures/posEffPlot.png used on input line 46.
 (pdftex.def)             Requested size: 291.28238pt x 138.70755pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 49.
+(babel)             in language  on input line 50.
 
 <figures/negEffPlot.png, id=484, 421.575pt x 200.75pt>
 File: figures/negEffPlot.png Graphic file (type png)
 
 <use figures/negEffPlot.png>
-Package pdftex.def Info: figures/negEffPlot.png used on input line 52.
+Package pdftex.def Info: figures/negEffPlot.png used on input line 53.
 (pdftex.def)             Requested size: 291.28238pt x 138.70755pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 56.
+(babel)             in language  on input line 57.
  [28 <./figures/posEffPlot.png> <./figures/negEffPlot.png>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 58.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 58.
  <figures/tensionPlot.png, id=493, 421.575pt x 200.75pt>
 File: figures/tensionPlot.png Graphic file (type png)
 
 <use figures/tensionPlot.png>
-Package pdftex.def Info: figures/tensionPlot.png used on input line 60.
+Package pdftex.def Info: figures/tensionPlot.png used on input line 61.
 (pdftex.def)             Requested size: 291.28238pt x 138.70755pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
-Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 66.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 66.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 79.
+(babel)             in language  on input line 73.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 79.
+(babel)             in language  on input line 73.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 80.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 80.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 105.
@@ -2194,7 +2194,7 @@ xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on ausarbeitung.pdf (41 pages, 2866654 bytes).
+Output written on ausarbeitung.pdf (41 pages, 2873109 bytes).
 PDF statistics:
  672 PDF objects out of 1000 (max. 8388607)
  577 compressed objects within 6 object streams
