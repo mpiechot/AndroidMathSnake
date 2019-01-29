@@ -7,10 +7,10 @@ User;FirstGame;Game;Kategorie;Mean
 1;TopDown First;ThirdPerson;Flow;1.666667
 1;TopDown First;TopDown;Immersion;1.666667
 1;TopDown First;ThirdPerson;Immersion;2.333333
-1;TopDown First;TopDown;Negative Effect;0.000000
-1;TopDown First;ThirdPerson;Negative Effect;0.000000
-1;TopDown First;TopDown;Positive Effect;2.666667
-1;TopDown First;ThirdPerson;Positive Effect;2.666667
+1;TopDown First;TopDown;Negative Affect;0.000000
+1;TopDown First;ThirdPerson;Negative Affect;0.000000
+1;TopDown First;TopDown;Positive Affect;2.666667
+1;TopDown First;ThirdPerson;Positive Affect;2.666667
 1;TopDown First;TopDown;Tension;0.666667
 1;TopDown First;ThirdPerson;Tension;1.000000
 2;TopDown First;TopDown;Challenge;1.333333
@@ -21,10 +21,10 @@ User;FirstGame;Game;Kategorie;Mean
 2;TopDown First;ThirdPerson;Flow;3.000000
 2;TopDown First;TopDown;Immersion;2.666667
 2;TopDown First;ThirdPerson;Immersion;2.333333
-2;TopDown First;TopDown;Negative Effect;0.000000
-2;TopDown First;ThirdPerson;Negative Effect;0.666667
-2;TopDown First;TopDown;Positive Effect;3.000000
-2;TopDown First;ThirdPerson;Positive Effect;3.000000
+2;TopDown First;TopDown;Negative Affect;0.000000
+2;TopDown First;ThirdPerson;Negative Affect;0.666667
+2;TopDown First;TopDown;Positive Affect;3.000000
+2;TopDown First;ThirdPerson;Positive Affect;3.000000
 2;TopDown First;TopDown;Tension;1.333333
 2;TopDown First;ThirdPerson;Tension;0.666667
 3;TopDown First;TopDown;Challenge;1.666667
@@ -35,10 +35,10 @@ User;FirstGame;Game;Kategorie;Mean
 3;TopDown First;ThirdPerson;Flow;2.333333
 3;TopDown First;TopDown;Immersion;4.000000
 3;TopDown First;ThirdPerson;Immersion;4.000000
-3;TopDown First;TopDown;Negative Effect;0.000000
-3;TopDown First;ThirdPerson;Negative Effect;0.333333
-3;TopDown First;TopDown;Positive Effect;2.666667
-3;TopDown First;ThirdPerson;Positive Effect;2.666667
+3;TopDown First;TopDown;Negative Affect;0.000000
+3;TopDown First;ThirdPerson;Negative Affect;0.333333
+3;TopDown First;TopDown;Positive Affect;2.666667
+3;TopDown First;ThirdPerson;Positive Affect;2.666667
 3;TopDown First;TopDown;Tension;0.000000
 3;TopDown First;ThirdPerson;Tension;0.000000
 4;ThirdPerson First;TopDown;Challenge;2.666667
@@ -49,10 +49,10 @@ User;FirstGame;Game;Kategorie;Mean
 4;ThirdPerson First;ThirdPerson;Flow;2.666667
 4;ThirdPerson First;TopDown;Immersion;1.000000
 4;ThirdPerson First;ThirdPerson;Immersion;4.000000
-4;ThirdPerson First;TopDown;Negative Effect;1.333333
-4;ThirdPerson First;ThirdPerson;Negative Effect;0.000000
-4;ThirdPerson First;TopDown;Positive Effect;3.666667
-4;ThirdPerson First;ThirdPerson;Positive Effect;0.333333
+4;ThirdPerson First;TopDown;Negative Affect;1.333333
+4;ThirdPerson First;ThirdPerson;Negative Affect;0.000000
+4;ThirdPerson First;TopDown;Positive Affect;3.666667
+4;ThirdPerson First;ThirdPerson;Positive Affect;0.333333
 4;ThirdPerson First;TopDown;Tension;1.666667
 4;ThirdPerson First;ThirdPerson;Tension;0.000000
 5;ThirdPerson First;TopDown;Challenge;2.333333
@@ -63,9 +63,9 @@ User;FirstGame;Game;Kategorie;Mean
 5;ThirdPerson First;ThirdPerson;Flow;3.000000
 5;ThirdPerson First;TopDown;Immersion;2.666667
 5;ThirdPerson First;ThirdPerson;Immersion;3.000000
-5;ThirdPerson First;TopDown;Negative Effect;0.000000
-5;ThirdPerson First;ThirdPerson;Negative Effect;0.000000
-5;ThirdPerson First;TopDown;Positive Effect;4.000000
-5;ThirdPerson First;ThirdPerson;Positive Effect;3.333333
+5;ThirdPerson First;TopDown;Negative Affect;0.000000
+5;ThirdPerson First;ThirdPerson;Negative Affect;0.000000
+5;ThirdPerson First;TopDown;Positive Affect;4.000000
+5;ThirdPerson First;ThirdPerson;Positive Affect;3.333333
 5;ThirdPerson First;TopDown;Tension;0.500000
 5;ThirdPerson First;ThirdPerson;Tension;0.333333
