@@ -33,27 +33,35 @@
 * <font color="lightgreen">Nutzertest durchführen **✓**</font>
 
 #### ToDo List: 2.1.2019 - 9.1.2019: <font color="red">**✓**</font>
-* Nutzertest auswerten<font color="red">**✓**</font>
-* Über Auswertung des Nutzertests weiter informieren<font color="red">**✓**</font>
-* Einleitung schreiben<font color="red">**✓**</font>
-* Stand der Forschung schreiben<font color="red">**✓**</font>
+* Nutzertest auswerten<font color="lightgreen">**✓**</font>
+* Über Auswertung des Nutzertests weiter informieren<font color="lightgreen">**✓**</font>
+* Einleitung schreiben<font color="lightgreen">**✓**</font>
+* Stand der Forschung schreiben<font color="lightgreen">**✓**</font>
 
 #### ToDo List: 9.1.2019 - 16.1.2019: <font color="red">**✓**</font>
-* Herangehensweise schreiben (Hauptkapitel! über Implementation der Spiele und Aufbau des Nutzertests)<font color="red">**✓**</font>
-* Evaluation beginnen<font color="red">**✓**</font>
+* Herangehensweise schreiben (Hauptkapitel! über Implementation der Spiele und Aufbau des Nutzertests)<font color="lightgreen">**✓**</font>
+* Evaluation beginnen<font color="lightgreen">**✓**</font>
 
 #### ToDo List: 16.1.2019 - 23.1.2019: <font color="red">**✓**</font>
-* Evaluation abschließen<font color="red">**✓**</font>
-* Diskussion schreiben (Ausblick hier rein?)<font color="red">**✓**</font>
-* Zusammenfassung schreiben<font color="red">**✓**</font>
-* Literaturverzeichnis zusammen stellen<font color="red">**✓**</font>
+* Evaluation abschließen<font color="lightgreen">**✓**</font>
+* Diskussion schreiben (Ausblick hier rein?)<font color="lightgreen">**✓**</font>
+* Zusammenfassung schreiben<font color="lightgreen">**✓**</font>
+* Literaturverzeichnis zusammen stellen<font color="lightgreen">**✓**</font>
 
 #### ToDo List: 23.1.2019 - 30.1.2019: <font color="red">(0%)</font>
-* Bachelorarbeit korrektur lesen lassen<font color="red">(50%)</font>
-* Bachelorarbeit korrigieren<font color="red">(0%)</font>
-* Bachelorarbeit drucken<font color="red">(0%)</font>
-* Bachelorarbeit abgeben<font color="red">(0%)</font>
+* Bachelorarbeit korrektur lesen lassen<font color="lightgreen">**✓**</font>
+* Bachelorarbeit korrigieren<font color="lightgreen">**✓**</font>
+* Bachelorarbeit drucken<font color="lightgreen">**✓**</font>
+* Bachelorarbeit abgeben<font color="lightgreen">**✓**</font>
 
+#### ToDoList: Post-Bachelorarbeit: <font color="red">(0%)</font>
+* Projektstruktur überarbeiten<font color="red">(0%)</font>
+* Scenenstruktur überarbeiten<font color="red">(0%)</font>
+* Snake<font color="red">(0%)</font>
+  * Wechsel zu neuem Unity InputSystem<font color="lightgreen">**✓**</font>
+  * Movement der Schlange unabhängig vom Rest der Schlange<font color="lightgreen">**✓**</font>
+  * Übergeordnetes Schlangenobjekt, dass nicht bewegt wird<font color="lightgreen">**✓**</font>
+  * Hinzufügen von neuen Schlangenteilen überarbeiten<font color="red">(60%)</font>
 
 #### Für den 'Ausblick'
 * Level 5: mit Fake Äpfeln

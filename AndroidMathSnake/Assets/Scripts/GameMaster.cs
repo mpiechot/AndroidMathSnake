@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using EZCameraShake;
+using MathSnake.Snake;
 
 public class GameMaster : MonoBehaviour {
     public GameObject apple;
@@ -17,12 +18,12 @@ public class GameMaster : MonoBehaviour {
     public GameObject appleDestroyAnim;
     public float currentRotTime;
     public int[] raiseDifficultyLevels = { 1, 2, 3, 4 };
-    public int[] difficultysMax = { 20, 50, 100 , 100};
+    public int[] difficultysMax = { 20, 50, 100, 100 };
     public int[] difficultysMin = { 3, 20, 50, 30 };
     public int currentLevel = 0;
     public int currentDiffculty = 0;
-   // public CameraShaker cameraShaker;
-    
+    // public CameraShaker cameraShaker;
+
 
     protected Vector3 worldSize;
 
@@ -43,8 +44,8 @@ public class GameMaster : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("Move");
         FindObjectOfType<AudioManager>().Play("Music");
         worldSize = ground.GetComponent<MeshRenderer>().bounds.size;
-        xLength = worldSize.x - 2*wallThickness;
-        zLength = worldSize.z - 2*wallThickness;
+        xLength = worldSize.x - 2 * wallThickness;
+        zLength = worldSize.z - 2 * wallThickness;
         currentRotTime = 0f;
 
         currentScore.text = score.ToString();
@@ -59,66 +60,67 @@ public class GameMaster : MonoBehaviour {
         destroyAppleAnims.Add(apple.position);
         currentApples.Remove(apple.gameObject);
     }
-	// Update is called once per frame
-	void Update () {
-        if(destroyAppleAnims.Count > 0)
+    // Update is called once per frame
+    void Update()
+    {
+        if (destroyAppleAnims.Count > 0)
         {
-            for(int i=destroyAppleAnims.Count-1;i>=0;i--)
+            for (int i = destroyAppleAnims.Count - 1; i >= 0; i--)
             {
                 Instantiate(appleDestroyAnim, destroyAppleAnims[i], appleDestroyAnim.transform.rotation);
                 FindObjectOfType<AudioManager>().Play("Splash");
                 destroyAppleAnims.RemoveAt(i);
             }
         }
-        if (snake.currentNums >= currentNum || currentApples.Count == 0)
-        {
-            currentLevel++;
-            if(currentDiffculty < raiseDifficultyLevels.Length-1 && currentLevel > raiseDifficultyLevels[currentDiffculty + 1])
-            {
-                currentDiffculty++;
-            }
-            if(currentDiffculty == raiseDifficultyLevels.Length - 1)
-            {
-                currentRotTime = 0.001f;
-            }
-            else
-            {
-                snake.increaseMovement();
-            }
-            if(snake.currentNums == currentNum)
-            {
-                FindObjectOfType<AudioManager>().Play("Right");
-                score += 10;
-            }
-            else
-            {
-                score -= 10;
+        //if (snake.currentNums >= currentNum || currentApples.Count == 0)
+        //{
+        //    currentLevel++;
+        //    if (currentDiffculty < raiseDifficultyLevels.Length - 1 && currentLevel > raiseDifficultyLevels[currentDiffculty + 1])
+        //    {
+        //        currentDiffculty++;
+        //    }
+        //    if (currentDiffculty == raiseDifficultyLevels.Length - 1)
+        //    {
+        //        currentRotTime = 0.001f;
+        //    }
+        //    else
+        //    {
+        //        snake.increaseMovement();
+        //    }
+        //    if (snake.currentNums == currentNum)
+        //    {
+        //        FindObjectOfType<AudioManager>().Play("Right");
+        //        score += 10;
+        //    }
+        //    else
+        //    {
+        //        score -= 10;
 
-                FindObjectOfType<AudioManager>().Play("Wrong");
+        //        FindObjectOfType<AudioManager>().Play("Wrong");
 
-                CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
-            }
-            currentScore.text = score.ToString();
-            ResetSnakeBody();
-            if (currentDiffculty != raiseDifficultyLevels.Length - 1)
-                DeleteRemainingApples();
-            CreateNewRandomNum();
-            SpawnApplePairs(3);
-        }
+        //        CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
+        //    }
+        //    currentScore.text = score.ToString();
+        //    ResetSnakeBody();
+        //    if (currentDiffculty != raiseDifficultyLevels.Length - 1)
+        //        DeleteRemainingApples();
+        //    CreateNewRandomNum();
+        //    SpawnApplePairs(3);
+        //}
     }
 
     void ResetSnakeBody()
     {
-        for (int i = 0; i < snake.bodyParts.Count;i++)
-        {
-            snake.bodyParts[i].gameObject.GetComponentInChildren<TextMeshPro>().text = "";
-        }
-        searchNumberField.text = "";
-        snake.currentNums = 0;
+        //for (int i = 0; i < snake.bodyParts.Count; i++)
+        //{
+        //    snake.bodyParts[i].gameObject.GetComponentInChildren<TextMeshPro>().text = "";
+        //}
+        //searchNumberField.text = "";
+        //snake.currentNums = 0;
     }
     void DeleteRemainingApples()
     {
-        foreach(GameObject apple in currentApples)
+        foreach (GameObject apple in currentApples)
         {
             Destroy(apple);
         }
@@ -133,7 +135,7 @@ public class GameMaster : MonoBehaviour {
 
     void SpawnApplePairs(int ammount)
     {
-        for(int i = 0; i < ammount; i++)
+        for (int i = 0; i < ammount; i++)
         {
             SpawnApplePair();
         }
@@ -148,13 +150,13 @@ public class GameMaster : MonoBehaviour {
     void SpawnApple(int num)
     {
         GameObject currentApple = Instantiate(apple, Vector3.zero, Quaternion.identity) as GameObject;
-        
-        currentApple.transform.position = new Vector3(Random.Range(-(xLength/2), (xLength / 2)), 10, Random.Range(-(zLength / 2), (zLength / 2)));
+
+        currentApple.transform.position = new Vector3(Random.Range(-(xLength / 2), (xLength / 2)), 10, Random.Range(-(zLength / 2), (zLength / 2)));
 
         currentApple.GetComponent<Apple>().num = num;
 
         CreateNumObjects(num, currentApple.transform);
-        
+
         currentApples.Add(currentApple);
     }
     private void CreateNumObjectsInList(int num, Transform parent)
@@ -188,8 +190,8 @@ public class GameMaster : MonoBehaviour {
     }
     private void ClearCurrentNumObjects()
     {
-            Debug.Log("Destroy: ");
-        for(int i= currentNumObjects.Count - 1; i >= 0; i--)
+        Debug.Log("Destroy: ");
+        for (int i = currentNumObjects.Count - 1; i >= 0; i--)
         {
             GameObject delete = currentNumObjects[i];
             currentNumObjects.RemoveAt(i);
