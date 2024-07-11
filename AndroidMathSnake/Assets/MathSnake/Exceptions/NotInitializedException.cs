@@ -2,6 +2,7 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Runtime.CompilerServices;
 
 namespace MathSnake.Exceptions
@@ -21,7 +22,7 @@ namespace MathSnake.Exceptions
         /// <param name="filePath">The path of the file where the unassigned field was found. This parameter is automatically populated by the compiler.</param>
         /// <param name="callerMemberName">The name of the member (method, property, etc.) where the unassigned field was detected. This parameter is automatically populated by the compiler.</param>
         public NotInitializedException([CallerFilePath] string filePath = "", [CallerMemberName] string callerMemberName = "") :
-            base($"The object '{callerMemberName}' of '{filePath}' was not assigned via the inspector.")
+            base($"The object '{callerMemberName}' of '{Path.GetFileName(filePath)}' was accessed before Initialize was called.")
         {
         }
 

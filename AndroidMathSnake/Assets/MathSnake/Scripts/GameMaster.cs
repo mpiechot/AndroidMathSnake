@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using EZCameraShake;
-using MathSnake.Snake;
+using MathSnake.Player;
 
 public class GameMaster : MonoBehaviour {
     public GameObject apple;

@@ -1,10 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 using UnityEngine.SceneManagement;
 
-public class StartUIControll : MonoBehaviour {
+public class StartUIControll : MonoBehaviour
+{
     public PostProcessingProfile profile;
 
     private static float startIntensity;

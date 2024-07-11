@@ -1,7 +1,8 @@
 ﻿#nullable enable
 
 using MathSnake.Eatables;
-using MathSnake.Snake;
+using MathSnake.Exceptions;
+using MathSnake.Player;
 
 namespace MathSnake
 {
@@ -11,24 +12,39 @@ namespace MathSnake
     /// </summary>
     public class GameContext
     {
+        private GameSettings gameSettings;
+
+        private Snake? player;
+
         /// <summary>
         ///     Gets the settings related to the rotting behavior of items within the game.
         /// </summary>
-        public RottingSettings RottingSettings { get; }
+        public RottingSettings RottingSettings => gameSettings.RottingSettings;
 
         /// <summary>
         ///    Gets the settings related to the snake behavior within the game.
         /// </summary>
-        public SnakeSettings SnakeSettings { get; }
+        public SnakeSettings SnakeSettings => gameSettings.SnakeSettings;
+
+        public Snake Player
+        {
+            get
+            {
+                return NotAssignedException.ThrowIfNull(player);
+            }
+            set
+            {
+                player = value;
+            }
+        }
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="GameContext"/> class with specified rotting settings.
         /// </summary>
-        /// <param name="rottingSettings">The rotting settings to be used within the game context.</param>
-        public GameContext(RottingSettings rottingSettings, SnakeSettings snakeSettings)
+        /// <param name="gameSettings">The settings to be used within the game context.</param>
+        public GameContext(GameSettings gameSettings)
         {
-            RottingSettings = rottingSettings;
-            SnakeSettings = snakeSettings;
+            this.gameSettings = gameSettings;
         }
     }
 }

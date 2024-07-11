@@ -10,7 +10,7 @@ namespace MathSnake.Eatables
     public class Apple : MonoBehaviour, IEatable
     {
         [SerializeField]
-        private ParticleSystem? eatingParticles;
+        private GameObject? eatingParticles;
 
         [SerializeField]
         private MeshRenderer? meshRenderer;

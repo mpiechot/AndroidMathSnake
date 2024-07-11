@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee107e82728e136409fe788dbe95a573, type: 3}
+  m_Name: DefaultSnakeSettings
+  m_EditorClassIdentifier: 
+  <SnakePrefab>k__BackingField: {fileID: 276456628997569824, guid: a0209286e31f6304482953eacf4b9646,
+    type: 3}
+  <SnakeBodyPrefab>k__BackingField: {fileID: 114199718067780986, guid: 8909fe8f60cde7348a021e4d3fa66787,
+    type: 3}
+  <NumberedSnakeBodyPrefab>k__BackingField: {fileID: 114199718067780986, guid: 8909fe8f60cde7348a021e4d3fa66787,
+    type: 3}
+  <SnakeTailPrefab>k__BackingField: {fileID: 4931065723453769416, guid: 51202b2656aa77b4090813f7cf2f5f3f,
+    type: 3}
+  <InitialSpeed>k__BackingField: 2
+  <IncreaseSpeedBy>k__BackingField: 0.3
+  <RotationSpeed>k__BackingField: 150
+  <IncreaseRotationBy>k__BackingField: 90
+  <PartsDistance>k__BackingField: 1

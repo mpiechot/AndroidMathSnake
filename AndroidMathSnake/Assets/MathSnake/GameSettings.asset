@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb5041358bc2bf408527bb7d28502a1, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  <SnakeSettings>k__BackingField: {fileID: 11400000, guid: 4a700b03de6813c418564f506d09602a,
+    type: 2}
+  <RottingSettings>k__BackingField: {fileID: 11400000, guid: dc3806c5a660bfb4ba9e298aa151f707,
+    type: 2}

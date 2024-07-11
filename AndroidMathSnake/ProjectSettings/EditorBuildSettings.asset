@@ -20,4 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UpdateHighScore.unity
     guid: 0750171b011bd774dbcc57d2b2244950
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 151b641bd047d9f43bb305de29909a52,
+      type: 2}

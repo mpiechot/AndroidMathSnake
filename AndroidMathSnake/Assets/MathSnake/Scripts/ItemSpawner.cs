@@ -13,16 +13,25 @@ namespace MathSnake.Eatables
         [SerializeField]
         private Transform? appleParent;
 
+        private GameContext? gameContext;
+
         private Apple ApplePrefab => SerializeFieldNotAssignedException.ThrowIfNull(applePrefab);
 
         private Transform AppleParent => SerializeFieldNotAssignedException.ThrowIfNull(appleParent);
+
+        private GameContext GameContext => NotInitializedException.ThrowIfNull(gameContext);
+
+        public void Initialize(GameContext context)
+        {
+            gameContext = context;
+        }
 
         public Apple SpawnApple(int number, Vector3 position)
         {
 
             var spawnedApple = Instantiate(ApplePrefab, position, Quaternion.identity, AppleParent);
+            spawnedApple.Initialize(number, GameContext);
             spawnedApple.gameObject.name = $"Apple ({number})";
-            spawnedApple.Number = number;
 
             return spawnedApple;
         }

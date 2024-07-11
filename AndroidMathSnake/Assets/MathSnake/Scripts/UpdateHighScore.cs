@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.PostProcessing;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UpdateHighScore : MonoBehaviour {
+public class UpdateHighScore : MonoBehaviour
+{
 
     public Text congrats;
     public InputField nameInput;
@@ -17,8 +16,9 @@ public class UpdateHighScore : MonoBehaviour {
     private int score;
     private int place = -1;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         StartCoroutine(StartUIControll.focusOn());
         profile.depthOfField.enabled = true;
         profile.vignette.enabled = true;
@@ -27,10 +27,10 @@ public class UpdateHighScore : MonoBehaviour {
 
         int moveScore = -1;
         string moveName = "-";
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             Debug.Log("PlaceFound: " + placeFound + "\nScore: " + score + "==" + PlayerPrefs.GetInt("score" + i));
-            if(!placeFound && PlayerPrefs.GetInt("score"+i) <= score)
+            if (!placeFound && PlayerPrefs.GetInt("score" + i) <= score)
             {
                 place = i;
                 placeFound = true;
@@ -51,26 +51,26 @@ public class UpdateHighScore : MonoBehaviour {
                 moveScore = moveScore2;
             }
         }
-        if(place >= 0)
+        if (place >= 0)
         {
-             congrats.text = "Congratulations! You reached " + score + " points!\n That is Number " + (place+1) + " in our highscore table!" +
-             "\n please type in a name to represent you in this highscore table.";
+            congrats.text = "Congratulations! You reached " + score + " points!\n That is Number " + (place + 1) + " in our highscore table!" +
+            "\n please type in a name to represent you in this highscore table.";
         }
         else
         {
-            congrats.text = "Congratulations! You reached " + score + " points!\n You need " + (PlayerPrefs.GetInt("score9") - score +1) + " more points for our Highscore table!";
+            congrats.text = "Congratulations! You reached " + score + " points!\n You need " + (PlayerPrefs.GetInt("score9") - score + 1) + " more points for our Highscore table!";
             saveBack.GetComponentInChildren<Text>().text = "Back";
             labelName.enabled = false;
             nameInput.GetComponent<Image>().enabled = false;
             inputPlaceholder.enabled = false;
 
         }
-	}
+    }
 
     public void OnUpdateSaveStart()
     {
         Debug.Log("Update-Save");
-        if(place >= 0)
+        if (place >= 0)
         {
             PlayerPrefs.SetInt("score" + place, score);
             PlayerPrefs.SetString("name" + place, nameInput.text);
