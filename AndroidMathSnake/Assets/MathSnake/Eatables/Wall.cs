@@ -11,6 +11,9 @@ namespace MathSnake.Eatables
         public bool IsGameOver => true;
 
         /// <inheritdoc/>
+        public GameObject GameObject => gameObject;
+
+        /// <inheritdoc/>
         public void Eat()
         {
             // Do nothing, because a wall is not edible => Game over.

@@ -17,7 +17,7 @@ namespace MathSnake.Exceptions
     public class NotInitializedException : Exception
     {
         /// <summary>
-        ///     Initializes a new instance of the <see cref="SerializeFieldNotAssignedException"/> class.
+        ///     Initializes a new instance of the <see cref="NotInitializedException"/> class.
         /// </summary>
         /// <param name="filePath">The path of the file where the unassigned field was found. This parameter is automatically populated by the compiler.</param>
         /// <param name="callerMemberName">The name of the member (method, property, etc.) where the unassigned field was detected. This parameter is automatically populated by the compiler.</param>

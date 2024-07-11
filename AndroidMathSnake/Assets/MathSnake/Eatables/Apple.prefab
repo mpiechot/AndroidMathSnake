@@ -120,7 +120,7 @@ Transform:
   - {fileID: 4625541700465960}
   - {fileID: 224388646019774122}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114915839392310814
 MonoBehaviour:
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a688c4898f4ba146a50e39447a244f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eatingParticles: {fileID: 1705023260711180, guid: 0293e41f6bf8e42d7b133263cc645551,
+  eatingParticles: {fileID: 1016440313933391209, guid: 0293e41f6bf8e42d7b133263cc645551,
     type: 3}
   meshRenderer: {fileID: 23088918073073786}
   rotting: {fileID: 6204132626695586004}

@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 4931065723453769416}
   - component: {fileID: 65049971479433906}
   - component: {fileID: 95746769392967230}
+  - component: {fileID: 6137513183315322381}
   m_Layer: 9
   m_Name: BodyTail
   m_TagString: Untagged
@@ -338,6 +339,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6137513183315322381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825152232478436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7335c605a911c864ca9d4c881b703d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1862790106051454
 GameObject:
   m_ObjectHideFlags: 0

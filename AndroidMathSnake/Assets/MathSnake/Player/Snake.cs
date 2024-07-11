@@ -3,6 +3,7 @@
 using MathSnake.Eatables;
 using MathSnake.Exceptions;
 using MathSnake.Extensions;
+using System;
 using UnityEngine;
 
 namespace MathSnake.Player
@@ -44,10 +45,19 @@ namespace MathSnake.Player
 
         private Transform SnakeHead => SerializeFieldNotAssignedException.ThrowIfNull(snakeHead);
 
+        /// <summary>
+        ///     Occurs when the snake dies.
+        /// </summary>
+        public event EventHandler<DieEventArgs>? Died;
+
 
         //private int currentNums { get; set; }
 
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Snake"/> class.
+        /// </summary>
+        /// <param name="context">The game context to use.</param>
         public void Initialize(GameContext context)
         {
             gameContext = context;
@@ -64,6 +74,10 @@ namespace MathSnake.Player
 
             snakeBodyController = new(SnakeHead, SnakeBodyParent, context);
         }
+        private void IncreaseSpeed()
+        {
+            SnakeMovement.IncreaseSpeed();
+        }
 
         private void OnEatenTriggered(object sender, EatenEventArgs args)
         {
@@ -76,7 +90,6 @@ namespace MathSnake.Player
                 //StartCoroutine(StartUIControll.focusOn());
                 //SceneManager.LoadScene("UpdateHighScore");
                 Destroy(gameObject);
-                Destroy(GameObject.FindGameObjectWithTag("BodyParts"));
                 return;
             }
 
@@ -97,11 +110,6 @@ namespace MathSnake.Player
 
                 IncreaseSpeed();
             }
-        }
-
-        public void IncreaseSpeed()
-        {
-            SnakeMovement.IncreaseSpeed();
         }
 
         private void OnDestroy()

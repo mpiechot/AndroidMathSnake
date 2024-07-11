@@ -2,7 +2,9 @@
 
 using MathSnake.Eatables;
 using MathSnake.Exceptions;
+using MathSnake.Music;
 using MathSnake.Player;
+using MathSnake.Ui;
 
 namespace MathSnake
 {
@@ -19,13 +21,31 @@ namespace MathSnake
         /// <summary>
         ///     Gets the settings related to the rotting behavior of items within the game.
         /// </summary>
-        public RottingSettings RottingSettings => gameSettings.RottingSettings;
+        public EatableSettings EatableSettings => gameSettings.RottingSettings;
 
         /// <summary>
         ///    Gets the settings related to the snake behavior within the game.
         /// </summary>
         public SnakeSettings SnakeSettings => gameSettings.SnakeSettings;
 
+        /// <summary>
+        ///    Gets the tilemap controller.
+        /// </summary>
+        public TilemapController TilemapController { get; }
+
+        /// <summary>
+        ///   Gets the UI controller.
+        /// </summary>
+        public UiController UiController { get; }
+
+        /// <summary>
+        ///     Gets the background music controller.
+        /// </summary>
+        public BackgroundMusicController BackgroundMusicController { get; }
+
+        /// <summary>
+        ///    Gets or sets the player snake.
+        /// </summary>
         public Snake Player
         {
             get
@@ -41,10 +61,20 @@ namespace MathSnake
         /// <summary>
         ///     Initializes a new instance of the <see cref="GameContext"/> class with specified rotting settings.
         /// </summary>
+        /// <param name="tilemapController">The tilemap controller to provide.</param>
+        /// <param name="musicManager">The music manager to provide.</param>
+        /// <param name="uiController">The UI controller to provide.</param>
         /// <param name="gameSettings">The settings to be used within the game context.</param>
-        public GameContext(GameSettings gameSettings)
+        public GameContext(
+            TilemapController tilemapController,
+            BackgroundMusicController musicManager,
+            UiController uiController,
+            GameSettings gameSettings)
         {
             this.gameSettings = gameSettings;
+            UiController = uiController;
+            TilemapController = tilemapController;
+            BackgroundMusicController = musicManager;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace MathSnake.Eatables
     public class Apple : MonoBehaviour, IEatable
     {
         [SerializeField]
-        private GameObject? eatingParticles;
+        private ParticleSystem? eatingParticles;
 
         [SerializeField]
         private MeshRenderer? meshRenderer;
@@ -28,6 +28,11 @@ namespace MathSnake.Eatables
         /// <inheritdoc/>
         public bool IsGameOver => false;
 
+        /// <inheritdoc/>
+        public GameObject GameObject => gameObject;
+
+
+
         /// <summary>
         ///     Initializes a new instance of the <see cref="Apple"/> class.
         /// </summary>
@@ -36,14 +41,14 @@ namespace MathSnake.Eatables
         public void Initialize(int number, GameContext context)
         {
             Number = number;
-            Rotting.Initialize(context.RottingSettings);
+            Rotting.Initialize(context.EatableSettings);
             Rotting.StartRotting();
         }
 
         /// <inheritdoc/>
         public void Eat()
         {
-            Instantiate(eatingParticles, transform.position, Quaternion.identity);
+            Instantiate(eatingParticles, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(gameObject);
         }
     }

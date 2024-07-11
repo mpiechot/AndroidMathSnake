@@ -1,7 +1,8 @@
 ﻿#nullable enable
 
 using MathSnake.Exceptions;
-using MathSnake.Player;
+using MathSnake.Music;
+using MathSnake.Ui;
 using UnityEngine;
 
 namespace MathSnake
@@ -9,16 +10,32 @@ namespace MathSnake
     public class GameStarter : MonoBehaviour
     {
         [SerializeField]
+        private GameController? gameMaster;
+
+        [SerializeField]
         private GameSettings? gameSettings;
 
-        private GameSettings GameSettings => SerializeFieldNotAssignedException.ThrowIfNull(gameSettings);
+        [SerializeField]
+        private TilemapController? tilemapController;
+
+        [SerializeField]
+        private BackgroundMusicController? backgroundMusicController;
+
+        [SerializeField]
+        private UiController? uiController;
 
         private void Start()
         {
-            var gameContext = new GameContext(GameSettings);
+            SerializeFieldNotAssignedException.ThrowIfNull(gameSettings);
+            SerializeFieldNotAssignedException.ThrowIfNull(tilemapController);
+            SerializeFieldNotAssignedException.ThrowIfNull(backgroundMusicController);
+            SerializeFieldNotAssignedException.ThrowIfNull(uiController);
+            SerializeFieldNotAssignedException.ThrowIfNull(gameMaster);
 
-            var snake = SnakeSpawner.SpawnSnake(gameContext);
-            gameContext.Player = snake;
+            var gameContext = new GameContext(tilemapController, backgroundMusicController, uiController, gameSettings);
+
+            // Start the game
+            gameMaster.StartGame(gameContext);
         }
     }
 }

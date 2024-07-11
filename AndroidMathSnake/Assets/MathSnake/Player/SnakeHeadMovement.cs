@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 namespace MathSnake.Player
 {
     /// <summary>
-    /// Represents the movement of the snakes head.
+    ///     Represents the movement of the snakes head.
     /// </summary>
     public class SnakeHeadMovement : MonoBehaviour
     {
@@ -41,12 +41,20 @@ namespace MathSnake.Player
             inputControls = new InputControls();
         }
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="SnakeHeadMovement"/> class.
+        /// </summary>
+        /// <param name="snakeHeadInstance">The snakes head transform that should be moved.</param>
+        /// <param name="snakeSettingsInstance">The snakes settings to use.</param>
         public void Initialize(Transform snakeHeadInstance, SnakeSettings snakeSettingsInstance)
         {
             snakeHead = snakeHeadInstance;
             snakeSettings = snakeSettingsInstance;
         }
 
+        /// <summary>
+        ///     Starts the movement of the snake.
+        /// </summary>
         public void StartMovement()
         {
             InputControls.Snake.ChangeDirection.performed += UpdateRotationValue;
@@ -56,21 +64,17 @@ namespace MathSnake.Player
             MoveSound.Play();
         }
 
-        private void UpdateRotationValue(InputAction.CallbackContext ctx)
-        {
-            rotationInputValue = SnakeSettings.IncreaseRotationBy * ctx.ReadValue<float>();
-        }
-
-        private void StopRotation(InputAction.CallbackContext _)
-        {
-            rotationInputValue = 0f;
-        }
-
+        /// <summary>
+        ///     Increases the speed of the snake.
+        /// </summary>
         public void IncreaseSpeed()
         {
             currentSpeed += SnakeSettings.IncreaseSpeedBy;
         }
 
+        /// <summary>
+        ///     Stops the movement of the snake.
+        /// </summary>
         public void StopMovement()
         {
             currentSpeed = 0;
@@ -78,6 +82,16 @@ namespace MathSnake.Player
 
             InputControls.Snake.ChangeDirection.performed -= UpdateRotationValue;
             InputControls.Snake.ChangeDirection.canceled -= StopRotation;
+        }
+
+        private void UpdateRotationValue(InputAction.CallbackContext ctx)
+        {
+            rotationInputValue = SnakeSettings.IncreaseRotationSpeedBy * ctx.ReadValue<float>();
+        }
+
+        private void StopRotation(InputAction.CallbackContext _)
+        {
+            rotationInputValue = 0f;
         }
 
         private void Update()

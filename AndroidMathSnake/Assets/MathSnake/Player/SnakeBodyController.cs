@@ -6,7 +6,7 @@ using UnityEngine;
 namespace MathSnake.Player
 {
     /// <summary>
-    /// Represents a controller for the snakes body for adding and removing new parts.
+    ///     Represents a controller for the snakes body for adding and removing new parts.
     /// </summary>
     public class SnakeBodyController
     {
@@ -22,6 +22,12 @@ namespace MathSnake.Player
 
         private Transform nextFollowTarget;
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="SnakeBodyController"/> class.
+        /// </summary>
+        /// <param name="snakeHead">The head of the snake.</param>
+        /// <param name="bodyParent">The parent object for all created body parts.</param>
+        /// <param name="context">The game context to use.</param>
         public SnakeBodyController(Transform snakeHead, Transform bodyParent, GameContext context)
         {
             this.context = context;
@@ -34,6 +40,10 @@ namespace MathSnake.Player
             nextFollowTarget = snakeHead;
         }
 
+        /// <summary>
+        ///     Creates a new body part for the snake.
+        ///     Note: The body part will be created without a number.
+        /// </summary>
         public void CreateBodyPart()
         {
             var bodyPart = GameObject.Instantiate(SnakeSettings.SnakeBodyPrefab, tail.transform.position, tail.transform.rotation, bodyParent);
@@ -53,6 +63,10 @@ namespace MathSnake.Player
             //}
         }
 
+        /// <summary>
+        ///    Creates a new body part for the snake with a specified number.
+        /// </summary>
+        /// <param name="num">The number to assign to the created body part.</param>
         public void CreateBodyPart(int num)
         {
             var bodyPart = GameObject.Instantiate(SnakeSettings.NumberedSnakeBodyPrefab, tail.transform.position, tail.transform.rotation, bodyParent);

@@ -13,6 +13,6 @@ namespace MathSnake
         public SnakeSettings SnakeSettings { get; private set; } = null!;
 
         [field: SerializeField]
-        public RottingSettings RottingSettings { get; private set; } = null!;
+        public EatableSettings RottingSettings { get; private set; } = null!;
     }
 }

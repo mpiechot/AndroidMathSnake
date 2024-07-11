@@ -6,6 +6,11 @@ using UnityEngine;
 
 namespace MathSnake.Player
 {
+    /// <summary>
+    ///     Represents a numbered body part of the snake in the game.
+    ///     This class extends <see cref="SnakeBodyBase"/> to include functionality for displaying and 
+    ///     managing a number associated with the snake body part.
+    /// </summary>
     public class NumberedSnakeBody : SnakeBodyBase
     {
         [SerializeField]
@@ -15,11 +20,18 @@ namespace MathSnake.Player
 
         private TMP_Text NumberText => SerializeFieldNotAssignedException.ThrowIfNull(numberText);
 
-        public void Initialize(int number, float speed, Transform nextFollowTarget, SnakeSettings settings)
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="NumberedSnakeBody"/> class.
+        /// </summary>
+        /// <param name="number">The number assigned to this body part.</param>
+        /// <param name="speed">The movement speed of the snake body part.</param>
+        /// <param name="followTarget">The target for the snake body part to follow.</param>
+        /// <param name="settings">The settings to be used by the snake body part.</param>
+        public void Initialize(int number, float speed, Transform followTarget, SnakeSettings settings)
         {
             this.number = number;
             NumberText.text = number.ToString();
-            base.Initialize(speed, nextFollowTarget, settings);
+            base.Initialize(speed, followTarget, settings);
         }
     }
 }

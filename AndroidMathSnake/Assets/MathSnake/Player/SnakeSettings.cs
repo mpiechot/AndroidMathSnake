@@ -5,63 +5,65 @@ using UnityEngine;
 namespace MathSnake.Player
 {
     /// <summary>
-    /// This class describes settings for a in game snake.
+    ///     Holds configuration settings for the snake in the game. This includes prefabs for different parts of the snake,
+    ///     initial movement speed, rotation speed, and other gameplay-related settings. This scriptable object allows for easy
+    ///     adjustments to the snake's behavior and appearance within the Unity Editor.
     /// </summary>
     [CreateAssetMenu(fileName = "SnakeSettings", menuName = "MathSnake/Snake/Snake Settings", order = 1)]
     public class SnakeSettings : ScriptableObject
     {
         /// <summary>
-        /// Gets the prefab for spawning a snake.
+        ///     Gets the prefab for spawning a snake.
         /// </summary>
         [field: SerializeField]
         public Snake SnakePrefab { get; private set; } = null!;
 
         /// <summary>
-        /// Gets the prefab for spawning a snake body part.
+        ///     Gets the prefab for spawning a snake body part without a number.
         /// </summary>
         [field: SerializeField]
         public SnakeBodyBase SnakeBodyPrefab { get; private set; } = null!;
 
         /// <summary>
-        /// Gets the prefab for spawning a snake body part.
+        ///     Gets the prefab for spawning a snake body part with a number.
         /// </summary>
         [field: SerializeField]
         public NumberedSnakeBody NumberedSnakeBodyPrefab { get; private set; } = null!;
 
         /// <summary>
-        /// Gets the prefab for spawning a snake body part.
+        ///     Gets the prefab for spawning a snake's tail.
         /// </summary>
         [field: SerializeField]
         public SnakeBodyBase SnakeTailPrefab { get; private set; } = null!;
 
         /// <summary>
-        /// Gets the initial speed for the snake.
+        ///     Gets the initial speed for the snake.
         /// </summary>
         [field: SerializeField]
         public float InitialSpeed { get; private set; }
 
         /// <summary>
-        /// Gets or sets the step value to increase the speed of the snake.
+        ///     Gets the value to increase the speed of the snake by, when it eats a valid item.
         /// </summary>
         [field: SerializeField]
         public float IncreaseSpeedBy { get; private set; } = .3f;
 
         /// <summary>
-        /// Gets or sets the rotationspeed of the snake.
+        ///     Gets the speed at which the snake rotates.
         /// </summary>
         [field: SerializeField]
         public float RotationSpeed { get; private set; } = 150f;
 
         /// <summary>
-        /// Gets or sets the step value to increase the rotation speed.
+        ///     Gets the step value to increase the rotation speed.
         /// </summary>
         [field: SerializeField]
-        public float IncreaseRotationBy { get; private set; } = 5f;
+        public float IncreaseRotationSpeedBy { get; private set; } = 5f;
 
         /// <summary>
-        /// Gets or sets the distance between snake parts.
+        ///     Gets the gap between snake parts.
         /// </summary>
         [field: SerializeField]
-        public float PartsDistance { get; private set; } = 1f;
+        public float SnakePartsGap { get; private set; } = 1f;
     }
 }

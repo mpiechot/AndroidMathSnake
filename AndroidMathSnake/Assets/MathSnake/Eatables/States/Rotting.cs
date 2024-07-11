@@ -18,13 +18,13 @@ namespace MathSnake.Eatables.States
         [SerializeField]
         private Canvas? rottingCanvas;
 
-        private RottingSettings? rottingSettings;
+        private EatableSettings? rottingSettings;
 
         private float currentRotTime;
 
         private Coroutine? rottingCoroutine;
 
-        private RottingSettings RottingSettings => NotInitializedException.ThrowIfNull(rottingSettings);
+        private EatableSettings RottingSettings => NotInitializedException.ThrowIfNull(rottingSettings);
 
         private Image RottingBar => SerializeFieldNotAssignedException.ThrowIfNull(rottingBar);
 
@@ -34,7 +34,7 @@ namespace MathSnake.Eatables.States
         ///    Initializes a new instance of the <see cref="Rotting"/> class.
         /// </summary>
         /// <param name="rottingSettings">The rotting settings to use.</param>
-        public void Initialize(RottingSettings rottingSettings)
+        public void Initialize(EatableSettings rottingSettings)
         {
             this.rottingSettings = rottingSettings;
         }
