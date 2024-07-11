@@ -22,6 +22,8 @@ namespace MathSnake.Player
 
         private Transform nextFollowTarget;
 
+        public NumberedSnakeBody LastAddedNumber { get; private set; }
+
         /// <summary>
         ///     Initializes a new instance of the <see cref="SnakeBodyController"/> class.
         /// </summary>
@@ -75,15 +77,14 @@ namespace MathSnake.Player
             bodyParts.Add(bodyPart.transform);
             nextFollowTarget = bodyPart.transform;
             tail.UpdateTarget(bodyPart.transform);
+            LastAddedNumber = bodyPart;
+        }
 
-
-            //Print the eaten number on the bodyPart if not 0
-            //if (num != 0)
-            //{
-            //    TextMeshPro mesh = bpm.GetComponentInChildren<TextMeshPro>();
-            //    mesh.text = num.ToString();
-            //    currentNums += num;
-            //}
+        public void DestroyLastBodyPart()
+        {
+            tail.UpdateTarget(LastAddedNumber.Target);
+            nextFollowTarget = LastAddedNumber.Target;
+            GameObject.Destroy(LastAddedNumber.gameObject);
         }
     }
 }

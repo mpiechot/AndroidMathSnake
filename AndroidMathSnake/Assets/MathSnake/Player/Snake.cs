@@ -81,34 +81,21 @@ namespace MathSnake.Player
 
         private void OnEatenTriggered(object sender, EatenEventArgs args)
         {
-            if (args.EatenItem.IsGameOver)
+            switch (GameContext.GameMaster.EvaluateStomach(args.EatenItem))
             {
-                DieSound.Play();
-                SnakeMovement.StopMovement();
-                Debug.Log("Snake hit a Wall");
-                //PlayerValues.Score = Int32.Parse(GameMaster.gm.currentScore.text);
-                //StartCoroutine(StartUIControll.focusOn());
-                //SceneManager.LoadScene("UpdateHighScore");
-                Destroy(gameObject);
-                return;
-            }
-
-            if (args.EatenItem is Apple apple)
-            {
-                //TextMeshProUGUI search = gm.searchNumberField;
-                //if (search.text[search.text.Length - 2] == '=')
-                //{
-                //    search.text += apple.num;
-                //}
-                //else
-                //{
-                //    search.text += " + " + apple.num;
-                //}
-                //gm.searchNumberField.text += "";
-                Debug.Log($"Snake eat apple with number {apple.Number}");
-                SnakeBodyController.CreateBodyPart(apple.Number);
-
-                IncreaseSpeed();
+                case StomachResult.Grow:
+                    // This is save because we know that only apples result in a grow
+                    var apple = (Apple)args.EatenItem;
+                    SnakeBodyController.CreateBodyPart(apple.Number);
+                    IncreaseSpeed();
+                    break;
+                case StomachResult.Shrink:
+                    break;
+                case StomachResult.Die:
+                    DieSound.Play();
+                    SnakeMovement.StopMovement();
+                    Destroy(gameObject);
+                    break;
             }
         }
 

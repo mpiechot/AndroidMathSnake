@@ -5,6 +5,7 @@ using MathSnake.Eatables;
 using MathSnake.Exceptions;
 using MathSnake.Player;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace MathSnake
@@ -31,6 +32,11 @@ namespace MathSnake
         private Transform EatablesParent => SerializeFieldNotAssignedException.ThrowIfNull(eatablesParent);
 
         private GameContext Context => GameNotStartedException.ThrowIfNull(context);
+
+        /// <summary>
+        ///    Gets the current search number.
+        /// </summary>
+        public int CurrentSearchNumber => currentSearchNumber;
 
         public void StartGame(GameContext gameContext)
         {
@@ -78,6 +84,61 @@ namespace MathSnake
             {
                 GameObject.Destroy(item.GameObject);
             }
+        }
+
+        private void IncreaseScore()
+        {
+            currentScore += 10;
+            Context.UiController.UpdateScore(currentScore);
+        }
+
+        public StomachResult EvaluateStomach(IEatable eatable)
+        {
+            if (eatable.IsGameOver)
+            {
+                GameOver();
+                return StomachResult.Die;
+            }
+
+            if (Context.Player.SnakeBodyController.LastAddedNumber == null)
+            {
+                return StomachResult.Grow;
+            }
+
+            if (eatable is Apple apple)
+            {
+                var firstNumber = Context.Player.SnakeBodyController.LastAddedNumber.Number;
+                var secondNumber = apple.Number;
+                if (firstNumber + secondNumber == CurrentSearchNumber)
+                {
+                    IncreaseScore();
+                    Context.Player.SnakeBodyController.DestroyLastBodyPart();
+                    foreach (var item in eatables)
+                    {
+                        GameObject.Destroy(item.GameObject);
+                    }
+                    eatables.Clear();
+
+                    currentSearchNumber = Random.Range(2, 10);
+                    Context.UiController.UpdateSearchNumber(currentSearchNumber);
+                    SpawnApplePairs(2);
+                    return StomachResult.Shrink;
+                }
+            }
+
+            if (eatables.All(eatables => eatables.IsEaten))
+            {
+                GameOver();
+                return StomachResult.Die;
+            }
+
+            return StomachResult.Grow;
+        }
+
+        private void GameOver()
+        {
+            gameIsRunning = false;
+            Context.UiController.ShowGameOver();
         }
     }
 }

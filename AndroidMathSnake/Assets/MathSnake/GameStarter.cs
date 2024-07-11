@@ -32,7 +32,7 @@ namespace MathSnake
             SerializeFieldNotAssignedException.ThrowIfNull(uiController);
             SerializeFieldNotAssignedException.ThrowIfNull(gameMaster);
 
-            var gameContext = new GameContext(tilemapController, backgroundMusicController, uiController, gameSettings);
+            var gameContext = new GameContext(gameMaster, tilemapController, backgroundMusicController, uiController, gameSettings);
 
             // Start the game
             gameMaster.StartGame(gameContext);

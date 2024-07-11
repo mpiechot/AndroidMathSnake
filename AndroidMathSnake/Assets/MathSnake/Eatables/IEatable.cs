@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#nullable enable
+
+using UnityEngine;
 
 namespace MathSnake.Eatables
 {
@@ -10,9 +12,14 @@ namespace MathSnake.Eatables
         bool IsGameOver { get; }
 
         /// <summary>
+        ///    Gets or sets a value indicating whether the item is eaten.
+        /// </summary>
+        bool IsEaten { get; }
+
+        /// <summary>
         ///     Gets the game object of the eatable item in the scene.
         /// </summary>
-        GameObject GameObject { get; }
+        GameObject? GameObject { get; }
 
         /// <summary>
         ///     Eats the item.

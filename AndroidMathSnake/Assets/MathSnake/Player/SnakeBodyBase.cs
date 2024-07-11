@@ -18,6 +18,11 @@ namespace MathSnake.Player
 
         private float currentSpeed;
 
+        /// <summary>
+        ///    Gets the target to follow.
+        /// </summary>
+        public Transform Target => NotInitializedException.ThrowIfNull(target);
+
         private SnakeSettings SnakeSettings => NotInitializedException.ThrowIfNull(snakeSettings);
 
         /// <summary>

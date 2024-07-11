@@ -1,3 +1,5 @@
+#nullable enable
+
 using UnityEngine;
 
 namespace MathSnake.Eatables
@@ -8,7 +10,10 @@ namespace MathSnake.Eatables
         public bool IsGameOver => true;
 
         /// <inheritdoc/>
-        public GameObject GameObject => gameObject;
+        public bool IsEaten { get; private set; }
+
+        /// <inheritdoc/>
+        public GameObject? GameObject => gameObject == null ? null : gameObject;
 
         /// <inheritdoc/>
         public void Eat()

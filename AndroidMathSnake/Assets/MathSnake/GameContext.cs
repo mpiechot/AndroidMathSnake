@@ -44,6 +44,11 @@ namespace MathSnake
         public BackgroundMusicController BackgroundMusicController { get; }
 
         /// <summary>
+        ///    Gets the game master.
+        /// </summary>
+        public GameController GameMaster { get; }
+
+        /// <summary>
         ///    Gets or sets the player snake.
         /// </summary>
         public Snake Player
@@ -66,11 +71,13 @@ namespace MathSnake
         /// <param name="uiController">The UI controller to provide.</param>
         /// <param name="gameSettings">The settings to be used within the game context.</param>
         public GameContext(
+            GameController gameMaster,
             TilemapController tilemapController,
             BackgroundMusicController musicManager,
             UiController uiController,
             GameSettings gameSettings)
         {
+            GameMaster = gameMaster;
             this.gameSettings = gameSettings;
             UiController = uiController;
             TilemapController = tilemapController;

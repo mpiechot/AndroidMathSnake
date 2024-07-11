@@ -16,7 +16,7 @@ namespace MathSnake.Player
         [SerializeField]
         private TMP_Text? numberText;
 
-        private int number;
+        public int Number { get; private set; }
 
         private TMP_Text NumberText => SerializeFieldNotAssignedException.ThrowIfNull(numberText);
 
@@ -29,7 +29,7 @@ namespace MathSnake.Player
         /// <param name="settings">The settings to be used by the snake body part.</param>
         public void Initialize(int number, float speed, Transform followTarget, SnakeSettings settings)
         {
-            this.number = number;
+            this.Number = number;
             NumberText.text = number.ToString();
             base.Initialize(speed, followTarget, settings);
         }

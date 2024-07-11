@@ -2,6 +2,7 @@
 
 using MathSnake.Eatables.States;
 using MathSnake.Exceptions;
+using TMPro;
 using UnityEngine;
 
 namespace MathSnake.Eatables
@@ -13,12 +14,17 @@ namespace MathSnake.Eatables
         private ParticleSystem? eatingParticles;
 
         [SerializeField]
+        private TMP_Text? numberLabel;
+
+        [SerializeField]
         private MeshRenderer? meshRenderer;
 
         [SerializeField]
         private Rotting? rotting;
 
         private Rotting Rotting => SerializeFieldNotAssignedException.ThrowIfNull(rotting);
+
+        private TMP_Text NumberLabel => SerializeFieldNotAssignedException.ThrowIfNull(numberLabel);
 
         /// <summary>
         ///     Gets the number for this apple.
@@ -29,7 +35,10 @@ namespace MathSnake.Eatables
         public bool IsGameOver => false;
 
         /// <inheritdoc/>
-        public GameObject GameObject => gameObject;
+        public GameObject? GameObject => gameObject == null ? null : gameObject;
+
+        /// <inheritdoc/>
+        public bool IsEaten { get; private set; }
 
 
 
@@ -41,6 +50,7 @@ namespace MathSnake.Eatables
         public void Initialize(int number, GameContext context)
         {
             Number = number;
+            NumberLabel.text = number.ToString();
             Rotting.Initialize(context.EatableSettings);
             Rotting.StartRotting();
         }
@@ -48,8 +58,9 @@ namespace MathSnake.Eatables
         /// <inheritdoc/>
         public void Eat()
         {
+            IsEaten = true;
             Instantiate(eatingParticles, transform.position, Quaternion.Euler(-90, 0, 0));
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
