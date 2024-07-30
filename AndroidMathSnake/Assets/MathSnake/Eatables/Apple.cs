@@ -62,5 +62,10 @@ namespace MathSnake.Eatables
             Instantiate(eatingParticles, transform.position, Quaternion.Euler(-90, 0, 0));
             gameObject.SetActive(false);
         }
+
+        private void OnDestroy()
+        {
+            Instantiate(eatingParticles, transform.position, Quaternion.Euler(-90, 0, 0));
+        }
     }
 }

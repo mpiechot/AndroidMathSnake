@@ -12,39 +12,53 @@ namespace MathSnake.Player
     /// </summary>
     public class SnakeBodyBase : MonoBehaviour
     {
+        [SerializeField]
+        private Rigidbody? bodyPartRigidbody;
+
         private SnakeSettings? snakeSettings;
 
-        private Transform? target;
+        private SnakeHeadMovement? snakeHeadMovement;
 
-        private float currentSpeed;
+        private Rigidbody? target;
+
+        private float CurrentSpeed => SnakeHeadMovement.CurrentSpeed;
 
         /// <summary>
         ///    Gets the target to follow.
         /// </summary>
-        public Transform Target => NotInitializedException.ThrowIfNull(target);
+        public Rigidbody Target => NotInitializedException.ThrowIfNull(target);
 
         private SnakeSettings SnakeSettings => NotInitializedException.ThrowIfNull(snakeSettings);
+
+        private SnakeHeadMovement SnakeHeadMovement => NotInitializedException.ThrowIfNull(snakeHeadMovement);
+
+
+        /// <summary>
+        ///     Gets the rigidbody of the snake body part.
+        /// </summary>
+        public Rigidbody BodyPartRigidbody => SerializeFieldNotAssignedException.ThrowIfNull(bodyPartRigidbody);
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="SnakeBodyBase"/> class.
         /// </summary>
-        /// <param name="speed">The movement speed of the snake body part.</param>
+        /// <param name="snakeHead">The movement speed of the snake body part.</param>
         /// <param name="followTarget">The target for the snake body part to follow.</param>
         /// <param name="settings">The settings to be used by the snake body part.</param>
-        public void Initialize(float speed, Transform followTarget, SnakeSettings settings)
+        public void Initialize(SnakeHeadMovement snakeHead, Rigidbody followTarget, SnakeSettings settings)
         {
             snakeSettings = settings;
-            currentSpeed = speed;
-            UpdateTarget(followTarget);
+            snakeHeadMovement = snakeHead;
+            ConnectTo(followTarget);
         }
 
         /// <summary>
         ///     Updates the target that this snake body part should follow.
         /// </summary>
         /// <param name="newTarget">The new target for the snake body part to follow.</param>
-        public void UpdateTarget(Transform newTarget)
+        public void ConnectTo(Rigidbody newTarget)
         {
             target = newTarget;
+            //BodyPartConntector.connectedBody = newTarget;
         }
 
         private void Update()
@@ -57,8 +71,8 @@ namespace MathSnake.Player
             float distance = Vector3.Distance(transform.position, target.position);
             if (distance > SnakeSettings.SnakePartsGap)
             {
-                transform.Translate(Vector3.forward * distance * currentSpeed * Time.deltaTime, Space.Self);
-                transform.LookAt(target);
+                transform.LookAt(target.transform);
+                transform.Translate(Vector3.forward * distance * CurrentSpeed * Time.deltaTime, Space.Self);
             }
         }
     }

@@ -15,7 +15,7 @@ C:/MARPIE/Unity-Projekte/AndroidMathSnake/AndroidMathSnake
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53468
+49794
 Successfully changed project path to: C:/MARPIE/Unity-Projekte/AndroidMathSnake/AndroidMathSnake
 C:/MARPIE/Unity-Projekte/AndroidMathSnake/AndroidMathSnake
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,11 +49,11 @@ C:/MARPIE/Unity-Projekte/AndroidMathSnake/AndroidMathSnake
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [40452] Host "[IP] 192.168.2.107 [Port] 0 [Flags] 2 [Guid] 107235954 [EditorId] 107235954 [Version] 1048832 [Id] WindowsEditor(7,Der-Rechner-v2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [30216] Host "[IP] 192.168.2.107 [Port] 0 [Flags] 2 [Guid] 4255057140 [EditorId] 4255057140 [Version] 1048832 [Id] WindowsEditor(7,Der-Rechner-v2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [40452] Host "[IP] 192.168.2.107 [Port] 0 [Flags] 2 [Guid] 107235954 [EditorId] 107235954 [Version] 1048832 [Id] WindowsEditor(7,Der-Rechner-v2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [30216] Host "[IP] 192.168.2.107 [Port] 0 [Flags] 2 [Guid] 4255057140 [EditorId] 4255057140 [Version] 1048832 [Id] WindowsEditor(7,Der-Rechner-v2) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 114.92 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 8.15 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -69,51 +69,51 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56744
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.007488 seconds.
-- Loaded All Assemblies, in  0.687 seconds
+Registered in 0.005320 seconds.
+- Loaded All Assemblies, in  0.206 seconds
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 206 ms
+Android Extension - Scanning For ADB Devices 189 ms
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.435 seconds
-Domain Reload Profiling: 1121ms
-	BeginReloadAssembly (57ms)
+- Finished resetting the current domain, in  0.393 seconds
+Domain Reload Profiling: 598ms
+	BeginReloadAssembly (51ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (123ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (19ms)
 	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (40ms)
-	LoadAllAssembliesAndSetupDomain (460ms)
-		LoadAssemblies (56ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (93ms)
+		LoadAssemblies (51ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (456ms)
-			TypeCache.Refresh (456ms)
-				TypeCache.ScanAssembly (221ms)
+		AnalyzeDomain (89ms)
+			TypeCache.Refresh (88ms)
+				TypeCache.ScanAssembly (81ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (435ms)
+	FinalizeReload (394ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (395ms)
+		SetupLoadedEditorAssemblies (358ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (295ms)
+			InitializePlatformSupportModulesInManaged (266ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (61ms)
-			ProcessInitializeOnLoadMethodAttributes (34ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (58ms)
+			ProcessInitializeOnLoadMethodAttributes (30ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -122,54 +122,54 @@ Domain Reload Profiling: 1121ms
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.983 seconds
-Refreshing native plugins compatible for Editor in 4.50 ms, found 2 plugins.
+- Loaded All Assemblies, in  0.542 seconds
+Refreshing native plugins compatible for Editor in 5.53 ms, found 2 plugins.
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.476 seconds
-Domain Reload Profiling: 2458ms
-	BeginReloadAssembly (83ms)
+- Finished resetting the current domain, in  0.551 seconds
+Domain Reload Profiling: 1092ms
+	BeginReloadAssembly (77ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (16ms)
+		CreateAndSetChildDomain (14ms)
 	RebuildCommonClasses (19ms)
 	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (1844ms)
-		LoadAssemblies (1706ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (415ms)
+		LoadAssemblies (240ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (173ms)
-			TypeCache.Refresh (154ms)
-				TypeCache.ScanAssembly (145ms)
-			ScanForSourceGeneratedMonoScriptInfo (15ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (476ms)
+		AnalyzeDomain (208ms)
+			TypeCache.Refresh (185ms)
+				TypeCache.ScanAssembly (174ms)
+			ScanForSourceGeneratedMonoScriptInfo (19ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (552ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (369ms)
+		SetupLoadedEditorAssemblies (420ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (17ms)
+			InitializePlatformSupportModulesInManaged (19ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (71ms)
-			ProcessInitializeOnLoadAttributes (170ms)
-			ProcessInitializeOnLoadMethodAttributes (106ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			BeforeProcessingInitializeOnLoad (79ms)
+			ProcessInitializeOnLoadAttributes (193ms)
+			ProcessInitializeOnLoadMethodAttributes (122ms)
+			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 4.67 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 4.25 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4226 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 94 unused Assets / (1.9 MB). Loaded Objects now: 4666.
-Memory consumption went from 175.4 MB to 173.5 MB.
-Total: 5.092400 ms (FindLiveObjects: 0.191600 ms CreateObjectMapping: 0.102900 ms MarkObjects: 4.483900 ms  DeleteObjects: 0.313100 ms)
+Unloading 4421 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 99 unused Assets / (1.9 MB). Loaded Objects now: 4860.
+Memory consumption went from 179.7 MB to 177.8 MB.
+Total: 4.928200 ms (FindLiveObjects: 0.196700 ms CreateObjectMapping: 0.103000 ms MarkObjects: 4.329200 ms  DeleteObjects: 0.298500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -186,105 +186,175 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 14281.655848 seconds.
-  path: Assets/MathSnake
-  artifactKey: Guid(64895a9b86272fb45b5500e741f6e534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MathSnake using Guid(64895a9b86272fb45b5500e741f6e534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fffa89e5f37265c72d53bbf4da1919cc') in 0.001930 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 1.569739 seconds.
-  path: Assets/MathSnake/Snake
-  artifactKey: Guid(6ca86a5eb45a6794cb203e2c7fe2b88c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MathSnake/Snake using Guid(6ca86a5eb45a6794cb203e2c7fe2b88c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee7ef088fd2e844e23054f2b5a72d72f') in 0.000403 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.136075 seconds.
-  path: Assets/MathSnake/Snake/BodyPart.prefab
-  artifactKey: Guid(8909fe8f60cde7348a021e4d3fa66787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MathSnake/Snake/BodyPart.prefab using Guid(8909fe8f60cde7348a021e4d3fa66787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a38018c5ba9e18bc4b5af8ef22b71f7') in 0.097819 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 37
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/MathSnake/Snake/SnakeBody.prefab
-  artifactKey: Guid(3d7c5ccc473f9c04f8e523a3acb352bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MathSnake/Snake/SnakeBody.prefab using Guid(3d7c5ccc473f9c04f8e523a3acb352bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24e879c9f0a45769ad49ad953d23a074') in 0.023255 seconds
+  Time since last request: 14672.931747 seconds.
+  path: Assets/MathSnake/Player/Snake.prefab
+  artifactKey: Guid(a0209286e31f6304482953eacf4b9646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MathSnake/Player/Snake.prefab using Guid(a0209286e31f6304482953eacf4b9646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9efe7841f5b0d58b553c4e7cc3be0c4') in 0.068649 seconds
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 30
+Number of asset objects unloaded after import = 42
 ========================================================================
 Received Import Request.
-  Time since last request: 15.264906 seconds.
-  path: Assets/Settings
-  artifactKey: Guid(ad742cea3e8fc6b48bb5d48aac19d0f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Settings using Guid(ad742cea3e8fc6b48bb5d48aac19d0f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f6c3382b136a737841f2b90a6c32f61') in 0.000494 seconds
+  Time since last request: 2052.004544 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs
+  artifactKey: Guid(a725bf64e97e05b4ab2c43dc1f29e831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs using Guid(a725bf64e97e05b4ab2c43dc1f29e831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0353effbe776f444d4d9bd1980cc8dc') in 0.000670 seconds
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.091758 seconds.
-  path: Assets/Settings/New Post-Processing Profile.asset
-  artifactKey: Guid(a75bf78dbf884424aa483abac1d032a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Settings/New Post-Processing Profile.asset using Guid(a75bf78dbf884424aa483abac1d032a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a163061ca1ee86d459a60560527547ac') in 0.004088 seconds
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 6.846809 seconds.
-  path: Assets/Prefabs
-  artifactKey: Guid(8149481244be99f43bd40895d539cb84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs using Guid(8149481244be99f43bd40895d539cb84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b8f4777f65e1dcfeae4867d44b32ee4') in 0.000450 seconds
+  Time since last request: 1.738554 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain
+  artifactKey: Guid(596eff7ef34c44e46a08e168702ee67d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain using Guid(596eff7ef34c44e46a08e168702ee67d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f61167eef3a85fc49d1f6251b3e7b0b') in 0.000379 seconds
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.093679 seconds.
-  path: Assets/Prefabs/Apple.prefab
-  artifactKey: Guid(18d630463d4727a4891bfab0afbf293c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Apple.prefab using Guid(18d630463d4727a4891bfab0afbf293c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68e7ab152f5e305b311cc3d512ae1091') in 0.050678 seconds
+  Time since last request: 3.102964 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Bridge.prefab
+  artifactKey: Guid(1cabe50e01a5ba34aac9b660f4ca71ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Bridge.prefab using Guid(1cabe50e01a5ba34aac9b660f4ca71ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77804348bf904a4073495612943e1d94') in 0.014297 seconds
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 41
+Number of asset objects unloaded after import = 9
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Prefabs/Level.prefab
-  artifactKey: Guid(e2f783b5d56f063479faa964060578a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level.prefab using Guid(e2f783b5d56f063479faa964060578a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3363e29ab40ea16a723a5f64b48b3b0') in 0.186593 seconds
+  Time since last request: 1.664829 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Cliff.prefab
+  artifactKey: Guid(7ce8ff77132093f4da3f2d8cb0876ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Cliff.prefab using Guid(7ce8ff77132093f4da3f2d8cb0876ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc5046740dbf1916294c5061dcf80029') in 0.011202 seconds
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 590
+Number of asset objects unloaded after import = 9
 ========================================================================
 Received Import Request.
-  Time since last request: 22.439156 seconds.
-  path: Assets/MathSnake/Snake/DefaultRottingSettings.asset
-  artifactKey: Guid(dc3806c5a660bfb4ba9e298aa151f707) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MathSnake/Snake/DefaultRottingSettings.asset using Guid(dc3806c5a660bfb4ba9e298aa151f707) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdacf7fedc726d2b867f9167aa0c2954') in 0.001149 seconds
+  Time since last request: 0.908119 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Dirt.prefab
+  artifactKey: Guid(c291e80b4e3bd6940a732e6027a8d72b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Dirt.prefab using Guid(c291e80b4e3bd6940a732e6027a8d72b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df56971b2a5f4931cd02d6fd57879a56') in 0.010888 seconds
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 9
 ========================================================================
 Received Import Request.
-  Time since last request: 9.174074 seconds.
-  path: Assets/MathSnake/Snake/DefaultSnakeSettings.asset
-  artifactKey: Guid(4a700b03de6813c418564f506d09602a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MathSnake/Snake/DefaultSnakeSettings.asset using Guid(4a700b03de6813c418564f506d09602a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cad1237c266418858b0089be39d3db84') in 0.000880 seconds
+  Time since last request: 2.239240 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Grass_01.prefab
+  artifactKey: Guid(872c16f7e1cc12b4793e2c3d414fa189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Grass_01.prefab using Guid(872c16f7e1cc12b4793e2c3d414fa189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02ffe74757e012c8aadc201511b58d3c') in 0.086514 seconds
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 1.753568 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Grass_02.prefab
+  artifactKey: Guid(d853c5ba406ab2449b57a72ebcf7e84b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Grass_02.prefab using Guid(d853c5ba406ab2449b57a72ebcf7e84b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3dc3759e1686cd87f91291395166364') in 0.011502 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 2.213250 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Rock.prefab
+  artifactKey: Guid(32f76d6f92327804aac5a09301211639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Rock.prefab using Guid(32f76d6f92327804aac5a09301211639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16ffdfa8e793e8772a32666a696d1656') in 0.011204 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.985861 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Sand.prefab
+  artifactKey: Guid(1029e45609b022b42995be807cce94bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Sand.prefab using Guid(1029e45609b022b42995be807cce94bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20e04416f201d4960349d6634ee6869e') in 0.010838 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.594762 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Wood.prefab
+  artifactKey: Guid(bf382bdae4dd23b428474523b2028c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Wood.prefab using Guid(bf382bdae4dd23b428474523b2028c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16515dab06321328df03d4cd5a5d9bdc') in 0.011973 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 346.478504 seconds.
+  path: Assets/ThirdParty/Cube_World/Models
+  artifactKey: Guid(59995730033883c4a9575563b6913ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Models using Guid(59995730033883c4a9575563b6913ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c74ae7be8dde3d9915dfc88d570470c8') in 0.000740 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.533023 seconds.
+  path: Assets/ThirdParty/Cube_World/Models/Cube_Buildings.fbx
+  artifactKey: Guid(f46bae364600ea44d876fdf16cf7628b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Models/Cube_Buildings.fbx using Guid(f46bae364600ea44d876fdf16cf7628b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7cbe42b480b757d8d6aad95a9390963') in 0.055467 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.812864 seconds.
+  path: Assets/ThirdParty/Cube_World/Models/Cube_Props.fbx
+  artifactKey: Guid(fdf4ecd4e2eb6284fae0d2b753ec42b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Models/Cube_Props.fbx using Guid(fdf4ecd4e2eb6284fae0d2b753ec42b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0d3679a42862dabd5ec4dc3e5ef10df') in 0.046374 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 0.625272 seconds.
+  path: Assets/ThirdParty/Cube_World/Models/Terrain_Cubes.fbx
+  artifactKey: Guid(1756dbd695eea5345bf74a83d3c1e523) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Models/Terrain_Cubes.fbx using Guid(1756dbd695eea5345bf74a83d3c1e523) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4713c164295eb68f6ad8df3990d46bee') in 0.057733 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 44
+========================================================================
+Received Import Request.
+  Time since last request: 388.013159 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Grass_01.prefab
+  artifactKey: Guid(872c16f7e1cc12b4793e2c3d414fa189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Grass_01.prefab using Guid(872c16f7e1cc12b4793e2c3d414fa189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3d799a9ef8919dc929a15ed6ef58ece') in 0.016688 seconds
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 2.197482 seconds.
+  path: Assets/ThirdParty/Cube_World/Prefabs/Terrain/Grass_02.prefab
+  artifactKey: Guid(d853c5ba406ab2449b57a72ebcf7e84b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ThirdParty/Cube_World/Prefabs/Terrain/Grass_02.prefab using Guid(d853c5ba406ab2449b57a72ebcf7e84b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8677b0ce24d8e3e3b70ebee8e35dd7e0') in 0.011774 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+TcpMessagingSession - receive error
+AssetImportWorkerClient::OnTransportError - code=10054 error=Eine vorhandene Verbindung wurde vom Remotehost geschlossen.

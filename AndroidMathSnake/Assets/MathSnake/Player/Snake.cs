@@ -45,6 +45,8 @@ namespace MathSnake.Player
 
         private Transform SnakeHead => SerializeFieldNotAssignedException.ThrowIfNull(snakeHead);
 
+        private bool isInitialized;
+
         /// <summary>
         ///     Occurs when the snake dies.
         /// </summary>
@@ -53,14 +55,19 @@ namespace MathSnake.Player
 
         //private int currentNums { get; set; }
 
-
         /// <summary>
         ///     Initializes a new instance of the <see cref="Snake"/> class.
         /// </summary>
         /// <param name="context">The game context to use.</param>
         public void Initialize(GameContext context)
         {
+            if (isInitialized)
+            {
+                return;
+            }
+
             gameContext = context;
+            gameContext.Player = this;
 
             snakeMouth = gameObject.GetComponentInChildrenOrThrow<SnakeMouth>();
             snakeMouth.Initialize(context.SnakeSettings);
@@ -73,6 +80,8 @@ namespace MathSnake.Player
             SnakeMovement.StartMovement();
 
             snakeBodyController = new(SnakeHead, SnakeBodyParent, context);
+
+            isInitialized = true;
         }
         private void IncreaseSpeed()
         {

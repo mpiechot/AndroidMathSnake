@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace MathSnake
 {
-    public class GameController : MonoBehaviour
+    public class GameController : MonoBehaviour, IGameController
     {
         [SerializeField]
         private Transform? eatablesParent;
@@ -51,7 +51,6 @@ namespace MathSnake
             // Spawn the snake
             var snake = SnakeSpawner.SpawnSnake(gameContext);
             snake.Died += OnSnakeDied;
-            gameContext.Player = snake;
 
             // Select the first apple number
             currentSearchNumber = Random.Range(2, 10);
@@ -61,35 +60,6 @@ namespace MathSnake
             SpawnApplePairs(2);
 
             gameIsRunning = true;
-        }
-
-        private void SpawnApplePairs(int ammount = 1)
-        {
-            for (int i = 0; i < ammount; i++)
-            {
-                int firstNum = Random.Range(1, currentSearchNumber);
-                eatables.Add(EatablesSpawner.SpawnApple(firstNum, Context, EatablesParent));
-                eatables.Add(EatablesSpawner.SpawnApple(currentSearchNumber - firstNum, Context, EatablesParent));
-            }
-        }
-
-        private void OnSnakeDied(object sender, DieEventArgs args)
-        {
-            gameIsRunning = false;
-        }
-
-        private void OnDestroy()
-        {
-            foreach (var item in eatables)
-            {
-                GameObject.Destroy(item.GameObject);
-            }
-        }
-
-        private void IncreaseScore()
-        {
-            currentScore += 10;
-            Context.UiController.UpdateScore(currentScore);
         }
 
         public StomachResult EvaluateStomach(IEatable eatable)
@@ -133,6 +103,34 @@ namespace MathSnake
             }
 
             return StomachResult.Grow;
+        }
+        private void SpawnApplePairs(int ammount = 1)
+        {
+            for (int i = 0; i < ammount; i++)
+            {
+                int firstNum = Random.Range(1, currentSearchNumber);
+                eatables.Add(EatablesSpawner.SpawnApple(firstNum, Context, EatablesParent));
+                eatables.Add(EatablesSpawner.SpawnApple(currentSearchNumber - firstNum, Context, EatablesParent));
+            }
+        }
+
+        private void OnSnakeDied(object sender, DieEventArgs args)
+        {
+            gameIsRunning = false;
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var item in eatables)
+            {
+                GameObject.Destroy(item.GameObject);
+            }
+        }
+
+        private void IncreaseScore()
+        {
+            currentScore += 10;
+            Context.UiController.UpdateScore(currentScore);
         }
 
         private void GameOver()

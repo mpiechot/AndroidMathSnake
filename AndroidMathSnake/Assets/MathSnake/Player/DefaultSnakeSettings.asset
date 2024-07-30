@@ -24,4 +24,4 @@ MonoBehaviour:
   <IncreaseSpeedBy>k__BackingField: 0.3
   <RotationSpeed>k__BackingField: 170
   <IncreaseRotationSpeedBy>k__BackingField: 100
-  <SnakePartsGap>k__BackingField: 1
+  <SnakePartsGap>k__BackingField: 1.5

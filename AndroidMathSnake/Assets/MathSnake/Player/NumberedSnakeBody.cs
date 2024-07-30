@@ -24,14 +24,14 @@ namespace MathSnake.Player
         ///     Initializes a new instance of the <see cref="NumberedSnakeBody"/> class.
         /// </summary>
         /// <param name="number">The number assigned to this body part.</param>
-        /// <param name="speed">The movement speed of the snake body part.</param>
+        /// <param name="snakeHead">The movement component of the snake head.</param>
         /// <param name="followTarget">The target for the snake body part to follow.</param>
         /// <param name="settings">The settings to be used by the snake body part.</param>
-        public void Initialize(int number, float speed, Transform followTarget, SnakeSettings settings)
+        public void Initialize(int number, SnakeHeadMovement snakeHead, Rigidbody followTarget, SnakeSettings settings)
         {
             this.Number = number;
             NumberText.text = number.ToString();
-            base.Initialize(speed, followTarget, settings);
+            base.Initialize(snakeHead, followTarget, settings);
         }
     }
 }

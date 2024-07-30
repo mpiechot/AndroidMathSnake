@@ -1,14 +1,21 @@
 ﻿#nullable enable
 
+using Cysharp.Threading.Tasks;
+using MathSnake.Assets.MathSnake.Util;
 using MathSnake.Exceptions;
+using System;
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace MathSnake.Eatables.States
 {
-    public class Rotting : MonoBehaviour
+    public sealed class Rotting : MonoBehaviour, IDisposable
     {
+        [SerializeField]
+        private AudioSource? splashSound;
+
         [SerializeField]
         private bool isRotting;
 
@@ -18,17 +25,20 @@ namespace MathSnake.Eatables.States
         [SerializeField]
         private Canvas? rottingCanvas;
 
+        private CancellableTaskCollection cancellableTaskCollection = new();
+
         private EatableSettings? rottingSettings;
 
         private float currentRotTime;
-
-        private Coroutine? rottingCoroutine;
+        private bool disposedValue;
 
         private EatableSettings RottingSettings => NotInitializedException.ThrowIfNull(rottingSettings);
 
         private Image RottingBar => SerializeFieldNotAssignedException.ThrowIfNull(rottingBar);
 
         private Canvas RottingCanvas => SerializeFieldNotAssignedException.ThrowIfNull(rottingCanvas);
+
+        private AudioSource SplashSound => SerializeFieldNotAssignedException.ThrowIfNull(splashSound);
 
         /// <summary>
         ///    Initializes a new instance of the <see cref="Rotting"/> class.
@@ -55,37 +65,60 @@ namespace MathSnake.Eatables.States
             RottingCanvas.gameObject.SetActive(true);
 
             isRotting = true;
-            rottingCoroutine = StartCoroutine(Rot());
+            cancellableTaskCollection.StartExecution(Rot);
         }
 
-        private IEnumerator Rot()
+        private async UniTask Rot(CancellationToken cancellationToken)
         {
             currentRotTime = 1;
             while (currentRotTime > 0)
             {
-                yield return null;
+                await UniTask.NextFrame(cancellationToken);
+
                 currentRotTime -= RottingSettings.RottingSpeed;
                 RottingBar.fillAmount = currentRotTime;
+
                 transform.localScale = Vector3.one * Mathf.Lerp(RottingSettings.FreshSize, RottingSettings.DeadSize, 1 - currentRotTime);
-                if (currentRotTime < .66f)
+
+                if (currentRotTime < .33f)
                 {
-                    RottingBar.color = Color.yellow;
+                    RottingBar.color = RottingSettings.DeadColor;
                 }
-                else if (currentRotTime < .33f)
+                else if (currentRotTime < .66f)
                 {
-                    RottingBar.color = Color.red;
+                    RottingBar.color = RottingSettings.GoodColor;
                 }
             }
-            //FindObjectOfType<AudioManager>().Play("Splash");
+
+            SplashSound.Play();
+
             Destroy(gameObject);
         }
 
         private void OnDestroy()
         {
-            if (rottingCoroutine != null)
+            Dispose();
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (disposedValue || !disposing)
             {
-                StopCoroutine(rottingCoroutine);
+                return;
             }
+
+            cancellableTaskCollection.Dispose();
+            cancellableTaskCollection = null!;
+
+
+            disposedValue = true;
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }

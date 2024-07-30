@@ -49,7 +49,7 @@ namespace MathSnake.Eatables
         ///     Gets the speed at which an apple rots. 
         ///     This is a value between 0 and 1, where 1 represents the fastest possible rotting speed.
         /// </summary>
-        [field: SerializeField, Range(0, 1)]
+        [field: SerializeField, Range(0, 0.001f)]
         public float RottingSpeed { get; private set; }
 
     }

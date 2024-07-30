@@ -1,6 +1,8 @@
 #nullable enable
 
+using MathSnake.Extensions;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace MathSnake.Player
@@ -14,15 +16,18 @@ namespace MathSnake.Player
 
         private readonly SnakeBodyBase tail;
 
-        private readonly List<Transform> bodyParts = new List<Transform>();
+        private readonly List<SnakeBodyBase> bodyParts = new();
 
         private readonly GameContext context;
 
         private SnakeSettings SnakeSettings => context.SnakeSettings;
 
-        private Transform nextFollowTarget;
+        private Rigidbody nextFollowTarget;
 
-        public NumberedSnakeBody LastAddedNumber { get; private set; }
+        /// <summary>
+        ///    Gets the last added numbered body part or null if no numbered body part was added.
+        /// </summary>
+        public NumberedSnakeBody? LastAddedNumber => bodyParts.OfType<NumberedSnakeBody>().LastOrDefault();
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="SnakeBodyController"/> class.
@@ -36,10 +41,11 @@ namespace MathSnake.Player
             this.bodyParent = bodyParent;
 
             tail = GameObject.Instantiate(SnakeSettings.SnakeTailPrefab, snakeHead.position, snakeHead.rotation, bodyParent);
-            tail.Initialize(SnakeSettings.InitialSpeed, snakeHead, SnakeSettings);
-            bodyParts.Add(tail.transform);
+            var snakePhysics = snakeHead.gameObject.GetComponentOrThrow<Rigidbody>();
+            tail.Initialize(context.Player.SnakeMovement, snakePhysics, SnakeSettings);
+            bodyParts.Add(tail);
 
-            nextFollowTarget = snakeHead;
+            nextFollowTarget = snakePhysics;
         }
 
         /// <summary>
@@ -49,11 +55,11 @@ namespace MathSnake.Player
         public void CreateBodyPart()
         {
             var bodyPart = GameObject.Instantiate(SnakeSettings.SnakeBodyPrefab, tail.transform.position, tail.transform.rotation, bodyParent);
-            bodyPart.Initialize(context.Player.SnakeMovement.CurrentSpeed, nextFollowTarget, SnakeSettings);
+            bodyPart.Initialize(context.Player.SnakeMovement, nextFollowTarget, SnakeSettings);
             bodyPart.name = $"BodyPart {bodyParts.Count}";
-            bodyParts.Add(bodyPart.transform);
-            nextFollowTarget = bodyPart.transform;
-            tail.UpdateTarget(bodyPart.transform);
+            bodyParts.Add(bodyPart);
+            nextFollowTarget = bodyPart.BodyPartRigidbody;
+            tail.ConnectTo(bodyPart.BodyPartRigidbody);
 
 
             //Print the eaten number on the bodyPart if not 0
@@ -72,19 +78,26 @@ namespace MathSnake.Player
         public void CreateBodyPart(int num)
         {
             var bodyPart = GameObject.Instantiate(SnakeSettings.NumberedSnakeBodyPrefab, tail.transform.position, tail.transform.rotation, bodyParent);
-            bodyPart.Initialize(num, context.Player.SnakeMovement.CurrentSpeed, nextFollowTarget, SnakeSettings);
+            bodyPart.Initialize(num, context.Player.SnakeMovement, nextFollowTarget, SnakeSettings);
             bodyPart.name = $"BodyPart {bodyParts.Count} ({num})";
-            bodyParts.Add(bodyPart.transform);
-            nextFollowTarget = bodyPart.transform;
-            tail.UpdateTarget(bodyPart.transform);
-            LastAddedNumber = bodyPart;
+            bodyParts.Add(bodyPart);
+            nextFollowTarget = bodyPart.BodyPartRigidbody;
+            tail.ConnectTo(bodyPart.BodyPartRigidbody);
         }
 
         public void DestroyLastBodyPart()
         {
-            tail.UpdateTarget(LastAddedNumber.Target);
-            nextFollowTarget = LastAddedNumber.Target;
-            GameObject.Destroy(LastAddedNumber.gameObject);
+            if (LastAddedNumber == null)
+            {
+                return;
+            }
+
+            var lastBodyPart = LastAddedNumber;
+
+            tail.ConnectTo(lastBodyPart.Target);
+            nextFollowTarget = lastBodyPart.Target;
+            bodyParts.Remove(lastBodyPart);
+            GameObject.Destroy(lastBodyPart.gameObject);
         }
     }
 }
